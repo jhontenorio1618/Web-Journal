@@ -1,0 +1,111 @@
+header {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    button{
+        background-color: black;
+        margin-left: 30px;
+        color: #fff;
+        padding: 10px 60px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+
+    }
+    .header-boxes button:hover{
+        background-color: royalblue; /* Change to the desired color when hovered */;
+    }
+
+}
+
+body {
+    background-size: cover;
+    font-family:  "Arial Rounded MT Bold";
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    max-width: 600px;
+    margin-left: 800px;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type= "text"], input[type= "password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.option-box {
+    position: relative;
+    display: inline-block;
+}
+
+.option-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.option {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #ddd;
+}
+
+
+button {
+    background-color: darkslateblue;
+    color: #fff;
+    margin-left: 235px;
+    text-align: center;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
