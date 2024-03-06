@@ -1,0 +1,122 @@
+/* Inside stylesheets.css */
+/* Inside stylesheets.css */
+
+.main-section {
+    display: flex;
+
+    justify-content: center; /* This spreads the items evenly */
+    /* Align items vertically */
+    position: -ms-device-fixed;
+    /* Adjust the gap between grid items if needed */
+    /*background-color: gray;
+    /* Create four columns, each sized according to its content */
+
+}
+
+button {
+    font-size: 28px;
+    margin: 14px; /* Adds space around buttons */
+    white-space: nowrap;
+    padding: 20px 50px; /* Adjusts the padding inside the buttons for a larger click area and better visual appearance */
+    background-color: transparent; /* Example background color */
+    border-color: transparent;
+    cursor: pointer; /* Changes cursor to pointer on hover over the buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    color: white;
+
+}
+
+/* Services Button Hover Effect */
+.About-us:hover{
+    text-decoration: underline;
+}
+.Services:hover {
+    text-decoration: underline;
+}
+
+/* Blog Button Hover Effect */
+.Blog:hover {
+
+    text-decoration: underline;
+}
+
+/* Contact Us Button Hover Effect */
+.Contact-us:hover { /* Note the escape character \ for spaces in class names */
+    text-decoration: underline;
+}
+.Log-in:hover{
+    background-color: white;
+    color: rgba(58, 63, 225, 0.8);
+}
+body {
+    background-image: url("Web-Journal/darkBlackgroundImg.jpeg");
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+.hamburger {
+    display: block;
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    right: 40px;
+    top: 30px;
+
+}
+
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.line:nth-child(3) {
+    bottom: 0;
+}
+
+/* Transforming the lines to create the 'X' shape when clicked */
+.hamburger.open .line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .line:nth-child(2) {
+    transform: scale(0);
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
