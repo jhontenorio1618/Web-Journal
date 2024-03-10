@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: royalblue;
+}
+
+.dashboard-sidebar {
+    background-color: black;
+    position: fixed;
+    top: 80px; /* Adjust based on the header height */
+    left: 0;
+    width: 200px;
+    bottom: 0;
+    overflow: auto;
+}
+.dashboard-main {
+    margin-left: 200px; /* Adjust based on the sidebar width */
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+}

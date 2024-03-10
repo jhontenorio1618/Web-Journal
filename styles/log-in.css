@@ -1,0 +1,55 @@
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items to the start */
+    height: 100vh; /* Use the full height of the viewport */
+}
+
+.centered-content {
+    width: 35%; /* Adjust width as needed */
+     /* Adjust margin-top as needed */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 150px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 20px; /* Space between title and form */
+}
+
+.login-form .form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.login-form label {
+    display: block; /* Make label take its own line */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px; /* Space between label and input */
+}
+
+.login-form button {
+    width: 105.5%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+.register{
+    text-decoration: underline;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+}

@@ -1,0 +1,46 @@
+header{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+
+}
+
+.top-left-section{
+    position: relative;
+    background-color: grey;
+    width: 200px
+
+}
+.dash-center{
+    background-color: red;
+    flex-grow: 1;
+
+}
+
+
+/**
+
+
+
+.top-left-section {
+    display: flex;
+    margin-left: 0;
+    background-color: blue;
+    width: 180px;
+    padding-bottom: 32px;
+
+}
+
+
+
+.middle-section {
+    background-color: grey;
+    align-content: center;
+
+
+}
+
+
+
+
+ */
