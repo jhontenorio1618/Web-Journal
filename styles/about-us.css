@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 200px;
+}
+
+
+.upper-body {
+    display: flex;
+    background-color: #C96536;
+    height: 420px;
+    width: 100%;
+    /* Remove padding-left and padding-right if you meant to use them for extending the element */
+    margin: 0;
+    z-index: 100;
+}
+.upper-layer{
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding-left: 50px;
+    left: 960px;
+    top: 200px;
+    background-color: #369ac9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 36px;
+
+}
+
+.values{
+    display: flex;
+    font-size: 30px;
+    position: relative;
+    top: 50px;
+    left: 100px;
+
+}
+
+.lower-body{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+}
+.left-container{
+    display: flex;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    width: 350px;
+    height: 400px;
+    background-color: #369ac9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.middle-container{
+    display: flex;
+    position: relative;
+    top: 100px;
+    width: 350px;
+    height: 400px;
+    left: 400px;
+    background-color: #369ac9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+.right-container{
+    display: flex;
+    position: relative;
+    top: 100px;
+    width: 350px;
+    height: 400px;
+    left: 600px;
+    background-color: #369ac9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+.container {
+
+    /* Ensure there's no margin or padding here that could affect the layout */
+}
+
+
