@@ -1,8 +1,7 @@
 html, body {
     margin: 0;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 200px;
+    overflow-x: hidden;
+    padding-bottom: 100px;
 }
 
 
@@ -11,7 +10,6 @@ html, body {
     background-color: #C96536;
     height: 420px;
     width: 100%;
-    /* Remove padding-left and padding-right if you meant to use them for extending the element */
     margin: 0;
     z-index: 100;
 }
@@ -38,45 +36,21 @@ html, body {
 
 }
 
-.lower-body{
+
+.lower-body {
     display: grid;
-    grid-template-columns: 350px 350px 350px;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-
+    margin-top: 180px;
+    grid-template-columns: repeat(3, 350px); /* 3 columns of equal width */
+    justify-content: center; /* Center grid items horizontally */
+    align-items: start; /* Align grid items to the start of the container vertically */
+    gap: 50px; /* Space between grid items */
 }
-.left-container{
-    display: flex;
-    position: relative;
-    top: 100px;
-    left: 200px;
+
+.left-container, .middle-container, .right-container {
     width: 350px;
     height: 400px;
     background-color: #369ac9;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.middle-container{
-    display: flex;
-    position: relative;
-    top: 100px;
-    width: 350px;
-    height: 400px;
-    left: 400px;
-    background-color: #369ac9;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-}
-.right-container{
-    display: flex;
-    position: relative;
-    top: 100px;
-    width: 350px;
-    height: 400px;
-    left: 600px;
-    background-color: #369ac9;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
 }
 
 .container {

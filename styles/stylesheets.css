@@ -11,44 +11,9 @@
 }
 
 
-.About-us, .Services, .Blog, .Contact-us, .Log-in {
-    font-size: 28px;
-    margin: 14px; /* Adds space around buttons */
-    white-space: nowrap;
-    padding: 20px 50px; /* Adjusts the padding inside the buttons for a larger click area and better visual appearance */
-    background-color: transparent; /* Example background color */
-    border-color: transparent;
-    cursor: pointer; /* Changes cursor to pointer on hover over the buttons */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    color: white;
 
-}
-
-/* Services Button Hover Effect */
-.About-us:hover{
-    text-decoration: underline;
-
-
-}
-.Services:hover {
-    text-decoration: underline;
-}
-
-/* Blog Button Hover Effect */
-.Blog:hover {
-    text-decoration: underline;
-}
-
-/* Contact Us Button Hover Effect */
-.Contact-us:hover { /* Note the escape character \ for spaces in class names */
-    text-decoration: underline;
-}
-.Log-in:hover{
-    background-color: white;
-    color: rgba(51, 102, 255);
-}
 body {
-    background-image: url("../images/darkBlackgroundImg.jpeg");
+    background-image: url("../images/logo.webp");
     margin: 0;
     background-position: center;
     background-attachment: fixed;

@@ -9,7 +9,7 @@
 .centered-content {
     width: 35%; /* Adjust width as needed */
      /* Adjust margin-top as needed */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 150px;
     box-sizing: border-box; /* Ensures padding is included in width */
 }
