@@ -14,12 +14,12 @@
     font-family: "Roboto Thin", fantasy;
     font-weight: bold;
     font-size: 28px;
-    margin: 14px; /* Adds space around buttons */
+    margin: 14px; 
     white-space: nowrap;
-    padding: 20px 50px; /* Adjusts the padding inside the buttons for a larger click area and better visual appearance */
-    background-color: transparent; /* Example background color */
+    padding: 20px 50px;
+    background-color: transparent;
     border-color: transparent;
-    cursor: pointer; /* Changes cursor to pointer on hover over the buttons */
+    cursor: pointer; 
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
     color: white;
     text-decoration: none;
@@ -47,13 +47,13 @@
     text-decoration: underline;
 }
 
-/* Blog Button Hover Effect */
+
 .Blog:hover {
     text-decoration: underline;
 }
 
-/* Contact Us Button Hover Effect */
-.Contact-us:hover { /* Note the escape character \ for spaces in class names */
+
+.Contact-us:hover { 
     text-decoration: underline;
 }
 
