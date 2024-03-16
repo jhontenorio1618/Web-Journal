@@ -17,15 +17,11 @@
 .title {
     text-align: center;
     font-size: 34px;
-    margin-bottom: 20px; /* Space between title and form */
+    margin-bottom: 20px;
 }
 
 .login-form .form-group {
     margin-bottom: 15px; /* Space between form fields */
-}
-
-.login-form label {
-    display: block; /* Make label take its own line */
 }
 
 .login-form input[type="text"],
@@ -46,10 +42,10 @@
 .login-form button:hover {
     background-color: #0056b3;
 }
-
-.register{
+.register:link,
+.register:visited {
+    color: black; /* Sets the color of the link text to white */
     text-decoration: underline;
-    padding-bottom: 10px;
-    cursor: pointer;
 
 }
+
