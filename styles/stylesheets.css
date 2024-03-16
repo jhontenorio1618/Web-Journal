@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     position: fixed;
-    right: 5vw; /* Assuming a 1000px wide viewport as reference */
-    left: 5vw; /* Assuming a 1000px wide viewport as reference */
+    right: 5vw; 
+    left: 5vw; 
     align-items: center;
     z-index: 100;
 }
@@ -66,7 +66,7 @@ body {
     width: 20vw;
     top: 0;
     background-color: white;
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.7); /* Assuming a 1000px wide viewport for the shadow size */
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.7); 
 }
 
 .circle {
