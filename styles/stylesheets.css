@@ -1,23 +1,94 @@
 /* Inside stylesheets.css */
-/* Inside stylesheets.css */
 
 .main-section {
     display: flex;
-    justify-content: center; /* This spreads the items evenly */
+    justify-content: center;
     position: fixed;
-    right: 50px;
-    left: 50px;
+    right: 5vw; /* Assuming a 1000px wide viewport as reference */
+    left: 5vw; /* Assuming a 1000px wide viewport as reference */
     align-items: center;
+    z-index: 100;
 }
 
+.image {
+    position: fixed;
+    top: 1.2vh;
+    left: 0;
+    z-index: 1000;
+}
 
+.pageLogo {
+    width: 9vh;
+    height: auto;
+    object-fit: contain;
+}
 
 body {
-    background-image: url("../images/logo.webp");
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
     margin: 0;
+    padding-left: 2.5vw;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    height: 3000px
+    height: 100vh;
+    z-index: 1000;
 }
 
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin: 0;
+    top: 25vh;
+    height: 50vh;
+}
+
+.title {
+    display: block;
+    padding-top: 10vh;
+    align-self: center;
+    height: 10vh;
+    width: 20vw;
+    margin: 0;
+    top: 0;
+}
+
+.step-one,
+.step-two,
+.step-three {
+    font-family: Chalkboard, fantasy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 62vh;
+    width: 20vw;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.7); /* Assuming a 1000px wide viewport for the shadow size */
+}
+
+.circle {
+    font-family: "Roboto Thin", fantasy;
+    alignment-baseline: bottom;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 5vw;
+    height: 9vh;
+    color: black;
+    font-size: 5vh;
+    border-color: Black;
+    background-color: #f0f0f0;
+}
+
+p {
+    align-self: center;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
