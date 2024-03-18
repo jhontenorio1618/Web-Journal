@@ -12,8 +12,8 @@
 
 .image {
     position: fixed;
-    top: 1.2vh;
-    left: 0;
+    top: 2.5vh;
+    left: 1.2vw;
     z-index: 1000;
 }
 
@@ -26,12 +26,13 @@
 body {
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
+    align-content: center;
     margin: 0;
     padding-left: 2.5vw;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    height: 150vh;
+    height: 190vh;
     z-index: 1000;
 }
 
@@ -91,4 +92,44 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sub-main {
+    display: flex;
+    position: relative;
+    top: 60vh;
+    align-items: center;
+    background-color: black;
+    width: calc(100% - 10vw); /* Adjust width */
+    height: 60vh;
+    margin: 0 auto; /* Centering */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Add some padding inside .sub-main */
+}
+
+.box {
+    display: flex; /* Use flexbox to lay out children side by side */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: start; /* Align content to start */
+    width: 100%; /* Take full width of its parent */
+    height: 100%; /* Take full height of its parent */
+    color: white; /* For the text color */
+}
+
+.box img { /* Assuming your image is a direct child of .box */
+    width: 20%; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image is scaled properly */
+    margin-right: 20px; /* Add some space between image and text */
+}
+
+.box-text {
+    border-color: white;
+    font-size: 18px;
+    flex: 1; /* This will make the paragraph take up the remaining space */
+    margin: 0; /* Adjust margin as needed */
+    display: block; /* Make sure it's displayed as block */
+    overflow: hidden; /* Hide overflow */
+
 }

@@ -19,7 +19,7 @@ html, body {
 .upper-body {
     display: flex;
     position: relative;
-    background-color: #b3d9ff; /* Light blue color */
+    background-color: white;
     height: 420px;
     width: 100%;
     margin: 0;
