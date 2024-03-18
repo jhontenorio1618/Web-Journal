@@ -4,9 +4,6 @@ html, body {
     padding-bottom: 100px;
 }
 
-
-
-
 .upper-body {
     display: flex;
     background-color: #C96536;
@@ -15,34 +12,27 @@ html, body {
     margin: 0;
     z-index: 100;
 }
-.upper-layer{
+
+.upper-layer {
     display: flex;
-    position: relative;
+    position: absolute;
     width: 500px;
     height: 300px;
     padding-left: 50px;
-    left: 960px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 200px;
     background-color: #369ac9;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-size: 36px;
-
-
 }
 
-
-.values{
-    display: flex;
+.values {
     font-size: 30px;
     position: relative;
     top: 50px;
     left: 100px;
-
-
 }
-
-
-
 
 .lower-body {
     display: grid;
@@ -53,7 +43,6 @@ html, body {
     gap: 50px; /* Space between grid items */
 }
 
-
 .left-container, .middle-container, .right-container {
     width: 350px;
     height: 400px;
@@ -61,13 +50,9 @@ html, body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-
 .container {
-
-
     /* Ensure there's no margin or padding here that could affect the layout */
 }
-
 
 .blue-text {
     color: blue;
@@ -77,14 +62,13 @@ html, body {
     margin: 0 auto;
 }
 
-
 .vertical-text {
     display: flex;
     flex-direction: column;
-    writing-mode: vertical;
-    text-orientation: upright;
+    writing-mode: vertical-lr; /* or vertical-rl; */
     margin-left: 20px;
-    font-size: 16px; /* Set the desired font size for the vertical text */
+    font-size: 16px;
 }
+
 
 
