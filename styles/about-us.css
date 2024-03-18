@@ -4,8 +4,17 @@ html, body {
     padding-bottom: 100px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Use viewport height to make the container take the full screen height */
+}
+
 .upper-body {
     display: flex;
+    position: relative;
     background-color: #C96536;
     height: 420px;
     width: 100%;
@@ -32,6 +41,7 @@ html, body {
     position: relative;
     top: 50px;
     left: 100px;
+    align-self: flex-start; /* Align the .values section to the start of the container */
 }
 
 .lower-body {
@@ -48,10 +58,15 @@ html, body {
     height: 400px;
     background-color: #369ac9;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 20px; /* Adjust the value to make the font bigger */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-    /* Ensure there's no margin or padding here that could affect the layout */
+.lower-body .left-container p {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the space */
 }
 
 .blue-text {
@@ -62,13 +77,12 @@ html, body {
     margin: 0 auto;
 }
 
-.vertical-text {
+.vertical-rl {
     display: flex;
     flex-direction: column;
-    writing-mode: sideways-lr;
+    writing-mode: sideways-rl;
     margin-left: 20px;
     font-size: 16px;
+    line-height: 1.5;
 }
-
-
 
