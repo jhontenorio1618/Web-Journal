@@ -40,7 +40,7 @@ body {
 
 /* Style the message text */
 .contact-form-message {
-    font-size: 14px;
+    font-size: 18px; /* Adjust the font size as needed */
     margin-top: 20px;
     color: #555; /* Dark grey text color */
 }
@@ -81,4 +81,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #2980b9; /* Darker blue on hover */
 }
-
