@@ -1,0 +1,94 @@
+/* Add emojis to the background */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+    background-color: #85c1e9; /* Medium blue color for the background */
+    color: #34495e; /* Text color for better contrast */
+    position: relative; /* Set the container to relative positioning */
+}
+
+/* Define styles for individual emojis */
+.emoji {
+    position: absolute;
+    animation: move 3s infinite; /* Move the emoji continuously */
+}
+
+.emoji1 {
+    font-size: 60px; /* Larger font size */
+    top: 50px;
+    left: 50px; /* Set both top and left to position it in the top left corner */
+}
+
+.emoji2 {
+    font-size: 80px; /* Larger font size */
+    top: 200px;
+    left: 100px;
+}
+
+.emoji3 {
+    font-size: 100px; /* Larger font size */
+    top: 300px;
+    left: 150px;
+}
+
+.emoji4 {
+    font-size: 60px; /* Larger font size */
+    bottom: 50px;
+    right: 50px; /* Changed from 'left' to 'right' */
+}
+
+.emoji5 {
+    font-size: 80px; /* Larger font size */
+    bottom: 100px;
+    right: 100px; /* Changed from 'left' to 'right' */
+}
+
+.emoji6 {
+    font-size: 100px; /* Larger font size */
+    bottom: 150px;
+    right: 150px; /* Changed from 'left' to 'right' */
+}
+
+/* Define animation for emojis */
+@keyframes move {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(50px, -50px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Keep the container styles as they were */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Use viewport height to make the container take the full screen height */
+}
+
+.values {
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #b3d9ff; /* Light blue color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 50px; /* Increase padding to make the boxes longer */
+    font-size: 24px; /* Increase font size for better readability */
+    text-align: center; /* Center align the text */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 70px;
+    color: #34495e;
+}

@@ -5,15 +5,69 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles/dashboard-header.css">
     <link rel="stylesheet" href="styles/body.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<header>
-    <div class="top-left-section"> TOP-LEFT </div>
-    <div class="dash-center"> CENTER </div>
-</header>
 <body>
-    <nav class="dashboard-sidebar">BODY </nav>
-    <div class="dash-board">
-<!-- Dashboard Layout-->
+<header>
+    <div class="top-left-section"> BLUE</div>
+    <h1 class="dash-center">Welcome Back To <span class="blue-text">Blue</span></h1>
+</header>
+<div class="dashboard-sidebar">
+    <div class="subsection">Emotion Tracking</div>
+    <div class="subsection">Goal Setting</div>
+    <div class="subsection">Progress Tracking</div>
+    <div class="subsection">Feedback & Support</div>
+    <div class="subsection">Security & Privacy</div>
+    <div class="subsection">Wellness Resources</div>
+</div>
+<div class="dash-board">
+    <div class="graph">
+        <!-- Graph for emotions -->
+        <canvas id="emotion-chart"></canvas>
+        <!-- Journaling area -->
+        <div class="journaling-area">
+            <textarea placeholder="Write your journal entry here..."></textarea>
+        </div>
     </div>
+</div>
+<script>
+    // Sample data for emotion tracking (replace with your actual data)
+    const emotionData = {
+        labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+        datasets: [{
+            label: 'Emotion Level',
+            data: [3, 4, 5, 6, 7, 8, 9], // Sample emotion levels
+            borderColor: 'blue',
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            tension: 0.4
+        }]
+    };
+
+
+
+
+    // Get the canvas element
+    const ctx = document.getElementById('emotion-chart').getContext('2d');
+
+
+
+
+    // Initialize a line chart
+    const emotionChart = new Chart(ctx, {
+        type: 'line',
+        data: emotionData,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 10
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
+
+
