@@ -2,20 +2,206 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Tracking</title>
-    <link rel="stylesheet" href="styles/dashboard-header.css">
-    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="dashboard-header.css">
+    <link rel="stylesheet" href="dashboard.css">
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body, h1, p, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .top-left-section {
+            float: left;
+            color: blue;
+            background-color: white;
+            padding: 5px 10px;
+        }
+
+        .dash-center {
+            margin-top: 0;
+        }
+
+        .blue-text {
+            color: #3498db;
+        }
+
+        .subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0; /* Remove margin-bottom for the last subsection */
+        }
+
+        .dash-board {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .graph {
+            position: relative;
+        }
+
+        #emotion-chart {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .journaling-area {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .journal-entry {
+            margin-bottom: 20px;
+        }
+
+        .journal-entry h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .journal-entry p {
+            margin-bottom: 10px;
+        }
+
+        /* Make all the words and numbers on the graph white */
+        .chartjs-text {
+            fill: white !important;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media screen and (max-width: 768px) {
+            .dashboard-sidebar {
+                width: 100%;
+                float: none;
+                padding-top: 0;
+                height: auto;
+            }
+
+            .dash-board {
+                margin-left: 0;
+            }
+        }
+
+        /* Adjustments for sidebar tabs */
+        .navigation {
+            width: 200px; /* Adjust width of sidebar */
+            overflow-y: auto; /* Add scroll if content overflows */
+            background-color: #2A3F54;
+            color: white;
+            height: 100vh; /* Full height of viewport */
+            position: fixed; /* Fixed position */
+            left: 0; /* Align to left */
+            top: 0; /* Align to top */
+            padding-top: 60px; /* Add space for header */
+        }
+
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navigation ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation ul li a:hover {
+            background-color: #1A262F;
+        }
+
+        /* Style for past entries section */
+        .past-entries {
+            padding: 20px;
+            background-color: #EDEDED;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .past-entry {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-<div class="dashboard-sidebar">
-    <a href="emotion-tracking.html" class="subsection">Emotion Tracking</a>
-    <a href="goal-setting.html" class="subsection">Goal Setting</a>
-    <a href="progress-tracking.html" class="subsection">Progress Tracking</a>
-    <a href="feedback-support.html" class="subsection">Feedback & Support</a>
-    <a href="security-privacy.html" class="subsection">Security & Privacy</a>
-    <a href="wellness-resources.html" class="subsection">Wellness Resources</a>
-</div>
+    <div class="dash-board">
+        <h2>Weekly Emotion Tracking</h2>
+        <canvas id="emotion-chart"></canvas>
+    </div>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="emotion-tracking.html">Emotion Tracking</a></li>
+            <li><a href="goal-setting.html" >Goal Setting</a></li>
+            <li><a href="progress-tracking.html">Progress Tracking</a></li>
+            <li><a href="feedback-support.html" >Feedback & Support</a></li>
+            <li><a href="security-privacy.html" >Security & Privacy</a></li>
+            <li><a href="wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+        <div class="past-entries">
+            <h3>Past Journal Entries</h3>
+            <div id="past-entries">
+                <!-- Display past journal entries here -->
+            </div>
+        </div>
+    </nav>
+    <script>
+        const ctx = document.getElementById('emotion-chart').getContext('2d');
+        const emotionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                datasets: [{
+                    label: 'Emotion Level',
+                    data: [3, 4, 5, 2, 4, 5, 3], // Sample data, replace with actual emotion levels
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMax: 10 // Assuming the emotion level is rated on a scale of 0 to 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: 14
+                            },
+                            color: 'black' // Change legend text color if needed
+                        }
+                    }
+                }
+            }
+        });
+    </script>    
 </body>
 </html>
+
