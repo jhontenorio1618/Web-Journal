@@ -1,113 +1,135 @@
-body, h1, p, div {
-    margin: 0;
-    padding: 0;
-}
 
+        body, h1, p, div {
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-}
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
+        .top-left-section {
+            float: left;
+            color: blue;
+            background-color: white;
+            padding: 5px 10px;
+        }
 
+        .dash-center {
+            margin-top: 0;
+        }
 
-.top-left-section {
-    float: left;
-    color: blue;
-    background-color: white;
-    padding: 5px 10px;
-}
+        .blue-text {
+            color: #3498db;
+        }
 
+        .subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0; /* Remove margin-bottom for the last subsection */
+        }
 
-.dash-center {
-    margin-top: 0;
-}
+        .dash-board {
+            margin-left: 200px;
+            padding: 20px;
+        }
 
+        .graph {
+            position: relative;
+        }
 
-.blue-text {
-    color: #3498db;
-}
+        #emotion-chart {
+            max-width: 100%;
+            height: auto;
+        }
 
+        .journaling-area {
+            margin-top: 20px;
+        }
 
-.dashboard-sidebar {
-    float: left;
-    width: 200px;
-    background-color: #f1f1f1;
-    height: 100vh;
-    padding-top: 20px;
-}
-.subsection {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    color: #333; /* Change text color to dark gray */
-    background-color: whitesmoke; /* Set background color to whitesmoke */
-    margin-bottom: 200px; /* Add more margin-bottom for increased spacing */
-}
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
+        .journal-entry {
+            margin-bottom: 20px;
+        }
 
-.subsection:last-child {
-    border-bottom: none;
-    margin-bottom: 0; /* Remove margin-bottom for the last subsection */
-}
+        .journal-entry h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
 
+        .journal-entry p {
+            margin-bottom: 10px;
+        }
 
-.dash-board {
-    margin-left: 200px;
-    padding: 20px;
-}
+        /* Make all the words and numbers on the graph white */
+        .chartjs-text {
+            fill: white !important;
+        }
 
+        /* Responsive layout for smaller screens */
+        @media screen and (max-width: 768px) {
+            .dashboard-sidebar {
+                width: 100%;
+                float: none;
+                padding-top: 0;
+                height: auto;
+            }
 
-.graph {
-    position: relative;
-}
+            .dash-board {
+                margin-left: 0;
+            }
+        }
 
+        /* Adjustments for sidebar tabs */
+        .navigation {
+            width: 200px; /* Adjust width of sidebar */
+            overflow-y: auto; /* Add scroll if content overflows */
+            background-color: #2A3F54;
+            color: white;
+            height: 100vh; /* Full height of viewport */
+            position: fixed; /* Fixed position */
+            left: 0; /* Align to left */
+            top: 0; /* Align to top */
+            padding-top: 60px; /* Add space for header */
+        }
 
-#emotion-chart {
-    max-width: 100%;
-    height: auto;
-}
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
+        .navigation ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
 
-.journaling-area {
-    margin-top: 20px;
-}
+        .navigation ul li a:hover {
+            background-color: #1A262F;
+        }
 
+        /* Style for past entries section */
+        .past-entries {
+            padding: 20px;
+            background-color: #EDEDED;
+            color: #333;
+            margin-top: 20px;
+        }
 
-textarea {
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-
-/* Make all the words and numbers on the graph white */
-.chartjs-text {
-    fill: white !important;
-}
-
-
-/* Responsive layout for smaller screens */
-@media screen and (max-width: 768px) {
-    .dashboard-sidebar {
-        width: 100%;
-        float: none;
-        padding-top: 0;
-        height: auto;
-    }
-
-
-    .dash-board {
-        margin-left: 0;
-    }
-}
-
-
+        .past-entry {
+            margin-bottom: 10px;
+        }

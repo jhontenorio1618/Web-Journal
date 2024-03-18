@@ -8,6 +8,142 @@
     <link rel="stylesheet" href="dashboard.css">
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body, h1, p, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .top-left-section {
+            float: left;
+            color: blue;
+            background-color: white;
+            padding: 5px 10px;
+        }
+
+        .dash-center {
+            margin-top: 0;
+        }
+
+        .blue-text {
+            color: #3498db;
+        }
+
+        .subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0; /* Remove margin-bottom for the last subsection */
+        }
+
+        .dash-board {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .graph {
+            position: relative;
+        }
+
+        #emotion-chart {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .journaling-area {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .journal-entry {
+            margin-bottom: 20px;
+        }
+
+        .journal-entry h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .journal-entry p {
+            margin-bottom: 10px;
+        }
+
+        /* Make all the words and numbers on the graph white */
+        .chartjs-text {
+            fill: white !important;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media screen and (max-width: 768px) {
+            .dashboard-sidebar {
+                width: 100%;
+                float: none;
+                padding-top: 0;
+                height: auto;
+            }
+
+            .dash-board {
+                margin-left: 0;
+            }
+        }
+
+        /* Adjustments for sidebar tabs */
+        .navigation {
+            width: 200px; /* Adjust width of sidebar */
+            overflow-y: auto; /* Add scroll if content overflows */
+            background-color: #2A3F54;
+            color: white;
+            height: 100vh; /* Full height of viewport */
+            position: fixed; /* Fixed position */
+            left: 0; /* Align to left */
+            top: 0; /* Align to top */
+            padding-top: 60px; /* Add space for header */
+        }
+
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navigation ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation ul li a:hover {
+            background-color: #1A262F;
+        }
+
+        /* Style for past entries section */
+        .past-entries {
+            padding: 20px;
+            background-color: #EDEDED;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .past-entry {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
