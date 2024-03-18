@@ -2,12 +2,14 @@ html, body {
     margin: 0;
     overflow-x: hidden;
     padding-bottom: 100px;
-    background-color: #85c1e9; /* Medium blue color for the background */
+    background-color: black;
     color: #34495e; /* Text color for better contrast */
 }
 
 
+
 .container {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +21,10 @@ html, body {
 .upper-body {
     display: flex;
     position: relative;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: white;
     height: 420px;
     width: 100%;
@@ -43,9 +49,19 @@ html, body {
     font-size: 36px;
     text-align: center; /* Center align the text */
 }
+/*
+<div class="upper-layer">
+            <p class="quote">
+                The Purpose and Goal of <br>
+                <br>
+                <span class="blue-text">"BLUE"</span>
+            </p>
+        </div>
+ */
 
 
 .values {
+    color: white;
     font-size: 30px;
     position: relative;
     top: 50px;
@@ -55,6 +71,7 @@ html, body {
 
 
 .lower-body {
+
     display: grid;
     margin-top: 180px;
     grid-template-columns: repeat(3, 350px); /* 3 columns of equal width */
@@ -67,9 +84,10 @@ html, body {
 .lower-body .left-container,
 .lower-body .middle-container,
 .lower-body .right-container {
+    color: black;
     width: 350px;
     height: 400px;
-    background-color: #b3d9ff; /* Light blue color */
+    background-color: white; /* Light blue color */
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-size: 20px; /* Adjust the value to make the font bigger */
     display: flex;
