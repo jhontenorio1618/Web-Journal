@@ -2,35 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard-header.css">
-    <link rel="stylesheet" href="styles/body.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Sidebar</title>
+    <link rel="stylesheet" href="dashboard-header.css">
+    <link rel="stylesheet" href="dashboard.css">
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
 <header>
-    <div class="top-left-section"> BLUE</div>
-    <h1 class="dash-center">Welcome Back To <span class="blue-text">Blue</span></h1>
+    <div class="top-left-section"> Blue </div>
+    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
 </header>
-<div class="dashboard-sidebar">
-    <a href="emotion-tracking.html" class="subsection">Emotion Tracking</a>
-    <a href="goal-setting.html" class="subsection">Goal Setting</a>
-    <a href="progress-tracking.html" class="subsection">Progress Tracking</a>
-    <a href="feedback-support.html" class="subsection">Feedback & Support</a>
-    <a href="security-privacy.html" class="subsection">Security & Privacy</a>
-    <a href="wellness-resources.html" class="subsection">Wellness Resources</a>
-</div>
-<div class="dash-board">
-    <div class="graph">
-        <!-- Graph for emotions -->
-        <canvas id="emotion-chart"></canvas>
-        <!-- Journaling area -->
-        <div class="journaling-area">
-            <textarea placeholder="Write your journal entry here..."></textarea>
+
+<nav class="navigation">
+    <ul>
+        <li><a href="emotion-tracking.html">Emotion Tracking</a></li>
+        <li><a href="goal-setting.html" >Goal Setting</a></li>
+        <li><a href="progress-tracking.html">Progress Tracking</a></li>
+        <li><a href="feedback-support.html" >Feedback & Support</a></li>
+        <li><a href="security-privacy.html" >Security & Privacy</a></li>
+        <li><a href="wellness-resources.html">Wellness Resources</a></li>
+    </ul>
+    <div class="past-entries">
+        <h3>Past Journal Entries</h3>
+        <div id="past-entries">
+            <!-- Display past journal entries here -->
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="dash-board">
+        <div class="graph">
+            <!-- Graph for emotions -->
+            <canvas id="emotion-chart"></canvas>
+            <!-- Journaling area -->
+            <div class="journaling-area">
+                <form id="journal-form">
+                    <textarea id="journal-entry" placeholder="Write your journal entry here..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
 <script>
     // Sample data for emotion tracking (replace with your actual data)
     const emotionData = {
@@ -44,14 +62,8 @@
         }]
     };
 
-
-
-
     // Get the canvas element
     const ctx = document.getElementById('emotion-chart').getContext('2d');
-
-
-
 
     // Initialize a line chart
     const emotionChart = new Chart(ctx, {
@@ -66,8 +78,27 @@
             }
         }
     });
+
+    // Function to handle form submission
+    document.getElementById('journal-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const journalEntry = document.getElementById('journal-entry').value;
+        // Here you can save the journal entry to a database or perform any other action
+        // For now, let's just display the journal entry below the form
+        displayJournalEntry(journalEntry);
+        // Clear the textarea after submission
+        document.getElementById('journal-entry').value = '';
+    });
+
+    // Function to display a journal entry
+    function displayJournalEntry(entry) {
+        const entryContainer = document.getElementById('past-entries');
+        const entryElement = document.createElement('div');
+        entryElement.classList.add('past-entry');
+        entryElement.innerHTML = `<p>${entry}</p>`;
+        entryContainer.prepend(entryElement); // Add new entry to the beginning of the list
+    }
 </script>
+
 </body>
 </html>
-
-
