@@ -1,46 +1,113 @@
-header{
-    display: flex;
-    flex-direction: row;
-    height: 80px;
-
-}
-
-.top-left-section{
-    position: relative;
-    background-color: grey;
-    width: 200px
-
-}
-.dash-center{
-    background-color: red;
-    flex-grow: 1;
-
+body, h1, p, div {
+    margin: 0;
+    padding: 0;
 }
 
 
-/**
+body {
+    font-family: Arial, sans-serif;
+}
 
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
 
 
 .top-left-section {
-    display: flex;
-    margin-left: 0;
-    background-color: blue;
-    width: 180px;
-    padding-bottom: 32px;
-
+    float: left;
+    color: blue;
+    background-color: white;
+    padding: 5px 10px;
 }
 
 
-
-.middle-section {
-    background-color: grey;
-    align-content: center;
-
-
+.dash-center {
+    margin-top: 0;
 }
 
 
+.blue-text {
+    color: #3498db;
+}
 
 
- */
+.dashboard-sidebar {
+    float: left;
+    width: 200px;
+    background-color: #f1f1f1;
+    height: 100vh;
+    padding-top: 20px;
+}
+.subsection {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: #333; /* Change text color to dark gray */
+    background-color: whitesmoke; /* Set background color to whitesmoke */
+    margin-bottom: 200px; /* Add more margin-bottom for increased spacing */
+}
+
+
+.subsection:last-child {
+    border-bottom: none;
+    margin-bottom: 0; /* Remove margin-bottom for the last subsection */
+}
+
+
+.dash-board {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+
+.graph {
+    position: relative;
+}
+
+
+#emotion-chart {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.journaling-area {
+    margin-top: 20px;
+}
+
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+/* Make all the words and numbers on the graph white */
+.chartjs-text {
+    fill: white !important;
+}
+
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .dashboard-sidebar {
+        width: 100%;
+        float: none;
+        padding-top: 0;
+        height: auto;
+    }
+
+
+    .dash-board {
+        margin-left: 0;
+    }
+}
+
+
