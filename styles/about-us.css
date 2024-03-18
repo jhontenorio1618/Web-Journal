@@ -1,35 +1,59 @@
 html, body {
     margin: 0;
     overflow-x: hidden;
-    padding-bottom: 10vh;
+    padding-bottom: 100px;
+    background-color: #85c1e9; /* Medium blue color for the background */
+    color: #34495e; /* Text color for better contrast */
 }
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Use viewport height to make the container take the full screen height */
+}
+
+
 .upper-body {
     display: flex;
-    background-color: #C96536;
-    height: 45vh;
+    position: relative;
+    background-color: #b3d9ff; /* Light blue color */
+    height: 420px;
     width: 100%;
     margin: 0;
     z-index: 100;
 }
-.upper-layer{
+
+
+.upper-layer {
     display: flex;
-    position: relative;
-    width: 70%;
-    height: 38vh;
-    padding-left: 5vw;
-    left: 56vw;
-    top: 20vh;
-    background-color: #369ac9;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    background-color: #85c1e9; /* Medium blue color */
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-size: 36px;
+    text-align: center; /* Center align the text */
 }
-.values{
-    display: flex;
+
+
+.values {
     font-size: 30px;
     position: relative;
     top: 50px;
     left: 100px;
+    align-self: flex-start; /* Align the .values section to the start of the container */
 }
+
+
 .lower-body {
     display: grid;
     margin-top: 180px;
@@ -38,14 +62,51 @@ html, body {
     align-items: start; /* Align grid items to the start of the container vertically */
     gap: 50px; /* Space between grid items */
 }
-.left-container, .middle-container, .right-container {
+
+
+.lower-body .left-container,
+.lower-body .middle-container,
+.lower-body .right-container {
     width: 350px;
     height: 400px;
-    background-color: #369ac9;
+    background-color: #b3d9ff; /* Light blue color */
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.container {
-    /* Ensure there's no margin or padding here that could affect the layout */
+    font-size: 20px; /* Adjust the value to make the font bigger */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
+.lower-body .left-container p {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the space */
+}
+
+
+.blue-text {
+    color: blue; /* Change the text color to blue */
+    font-size: 36px;
+    text-align: center;
+}
+
+
+.vertical-rl {
+    display: flex;
+    flex-direction: column;
+    writing-mode: sideways-rl;
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.vertical-rl p {
+    color: #34495e; /* Default text color */
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+.vertical-rl p span {
+    color: blue; /* Color for the word "BLUE" */
+}
