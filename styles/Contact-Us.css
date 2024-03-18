@@ -1,11 +1,13 @@
+/* Apply existing styles to the body */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #3498db; /* Blue background */
-    color: #fff; /* White text */
+    color: #000; /* Black text */
 }
 
+/* Keep the container styling */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -14,19 +16,41 @@ body {
     border-radius: 10px;
 }
 
-h1 {
+/* Center the quote text */
+.upper-layer {
     text-align: center;
 }
 
-form {
+/* Style the contact information section */
+.contact-info {
     margin-top: 20px;
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    border-radius: 5px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+/* Style the contact form section */
+.contact-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    border-radius: 5px;
+    position: relative; /* Add this to position the message */
 }
 
+/* Style the message text */
+.contact-form-message {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #555; /* Dark grey text color */
+}
+
+/* Center the headings */
+h2 {
+    text-align: center;
+}
+
+/* Style the input fields and textarea */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -35,17 +59,26 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
-button {
+/* Make the textarea taller */
+textarea {
+    height: 150px; /* Adjust the height as needed */
+}
+
+/* Style the submit button */
+input[type="submit"] {
     padding: 10px 20px;
     background-color: #3498db; /* Blue button */
-    color: #fff;
+    color: #000; /* Black text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
+/* Darker button color on hover */
+input[type="submit"]:hover {
     background-color: #2980b9; /* Darker blue on hover */
 }
+
