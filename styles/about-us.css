@@ -5,6 +5,8 @@ html, body {
 }
 
 
+
+
 .upper-body {
     display: flex;
     background-color: #C96536;
@@ -25,7 +27,9 @@ html, body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-size: 36px;
 
+
 }
+
 
 .values{
     display: flex;
@@ -34,7 +38,10 @@ html, body {
     top: 50px;
     left: 100px;
 
+
 }
+
+
 
 
 .lower-body {
@@ -46,6 +53,7 @@ html, body {
     gap: 50px; /* Space between grid items */
 }
 
+
 .left-container, .middle-container, .right-container {
     width: 350px;
     height: 400px;
@@ -53,9 +61,30 @@ html, body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+
 .container {
 
+
     /* Ensure there's no margin or padding here that could affect the layout */
+}
+
+
+.blue-text {
+    color: blue;
+    font-size: 86px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.vertical-text {
+    display: flex;
+    flex-direction: column;
+    writing-mode: vertical;
+    text-orientation: upright;
+    margin-left: 20px;
+    font-size: 16px; /* Set the desired font size for the vertical text */
 }
 
 
