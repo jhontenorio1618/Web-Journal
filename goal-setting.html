@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Tracking</title>
+    <title>Dashboard with Sidebar</title>
     <link rel="stylesheet" href="dashboard-header.css">
     <link rel="stylesheet" href="dashboard.css">
     <!-- Include Chart.js library -->
@@ -50,42 +50,36 @@
             padding: 20px;
         }
 
-        .graph {
-            position: relative;
+        .goal-input {
+            margin-bottom: 20px;
         }
 
-        #emotion-chart {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .journaling-area {
-            margin-top: 20px;
-        }
-
-        textarea {
+        .goal-input input[type="text"] {
             width: 100%;
-            height: 200px;
             padding: 10px;
             box-sizing: border-box;
         }
 
-        .journal-entry {
-            margin-bottom: 20px;
+        .goal-input button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
-        .journal-entry h3 {
-            color: #333;
-            margin-bottom: 5px;
+        .goal-list {
+            margin-top: 20px;
         }
 
-        .journal-entry p {
+        .goal-item {
             margin-bottom: 10px;
+            padding: 10px;
+            background-color: #EDEDED;
         }
 
-        /* Make all the words and numbers on the graph white */
-        .chartjs-text {
-            fill: white !important;
+        .goal-item.completed {
+            background-color: #C5E1A5;
         }
 
         /* Responsive layout for smaller screens */
@@ -146,62 +140,71 @@
     </style>
 </head>
 <body>
-    <div class="dash-board">
-        <h2>Weekly Emotion Tracking</h2>
-        <canvas id="emotion-chart"></canvas>
-    </div>
 
-    <nav class="navigation">
-        <ul>
-            <li><a href="emotion-tracking.html">Emotion Tracking</a></li>
-            <li><a href="goal-setting.html" >Goal Setting</a></li>
-            <li><a href="progress-tracking.html">Progress Tracking</a></li>
-            <li><a href="feedback-support.html" >Feedback & Support</a></li>
-            <li><a href="security-privacy.html" >Security & Privacy</a></li>
-            <li><a href="wellness-resources.html">Wellness Resources</a></li>
-        </ul>
-        <div class="past-entries">
-            <h3>Past Journal Entries</h3>
-            <div id="past-entries">
-                <!-- Display past journal entries here -->
+<header>
+    <div class="top-left-section"> Blue </div>
+    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
+</header>
+
+<nav class="navigation">
+    <ul>
+        <li><a href="emotion-tracking.html">Emotion Tracking</a></li>
+        <li><a href="goal-setting.html" >Goal Setting</a></li>
+        <li><a href="progress-tracking.html">Progress Tracking</a></li>
+        <li><a href="feedback-support.html" >Feedback & Support</a></li>
+        <li><a href="security-privacy.html" >Security & Privacy</a></li>
+        <li><a href="wellness-resources.html">Wellness Resources</a></li>
+    </ul>
+    <div class="past-entries">
+        <h3>Past Journal Entries</h3>
+        <div id="past-entries">
+            <!-- Display past journal entries here -->
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="dash-board">
+        <div class="goal-input">
+            <h2>Set Your Goals</h2>
+            <form id="goal-form">
+                <input type="text" id="goal" placeholder="Enter your goal...">
+                <button type="submit">Add Goal</button>
+            </form>
+        </div>
+        <div class="goal-list">
+            <h2>Your Goals</h2>
+            <div id="goal-list">
+                <!-- Display user's goals here -->
             </div>
         </div>
-    </nav>
-    <script>
-        const ctx = document.getElementById('emotion-chart').getContext('2d');
-        const emotionChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                datasets: [{
-                    label: 'Emotion Level',
-                    data: [3, 4, 5, 2, 4, 5, 3], // Sample data, replace with actual emotion levels
-                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
-                    borderColor: 'rgba(52, 152, 219, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        suggestedMax: 10 // Assuming the emotion level is rated on a scale of 0 to 10
-                    }
-                },
-                plugins: {
-                    legend: {
-                        labels: {
-                            // This more specific font property overrides the global property
-                            font: {
-                                size: 14
-                            },
-                            color: 'black' // Change legend text color if needed
-                        }
-                    }
-                }
-            }
-        });
-    </script>    
+    </div>
+</div>
+
+<script src="dashboard-script.js"></script>
+<script>
+    document.getElementById('goal-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get goal input value
+        const goalInput = document.getElementById('goal');
+        const goalText = goalInput.value.trim();
+
+        if (goalText !== '') {
+            // Create new goal item
+            const goalList = document.getElementById('goal-list');
+            const goalItem = document.createElement('div');
+            goalItem.classList.add('goal-item');
+            goalItem.textContent = goalText;
+
+            // Add goal item to the list
+            goalList.appendChild(goalItem);
+
+            // Clear input field
+            goalInput.value = '';
+        }
+    });
+</script>
+
 </body>
 </html>
-
