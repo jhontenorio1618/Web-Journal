@@ -65,7 +65,7 @@ html, body {
 .vertical-text {
     display: flex;
     flex-direction: column;
-    writing-mode: vertical-lr; /* or vertical-rl; */
+    writing-mode: sideways-lr;
     margin-left: 20px;
     font-size: 16px;
 }
