@@ -66,10 +66,18 @@ body {
     height: 62vh;
     width: 20vw;
     top: 0;
-    background-color: white;
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.7); 
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.7);
+    border: #ebc934;
 }
+.step-one,
+.step-two,
+.step-three:hover{
+    border-color: white;
+    cursor: pointer;
 
+}
 .circle {
     font-family: "Roboto Thin", fantasy;
     alignment-baseline: bottom;
