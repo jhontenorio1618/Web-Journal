@@ -1,19 +1,21 @@
 /* Add emojis to the background */
 body {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
     margin: 0;
-    overflow-x: hidden;
-    padding-bottom: 100px;
-    background-color:white; /* Medium blue color for the background */
-    color: #34495e; /* Text color for better contrast */
-    position: relative; /* Set the container to relative positioning */
+    padding:0;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 10vh;
+    z-index: 1000;
 }
 
 /* Define styles for individual emojis */
 .emoji {
-    position: fixed; /* Changed from absolute to fixed */
-    animation: move 2s infinite linear; /* Example: Updated for a smoother, wider-range animation */
+    position: absolute;
+    animation: move 3s infinite; /* Move the emoji continuously */
 }
-
 
 .emoji1 {
     font-size: 60px; /* Larger font size */
@@ -91,5 +93,5 @@ h1 {
     text-align: center;
     margin-top: 20px;
     font-size: 70px;
-    color: #34495e;
+    color: #ecde3e;
 }
