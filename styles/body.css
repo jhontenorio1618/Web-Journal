@@ -7,7 +7,7 @@ body {
 .dashboard-sidebar {
     background-color: black;
     position: fixed;
-    top: 80px; /* Adjust based on the header height */
+    top: 50px; /* Adjust based on the header height */
     left: 0;
     width: 200px;
     bottom: 0;

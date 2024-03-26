@@ -5,7 +5,7 @@
     justify-content: center;
     position: fixed;
     right: 5vw; 
-    left: 5vw; 
+    left: 5vw;
     align-items: center;
     z-index: 100;
 }
@@ -32,7 +32,8 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    height: 190vh;
+    height: 140vh;
+    padding-bottom: 12vh;
     z-index: 1000;
 }
 
