@@ -14,13 +14,13 @@
     font-family: "Roboto Thin", fantasy;
     font-weight: bold;
     font-size: 28px;
-    margin: 14px; /* Adds space around buttons */
+    margin: 14px; 
     white-space: nowrap;
-    padding: 20px 50px; /* Adjusts the padding inside the buttons for a larger click area and better visual appearance */
-    background-color: transparent; /* Example background color */
+    padding: 20px 50px; 
+    background-color: transparent; 
     border-color: transparent;
-    cursor: pointer; /* Changes cursor to pointer on hover over the buttons */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
     color: white;
     text-decoration: none;
 }
@@ -33,7 +33,7 @@
 .Blog-link:visited,
 .Contact-us-link:link,
 .Contact-us-link:visited {
-    color: white; /* Sets the color of the link text to white */
+    color: white; 
     text-decoration: none;
 
 }
