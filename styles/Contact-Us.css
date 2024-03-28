@@ -1,9 +1,8 @@
-/* Apply existing styles to the body */
 body {
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     margin: 0;
-    padding:0;
+    padding: 0;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -11,52 +10,45 @@ body {
     z-index: 1000;
 }
 
-/* Keep the container styling */
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff; /* White background */
+    background-color: #fff;
     border-radius: 10px;
 }
 
-/* Center the quote text */
 .upper-layer {
     text-align: center;
 }
 
-/* Style the contact information section */
 .contact-info {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f2f2f2; /* Light grey background */
+    background-color: #f2f2f2;
     border-radius: 5px;
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 16px;
 }
 
-/* Style the contact form section */
 .contact-form {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f2f2f2; /* Light grey background */
+    background-color: #f2f2f2;
     border-radius: 5px;
-    position: relative; /* Add this to position the message */
+    position: relative;
 }
 
-/* Style the message text */
 .contact-form-message {
-    font-size: 14px; /* Adjust the font size of the message */
+    font-size: 14px;
     margin-top: 20px;
-    color: #555; /* Dark grey text color */
+    color: #555;
 }
 
-/* Center the headings */
 h2 {
     text-align: center;
-    font-size: 20px; /* Adjust the font size of "Send Us a Message" */
+    font-size: 20px;
 }
 
-/* Style the input fields and textarea */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -65,30 +57,26 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    box-sizing: border-box;
 }
 
-/* Make the textarea taller */
 textarea {
-    height: 150px; /* Adjust the height as needed */
+    height: 150px;
 }
 
-/* Style the submit button */
 input[type="submit"] {
     padding: 10px 20px;
-    background-color: #3498db; /* Blue button */
-    color: #000; /* Black text */
+    background-color: #3498db;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Darker button color on hover */
 input[type="submit"]:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+    background-color: #2980b9;
 }
 
-/* Change the font size of the title */
 .title {
-    font-size: 40px; /* Adjust the font size of the title */
+    font-size: 40px;
 }
