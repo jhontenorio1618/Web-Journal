@@ -3,20 +3,16 @@ html, body {
     overflow-x: hidden;
     padding-bottom: 100px;
     background-color: black;
-    color: #34495e; /* Text color for better contrast */
+    color: #34495e;
 }
 
-
-
 .container {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Use viewport height to make the container take the full screen height */
+    min-height: 100vh;
 }
-
 
 .upper-body {
     display: flex;
@@ -32,7 +28,6 @@ html, body {
     z-index: 100;
 }
 
-
 .upper-layer {
     display: flex;
     flex-direction: column;
@@ -44,21 +39,11 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     top: 200px;
-    background-color: #85c1e9; /* Medium blue color */
+    background-color: #85c1e9;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-size: 36px;
-    text-align: center; /* Center align the text */
+    text-align: center;
 }
-/*
-<div class="upper-layer">
-            <p class="quote">
-                The Purpose and Goal of <br>
-                <br>
-                <span class="blue-text">"BLUE"</span>
-            </p>
-        </div>
- */
-
 
 .values {
     color: white;
@@ -66,20 +51,17 @@ html, body {
     position: relative;
     top: 50px;
     left: 100px;
-    align-self: flex-start; /* Align the .values section to the start of the container */
+    align-self: flex-start;
 }
-
 
 .lower-body {
-
     display: grid;
     margin-top: 180px;
-    grid-template-columns: repeat(3, 350px); /* 3 columns of equal width */
-    justify-content: center; /* Center grid items horizontally */
-    align-items: start; /* Align grid items to the start of the container vertically */
-    gap: 50px; /* Space between grid items */
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    align-items: start;
+    gap: 50px;
 }
-
 
 .lower-body .left-container,
 .lower-body .middle-container,
@@ -87,27 +69,24 @@ html, body {
     color: black;
     width: 350px;
     height: 400px;
-    background-color: white; /* Light blue color */
+    background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 20px; /* Adjust the value to make the font bigger */
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-
 .lower-body .left-container p {
-    margin-bottom: 10px; /* Adjust the value to increase or decrease the space */
+    margin-bottom: 10px;
 }
 
-
 .blue-text {
-    color: blue; /* Change the text color to blue */
+    color: blue;
     font-size: 36px;
     text-align: center;
 }
-
 
 .vertical-rl {
     display: flex;
@@ -118,13 +97,12 @@ html, body {
     line-height: 1.5;
 }
 
-
 .vertical-rl p {
-    color: #34495e; /* Default text color */
+    color: #34495e;
     font-size: 26px;
     line-height: 1.5;
 }
 
 .vertical-rl p span {
-    color: blue; /* Color for the word "BLUE" */
+    color: blue;
 }
