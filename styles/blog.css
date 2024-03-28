@@ -1,9 +1,9 @@
-/* Add emojis to the background */
+
 body {
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     margin: 0;
-    padding:0;
+    padding: 0;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -11,62 +11,59 @@ body {
     z-index: 1000;
 }
 
-/* Define styles for individual emojis */
 .emoji {
     position: absolute;
-    animation: move 3s infinite; /* Move the emoji continuously */
+    animation: move 3s infinite;
 }
 
 .emoji1 {
-    font-size: 60px; /* Larger font size */
+    font-size: 60px;
     top: 50px;
-    left: 50px; /* Set both top and left to position it in the top left corner */
+    left: 50px;
 }
 
 .emoji2 {
-    font-size: 80px; /* Larger font size */
+    font-size: 80px;
     top: 200px;
     left: 100px;
 }
 
 .emoji3 {
-    font-size: 100px; /* Larger font size */
+    font-size: 100px;
     top: 300px;
     left: 150px;
 }
 
 .emoji4 {
-    font-size: 60px; /* Larger font size */
+    font-size: 60px;
     bottom: 50px;
-    right: 50px; /* Changed from 'left' to 'right' */
+    right: 50px;
 }
 
 .emoji5 {
-    font-size: 80px; /* Larger font size */
+    font-size: 80px;
     bottom: 100px;
-    right: 100px; /* Changed from 'left' to 'right' */
+    right: 100px;
 }
 
 .emoji6 {
-    font-size: 100px; /* Larger font size */
+    font-size: 100px;
     bottom: 150px;
-    right: 150px; /* Changed from 'left' to 'right' */
+    right: 150px;
 }
 
-/* Define animation for emojis */
 @keyframes move {
     0% { transform: translate(0, 0); }
     50% { transform: translate(50px, -50px); }
     100% { transform: translate(0, 0); }
 }
 
-/* Keep the container styles as they were */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Use viewport height to make the container take the full screen height */
+    min-height: 100vh;
 }
 
 .values {
@@ -82,11 +79,11 @@ body {
 }
 
 .grid-item {
-    background-color: #b3d9ff; /* Light blue color */
+    background-color: #b3d9ff;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    padding: 50px; /* Increase padding to make the boxes longer */
-    font-size: 24px; /* Increase font size for better readability */
-    text-align: center; /* Center align the text */
+    padding: 50px;
+    font-size: 24px;
+    text-align: center;
 }
 
 h1 {
