@@ -32,7 +32,7 @@
 
         .subsection:last-child {
             border-bottom: none;
-            margin-bottom: 0; /* Remove margin-bottom for the last subsection */
+            margin-bottom: 0;
         }
 
         .dash-board {
@@ -73,12 +73,12 @@
             margin-bottom: 10px;
         }
 
-        /* Make all the words and numbers on the graph white */
+        
         .chartjs-text {
             fill: white !important;
         }
 
-        /* Responsive layout for smaller screens */
+        
         @media screen and (max-width: 768px) {
             .dashboard-sidebar {
                 width: 100%;
@@ -92,17 +92,17 @@
             }
         }
 
-        /* Adjustments for sidebar tabs */
+        
         .navigation {
-            width: 200px; /* Adjust width of sidebar */
-            overflow-y: auto; /* Add scroll if content overflows */
+            width: 200px; 
+            overflow-y: auto; 
             background-color: #2A3F54;
             color: white;
-            height: 100vh; /* Full height of viewport */
-            position: fixed; /* Fixed position */
-            left: 0; /* Align to left */
-            top: 0; /* Align to top */
-            padding-top: 60px; /* Add space for header */
+            height: 100vh; 
+            position: fixed; 
+            left: 0; 
+            top: 0; 
+            padding-top: 60px; 
         }
 
         .navigation ul {
@@ -122,7 +122,7 @@
             background-color: #1A262F;
         }
 
-        /* Style for past entries section */
+        
         .past-entries {
             padding: 20px;
             background-color: #EDEDED;
