@@ -18,11 +18,11 @@ body {
     border-radius: 10px;
 }
 
-.upper-layer {
+.upper_layer {
     text-align: center;
 }
 
-.contact-info {
+.contact_info {
     margin-top: 20px;
     padding: 20px;
     background-color: #f2f2f2;
@@ -30,7 +30,7 @@ body {
     font-size: 16px;
 }
 
-.contact-form {
+.contact_form {
     margin-top: 20px;
     padding: 20px;
     background-color: #f2f2f2;
@@ -38,7 +38,7 @@ body {
     position: relative;
 }
 
-.contact-form-message {
+.contact_form_message {
     font-size: 14px;
     margin-top: 20px;
     color: #555;

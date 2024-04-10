@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Sidebar</title>
+    <link rel="stylesheet" href="../styles/goal-setting.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="top-left-section"> Blue </div>
+    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
+</header>
+
+<aside class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../MainPages/Dashboard.html">Home</a></li>
+            <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
+            <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
+            <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
+            <li><a href="../secondary_pages/security-and-privacy.html">Security & Privacy</a></li>
+            <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+    </nav>
+    <section class="past_entries">
+        <h3>Past Journal Entries</h3>
+        <div id="past_entries">
+            <!-- Display past journal entries here -->
+        </div>
+    </section>
+</aside>
+
+<div class="main-content">
+    <div class="dash_board">
+        <div class="goal-input">
+            <h2>Set Your Goals</h2>
+            <form id="goal-form">
+                <input type="text" id="goal" placeholder="Enter your goal...">
+                <button type="submit">Add Goal</button>
+            </form>
+        </div>
+        <div class="goal-list">
+            <h2>Your Goals</h2>
+            <div id="goal-list">
+                <!-- Display user's goals here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard-script.js"></script>
+<script>
+    document.getElementById('goal-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get goal input value
+        const goalInput = document.getElementById('goal');
+        const goalText = goalInput.value.trim();
+
+        if (goalText !== '') {
+            // Create new goal item
+            const goalList = document.getElementById('goal-list');
+            const goalItem = document.createElement('div');
+            goalItem.classList.add('goal-item');
+            goalItem.textContent = goalText;
+
+            // Add goal item to the list
+            goalList.appendChild(goalItem);
+
+            // Clear input field
+            goalInput.value = '';
+        }
+    });
+</script>
+
+</body>
+</html>

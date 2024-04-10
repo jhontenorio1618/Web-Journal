@@ -72,13 +72,13 @@ body {
     text-align: center;
 }
 
-.grid-container {
+.grid_container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 }
 
-.grid-item {
+.grid_item {
     background-color: #b3d9ff;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 50px;

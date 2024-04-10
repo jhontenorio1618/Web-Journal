@@ -1,0 +1,42 @@
+.goal-input {
+    margin-bottom: 20px;
+}
+
+.goal-input input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.goal-input button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.goal-list {
+    margin-top: 20px;
+}
+
+.goal-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #EDEDED;
+}
+
+.goal-item.completed {
+    background-color: #C5E1A5;
+}
+/* Style for past entries section */
+.past_entries {
+    padding: 20px;
+    background-color: #EDEDED;
+    color: #333;
+    margin-top: 20px;
+}
+
+.past-entry {
+    margin-bottom: 10px;
+}

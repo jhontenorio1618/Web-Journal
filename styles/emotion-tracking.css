@@ -14,11 +14,18 @@ header {
     text-align: center;
 }
 
+.top-left-section {
+    float: left;
+    color: blue;
+    background-color: white;
+    padding: 5px 10px;
+}
+
 .dash-center {
     margin-top: 0;
 }
 
-.blue-text { /*   */
+.blue-text {
     color: #3498db;
 }
 
@@ -84,7 +91,7 @@ header {
 .navigation {
     width: 200px;
     overflow-y: auto;
-    background-color: deepskyblue;
+    background-color: #2A3F54;
     color: white;
     height: 100vh;
     position: fixed;
@@ -119,10 +126,4 @@ header {
 
 .past-entry {
     margin-bottom: 10px;
-}
-.graph{
-    background-color: #E5E4E2;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-
 }

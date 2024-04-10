@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Sidebar</title>
-
+    <link rel="stylesheet" href="../styles/dashboard_header.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <!-- Include Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../styles/security_and_privacy.css">
+    <link rel="stylesheet" href="../styles/feedback_support.css">
 </head>
 <body>
 
 <header>
-    <div class="top-left-section">Blue</div>
+    <div class="top-left-section"> Blue </div>
     <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
 </header>
 
 <aside class="navigation">
     <nav>
         <ul>
-            <li><a href="Dashboard.html">Home</a></li>
+            <li><a href="../MainPages/Dashboard.html">Home</a></li>
             <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
             <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
             <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
@@ -34,25 +34,3 @@
         </div>
     </section>
 </aside>
-
-<main class="main_content">
-    <article class="dash_board">
-
-        <section class="graph">
-            <!-- Graph for emotions -->
-            <canvas id="emotion_chart" width="100" height="100"></canvas>
-        </section>
-
-        <!-- Journaling area -->
-        <section class="journaling_area">
-            <form id="journal_form">
-                <textarea id="journal_entry" placeholder="Write your journal entry here..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </article>
-</main>
-
-<script src="../js/graph.js"></script>
-</body>
-</html>

@@ -14,12 +14,10 @@ header {
     text-align: center;
 }
 
+
+
 .dash-center {
     margin-top: 0;
-}
-
-.blue-text { /*   */
-    color: #3498db;
 }
 
 .subsection:last-child {
@@ -84,7 +82,7 @@ header {
 .navigation {
     width: 200px;
     overflow-y: auto;
-    background-color: deepskyblue;
+    background-color: #2A3F54;
     color: white;
     height: 100vh;
     position: fixed;
@@ -119,10 +117,4 @@ header {
 
 .past-entry {
     margin-bottom: 10px;
-}
-.graph{
-    background-color: #E5E4E2;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-
 }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Sidebar</title>
-    <link rel="stylesheet" href="../styles/dashboard-header.css">
+    <link rel="stylesheet" href="../styles/dashboard_header.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/security-and-privacy.css">
-    <link rel="stylesheet" href="../styles/feedbackSupport.css">
+    <link rel="stylesheet" href="../styles/security_and_privacy.css">
+    <link rel="stylesheet" href="../styles/feedback_support.css">
 </head>
 <body>
 
@@ -16,25 +16,27 @@
     <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
 </header>
 
-<nav class="navigation">
-    <ul>
-        <li><a href="../Secondary-Pages/emotion-tracking.html">Emotion Tracking</a></li>
-        <li><a href="../Secondary-Pages/goal-setting.html" >Goal Setting</a></li>
-        <li><a href="../Secondary-Pages/progress-tracking.html">Progress Tracking</a></li>
-        <li><a href="../Secondary-Pages/feedback-and-support.html" >Feedback & Support</a></li>
-        <li><a href="../Secondary-Pages/security-and-privacy.html" >Security & Privacy</a></li>
-        <li><a href="../Secondary-Pages/wellness-resources.html">Wellness Resources</a></li>
-    </ul>
-    <div class="past-entries">
+<aside class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../MainPages/Dashboard.html">Home</a></li>
+            <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
+            <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
+            <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
+            <li><a href="../secondary_pages/security-and-privacy.html">Security & Privacy</a></li>
+            <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+    </nav>
+    <section class="past_entries">
         <h3>Past Journal Entries</h3>
-        <div id="past-entries">
+        <div id="past_entries">
             <!-- Display past journal entries here -->
         </div>
-    </div>
-</nav>
+    </section>
+</aside>
 
-<div class="main-content">
-    <div class="dash-board">
+<div class="main_content">
+    <div class="dash_board">
         <div class="feedback-support">
             <h2>Feedback & Support</h2>
             <p>For general feedback, please email us at <a href="mailto:contact@blueapp.com">contact@blueapp.com</a>.</p>

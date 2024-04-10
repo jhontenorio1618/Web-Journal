@@ -14,7 +14,7 @@ html, body {
     min-height: 100vh;
 }
 
-.upper-body {
+.upper_body {
     display: flex;
     position: relative;
     background-image: url("../images/logo.png");
@@ -28,7 +28,7 @@ html, body {
     z-index: 100;
 }
 
-.upper-layer {
+.upper_layer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +54,7 @@ html, body {
     align-self: flex-start;
 }
 
-.lower-body {
+.lower_body {
     display: grid;
     margin-top: 180px;
     grid-template-columns: repeat(3, 350px);
@@ -63,9 +63,9 @@ html, body {
     gap: 50px;
 }
 
-.lower-body .left-container,
-.lower-body .middle-container,
-.lower-body .right-container {
+.lower_body .left-container,
+.lower_body .middle-container,
+.lower_body .right-container {
     color: black;
     width: 350px;
     height: 400px;
@@ -78,7 +78,7 @@ html, body {
     align-items: center;
 }
 
-.lower-body .left-container p {
+.lower_body .left-container p {
     margin-bottom: 10px;
 }
 
@@ -88,7 +88,7 @@ html, body {
     text-align: center;
 }
 
-.vertical-rl {
+.vertical_rl {
     display: flex;
     flex-direction: column;
     writing-mode: sideways-rl;
@@ -97,12 +97,12 @@ html, body {
     line-height: 1.5;
 }
 
-.vertical-rl p {
+.vertical_rl p {
     color: #34495e;
     font-size: 26px;
     line-height: 1.5;
 }
 
-.vertical-rl p span {
+.vertical_rl p span {
     color: blue;
 }

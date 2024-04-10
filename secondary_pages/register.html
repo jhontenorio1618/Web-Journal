@@ -6,41 +6,39 @@
     <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
-<div class="flex-container">
-    <div class="centered-content">
-        <div class="title">
-            REGISTER
-        </div>
+
+<main class="flex-container">
+    <section class="centered-content">
+        <h1 class="title">REGISTER</h1>
         <form action="/submit-registration" method="post" class="register-form">
-            <div class="form-group">
-                <label for="Name"> Name </label>
+            <fieldset class="form-group">
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="LastName"> Last Name</label>
-                <input type="text" id="LastName" name="LastName" required>
-            </div>
-            <div class="form-group">
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Account Information</legend>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
+
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Register</button>
-            </div>
+            </fieldset>
+
+            <button type="submit" class="register-button">Register</button>
         </form>
-    </div>
-</div>
+    </section>
+</main>
+
 </body>
 </html>
