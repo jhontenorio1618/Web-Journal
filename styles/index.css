@@ -7,31 +7,31 @@
     left: 0;
     z-index: 100;
     display: flex;
-    justify-content: center; /* Center the items */
+    justify-content: center; /
     align-items: center;
     padding: 50px 50px;
 }
 
 .logo-container {
-    position: absolute; /* Keeps the logo positioned within the header */
-    left: 15px; /* Distance from the left edge of the viewport */
-    top: 18px; /* Adjusted to align the logo properly within the header */
-    bottom: 18px; /* Ensures a consistent margin from the bottom of the header */
+    position: absolute;
+    left: 15px;
+    top: 18px;
+    bottom: 18px;
 }
 
 .page-logo {
     height: auto;
-    width: auto; /* Allows the logo to maintain its aspect ratio */
-    max-height: 10vh; /* Increases the maximum height to make the logo bigger */
-    max-width: 100px; /* You can adjust this value to control the width of the logo */
-    object-fit: contain; /* Ensures the logo fits well within the given dimensions, maintaining its aspect ratio */
+    width: auto;
+    max-height: 10vh;
+    max-width: 100px;
+    object-fit: contain;
 }
 
 .nav-link {
     font-family: "Roboto Thin", fantasy;
     font-weight: bold;
     font-size: 25px;
-    margin: 0 3vw; /* Adjust this value to reduce the gap for nav-links */
+    margin: 0 3vw;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -42,7 +42,7 @@
     font-family: "Roboto Thin", fantasy;
     font-weight: bold;
     font-size: 25px;
-    margin-left: 3vw; /* Keep the original margin for log-in */
+    margin-left: 3vw;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
