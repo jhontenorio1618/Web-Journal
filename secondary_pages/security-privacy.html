@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Sidebar</title>
-    <link rel="stylesheet" href="../styles/dashboard_header.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/security_and_privacy.css">
-    <link rel="stylesheet" href="../styles/feedback_support.css">
+    <link rel="stylesheet" href="../styles/security-privacy.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <header>
-    <div class="top-left-section"> Blue </div>
-    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
+    <div class="header-content">
+        <aside class="page-title">
+            <!-- Logo Image can be included here -->
+            <span>Blue</span>
+        </aside>
+        <section class="dash-center">
+            <h1>Welcome to Dashboard [USER]</h1>
+        </section>
+    </div>
 </header>
 
-<nav class="navigation">
-    <ul>
-        <li><a href="../MainPages/Dashboard.html">Home</a></li>
-        <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
-        <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
-        <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
-        <li><a href="../secondary_pages/security-and-privacy.html">Security & Privacy</a></li>
-        <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
-    </ul>
+<aside class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../MainPages/Dashboard.html">Home</a></li>
+            <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
+            <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
+            <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
+            <li><a href="../secondary_pages/security-privacy.html">Security & Privacy</a></li>
+            <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+    </nav>
+</aside>
 
-    <div class="past_entries">
-        <h3>Past Journal Entries</h3>
-        <div id="past-entries">
-            <!-- Display past journal entries here -->
-        </div>
-    </div>
-</nav>
-
-<div class="main-content">
-    <div class="dash_board">
+<main class="main-content">
+    <section class="dash_board">
         <div class="security-privacy">
             <h2>Security & Privacy Policy</h2>
             <p>At Blue, we take the security and privacy of our users very seriously. Please take a look at our Security & Privacy Policy which outlines how we collect, use, and protect your personal information as you use Blue.</p>
@@ -61,7 +63,7 @@
                 </li>
                 <li><strong>Data Sharing</strong>
                     <ul>
-                        <li>Third Parties: Your personal information, emotion tracking data, journal entries, or goals with third parties without your consent.</li>
+                        <li>Third Parties: Your personal information, emotion tracking data, journal entries, or goals will not be shared with third parties without your consent.</li>
                     </ul>
                 </li>
                 <li><strong>Compliance</strong>
@@ -73,8 +75,8 @@
             <p>If you have any questions or concerns about our Security & Privacy Policy, please contact us at contact@blueapp.com.</p>
             <p>Last updated: 3/18/2024</p>
         </div>
-    </div>
-</div>
+    </section>
+</main>
 
 </body>
 </html>

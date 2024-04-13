@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Sidebar</title>
-    <link rel="stylesheet" href="../styles/dashboard_header.css">
+
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/security_and_privacy.css">
     <link rel="stylesheet" href="../styles/feedback_support.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <header>
-    <div class="top-left-section"> Blue </div>
-    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
-</header>
 
+    <aside class="page-title">
+        <!-- <img src="../images/logo.png"> -->
+        Blue
+    </aside>
+    <section class="dash-center">
+        <h1 class="title">Welcome to Dashboard [USER]</h1>
+    </section>
+</header>
 <aside class="navigation">
     <nav>
         <ul>
@@ -23,28 +29,22 @@
             <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
             <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
             <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
-            <li><a href="../secondary_pages/security-and-privacy.html">Security & Privacy</a></li>
+            <li><a href="security-privacy.html">Security & Privacy</a></li>
             <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
         </ul>
     </nav>
-    <section class="past_entries">
-        <h3>Past Journal Entries</h3>
-        <div id="past_entries">
-            <!-- Display past journal entries here -->
-        </div>
-    </section>
+
 </aside>
 
-<div class="main_content">
-    <div class="dash_board">
-        <div class="feedback-support">
+<main class="main_content">
+        <article class="feedback-support">
             <h2>Feedback & Support</h2>
             <p>For general feedback, please email us at <a href="mailto:contact@blueapp.com">contact@blueapp.com</a>.</p>
             <p>For technical support, including issues with the app or website, please contact us at <a href="mailto:support@blueapp.com">support@blueapp.com</a>.</p>
             <p>Thank you for using Blue!</p>
-        </div>
-    </div>
-</div>
+        </article>
+
+</main>
 
 </body>
 </html>

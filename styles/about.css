@@ -2,22 +2,22 @@ html, body {
     margin: 0;
     overflow-x: hidden;
     padding-bottom: 100px;
-    background-color: black;
-    color: #34495e;
+    background-color: #121212;
 }
 
 .container {
     display: flex;
+    background-color: #121212;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100vh;  /* This should stretch the container to at least the height of the viewport */
 }
 
 .upper_body {
     display: flex;
     position: relative;
-    background-image: url("../images/logo.png");
+    background-image: url("../images/styled-bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -28,22 +28,7 @@ html, body {
     z-index: 100;
 }
 
-.upper_layer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 500px;
-    height: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 200px;
-    background-color: #85c1e9;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 36px;
-    text-align: center;
-}
+
 
 .values {
     color: white;
@@ -55,41 +40,53 @@ html, body {
 }
 
 .lower_body {
-    display: grid;
-    margin-top: 180px;
-    grid-template-columns: repeat(3, 350px);
+    display: flex;
     justify-content: center;
-    align-items: start;
-    gap: 50px;
+    margin-top: 18vh;
+    grid-template-columns: repeat(3, 350px);
+    align-items: center;
+    gap: 8vw;
+    background-color: #121212;
 }
 
 .lower_body .left-container,
 .lower_body .middle-container,
 .lower_body .right-container {
+    margin: 0;
     color: black;
     width: 350px;
     height: 400px;
     background-color: white;
+    font-family:Trebuchet MS sans-serif; ;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 2;
+    padding: 3vw;
+
 }
 
 .lower_body .left-container p {
     margin-bottom: 10px;
 }
 
+
+.title{
+    font-size: 50px;
+    font-family:Trebuchet MS sans-serif;
+}
 .blue-text {
-    color: blue;
+    color: #1792ec;
     font-size: 36px;
     text-align: center;
 }
 
 .vertical_rl {
     display: flex;
+    font-family: "Roboto Thin", fantasy;
     flex-direction: column;
     writing-mode: sideways-rl;
     margin-left: 20px;
@@ -98,11 +95,8 @@ html, body {
 }
 
 .vertical_rl p {
-    color: #34495e;
+    color: white;
     font-size: 26px;
     line-height: 1.5;
 }
 
-.vertical_rl p span {
-    color: blue;
-}

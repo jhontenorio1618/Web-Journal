@@ -18,8 +18,8 @@ const emotionData = {
 const ctx = document.getElementById('emotion_chart').getContext('2d');
 
 // Set custom width and height for the canvas element
-ctx.canvas.width = 400; // Set the width to 800 pixels
-ctx.canvas.height = 100; // Set the height to 400 pixels
+ctx.canvas.width = 100; // Set the width to 800 pixels
+ctx.canvas.height = 25; // Set the height to 400 pixels
 
 // Initialize a line chart
 const emotionChart = new Chart(ctx, {

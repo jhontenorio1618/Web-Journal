@@ -28,7 +28,7 @@
 }
 
 .nav-link {
-    font-family: "Roboto Thin", fantasy;
+    font-family:Trebuchet MS sans-serif;
     font-weight: bold;
     font-size: 25px;
     margin: 0 3vw;
@@ -39,7 +39,7 @@
 }
 
 .log-in {
-    font-family: "Roboto Thin", fantasy;
+    font-family:Trebuchet MS sans-serif;
     font-weight: bold;
     font-size: 25px;
     margin-left: 3vw;
@@ -86,9 +86,7 @@ main{
 
     height: 50vh;
 }
-section{
-    background-color: black;
-}
+
 
 .title {
     display: block;

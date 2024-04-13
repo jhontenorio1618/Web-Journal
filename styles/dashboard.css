@@ -3,34 +3,92 @@ body, h1, p, div {
     padding: 0;
 }
 
+
+
 body {
     font-family: Arial, sans-serif;
+
+
+
+
 }
 
+
 header {
-    background-color: #333;
+    display: flex;
+    height: 10.1vh ;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121212;
+}
+/*.page-title img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}8/
+
+ */
+.page-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 17vw;
+    height: 10vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    font-family: 'Brush Script MT', fantasy;
+    font-size: 80px;
+    font-weight: bolder;
     color: white;
-    padding: 10px 20px;
     text-align: center;
 }
 
+
+
+
 .dash-center {
-    margin-top: 0;
+    flex: 1; /* Takes up the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3vw; /* Adjust if needed */
 }
 
-.blue-text { /*   */
-    color: #3498db;
+.title {
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+    color: white;
 }
+
+
 
 .subsection:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
-.dash_board {
-    margin-left: 200px;
-    padding: 20px;
+.main_content {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 10vw;
+    width: 80%; /* Ensure it takes full width */
 }
+
+.dash_board {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the child elements like .graph */
+    width: 80%; /* Adjust based on your layout needs */
+    margin: 0 auto; /* This centers .dash_board itself */
+}
+
 
 .goal-input {
     margin-bottom: 20px;
@@ -44,7 +102,6 @@ header {
 
 .goal-input button {
     padding: 10px 20px;
-    background-color: #3498db;
     color: white;
     border: none;
     cursor: pointer;
@@ -62,35 +119,29 @@ header {
 
 .goal-item.completed {
     background-color: #C5E1A5;
+
 }
+main{
+    display: flex;
+    position: relative;
+    padding-right: 3vw;
+    overflow-x: hidden;
+    margin-left: 7vw;
+    width: 100%;
+    padding-bottom:37.87vh;
 
-.security-privacy {
-    margin-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .dashboard-sidebar {
-        width: 100%;
-        float: none;
-        padding-top: 0;
-        height: auto;
-    }
-
-    .dash_board {
-        margin-left: 0;
-    }
+    background-color: #ebc934;
 }
 
 .navigation {
-    width: 200px;
+    width: 17vw;
     overflow-y: auto;
-    background-color: deepskyblue;
+    background-color: #121212;
     color: white;
     height: 100vh;
     position: fixed;
     left: 0;
-    top: 0;
-    padding-top: 60px;
+    top: 10vh;
 }
 
 .navigation ul {
@@ -107,22 +158,30 @@ header {
 }
 
 .navigation ul li a:hover {
-    background-color: #1A262F;
+    background-color: #007bff;
+}
+.dash_board{
+    margin: 0;
 }
 
-.past_entries {
-    padding: 20px;
-    background-color: #EDEDED;
-    color: #333;
-    margin-top: 20px;
+#emotion_chart {
+
+
+    transform-origin: top left; /* Ensures the scaling starts from the top left corner */
 }
 
-.past-entry {
-    margin-bottom: 10px;
-}
+
 .graph{
-    background-color: #E5E4E2;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    left: 24vw;
+
+    width: 50vw; /* Adjust based on your desired width */
+    height: 50vh; /* Adjust based on your desired height */
+    background-color: #F6F6F6;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-
 }
+

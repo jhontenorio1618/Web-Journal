@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness Resources</title>
+    <title>Dashboard with Sidebar</title>
+
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/wellness-resources.css">
-
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
 <header>
-    <div class="top-left-section"> Blue </div>
-    <h1 class="dash-center">Welcome back to your <span class="blue-text">user dashboard!</span></h1>
+
+    <aside class="page-title">
+        <!-- <img src="../images/logo.png"> -->
+        Blue
+    </aside>
+
+
+    <section class="dash-center">
+        <h1 class="title">Welcome to Dashboard [USER]</h1>
+    </section>
 </header>
-<nav class="navigation">
-    <ul>
-        <li><a href="../MainPages/Dashboard.html">Home</a></li>
-        <li><a href="../secondary_pages/goal-setting.html" >Goal Setting</a></li>
-        <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
-        <li><a href="../secondary_pages/feedback-and-support.html" >Feedback & Support</a></li>
-        <li><a href="../secondary_pages/security-and-privacy.html" >Security & Privacy</a></li>
-        <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
-    </ul>
-</nav>
+
+<aside class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../MainPages/Dashboard.html">Home</a></li>
+            <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
+            <li><a href="../secondary_pages/progress-tracking.html">Progress Tracking</a></li>
+            <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
+            <li><a href="security-privacy.html">Security & Privacy</a></li>
+            <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+    </nav>
+
+</aside>
+
 
 <main class="content">
     <h1>Wellness Resources</h1>

@@ -1,7 +1,21 @@
+header {
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    font-size: 30px;
+
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.emoji {
+    position: absolute;
+    animation: move 3s infinite;
+}
 
 body {
-    background-image: url("../images/logo.png");
-    background-repeat: no-repeat;
+    background-image: url("../images/styled-bg.jpg");
     margin: 0;
     padding: 0;
     background-position: center;
@@ -11,52 +25,6 @@ body {
     z-index: 1000;
 }
 
-.emoji {
-    position: absolute;
-    animation: move 3s infinite;
-}
-
-.emoji1 {
-    font-size: 60px;
-    top: 50px;
-    left: 50px;
-}
-
-.emoji2 {
-    font-size: 80px;
-    top: 200px;
-    left: 100px;
-}
-
-.emoji3 {
-    font-size: 100px;
-    top: 300px;
-    left: 150px;
-}
-
-.emoji4 {
-    font-size: 60px;
-    bottom: 50px;
-    right: 50px;
-}
-
-.emoji5 {
-    font-size: 80px;
-    bottom: 100px;
-    right: 100px;
-}
-
-.emoji6 {
-    font-size: 100px;
-    bottom: 150px;
-    right: 150px;
-}
-
-@keyframes move {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(50px, -50px); }
-    100% { transform: translate(0, 0); }
-}
 
 .container {
     display: flex;
@@ -72,23 +40,26 @@ body {
     text-align: center;
 }
 
-.grid_container {
+.grid-container {
     display: grid;
+
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 }
 
-.grid_item {
-    background-color: #b3d9ff;
+.grid-item {
+    background-color: #121212;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    padding: 50px;
+    color: white;
+    width: 100%;
     font-size: 24px;
-    text-align: center;
+    padding-bottom: 4vh;
+
 }
 
 h1 {
     text-align: center;
     margin-top: 20px;
     font-size: 70px;
-    color: #ecde3e;
+    color: white;
 }
