@@ -1,3 +1,35 @@
-.content {
-    margin-left: 12vw; /* Adjust this value as needed */
+main{
+    height: 50.7vh;
+}
+h1{
+    margin-left: 3vw;
+}
+.content-box {
+    padding: 20px;
+    width: 100%; /* Full width of the main content */
+    background-color: rgba(243, 243, 243, 0.97);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px; /* Rounded corners for aesthetics */
+}
+
+.resource-list {
+    list-style-type: none; /* Remove default list styling */
+    width: 100%; /* Full width of the content box */
+    padding: 0;
+}
+
+.resource-list li {
+    margin-bottom: 10px; /* Space between list items */
+    padding: 10px; /* Padding around list items */
+    background-color: white; /* Light background for each item */
+    border-radius: 5px; /* Slight rounding of corners for each item */
+}
+
+.resource-list a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* No underline */
+}
+
+.resource-list p {
+    margin: 5px 0 0; /* Spacing for paragraph */
 }

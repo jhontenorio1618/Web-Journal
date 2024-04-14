@@ -7,10 +7,6 @@ body, h1, p, div {
 
 body {
     font-family: Arial, sans-serif;
-
-
-
-
 }
 
 
@@ -39,17 +35,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
+    background-image: url("../images/styled-bg.jpg");
+    background-position: center;
     font-family: 'Brush Script MT', fantasy;
     font-size: 80px;
     font-weight: bolder;
     color: white;
     text-align: center;
 }
-
-
-
-
 .dash-center {
     flex: 1; /* Takes up the remaining space */
     display: flex;
@@ -57,7 +50,6 @@ header {
     align-items: center;
     margin-right: 3vw; /* Adjust if needed */
 }
-
 .title {
     display: flex;
     justify-content: start;
@@ -65,14 +57,12 @@ header {
     color: white;
 }
 
-
-
 .subsection:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
-.main_content {
+.main-content {
     display: flex;
     position: relative;
     justify-content: center;
@@ -81,56 +71,17 @@ header {
     width: 80%; /* Ensure it takes full width */
 }
 
-.dash_board {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* This centers the child elements like .graph */
-    width: 80%; /* Adjust based on your layout needs */
-    margin: 0 auto; /* This centers .dash_board itself */
-}
-
-
-.goal-input {
-    margin-bottom: 20px;
-}
-
-.goal-input input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.goal-input button {
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.goal-list {
-    margin-top: 20px;
-}
-
-.goal-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #EDEDED;
-}
-
-.goal-item.completed {
-    background-color: #C5E1A5;
-
-}
 main{
     display: flex;
     position: relative;
-    padding-right: 3vw;
-    overflow-x: hidden;
+
     margin-left: 7vw;
     width: 100%;
-    padding-bottom:37.87vh;
-
-    background-color: #ebc934;
+    padding-bottom:30vh;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
 }
 
 .navigation {
@@ -160,28 +111,27 @@ main{
 .navigation ul li a:hover {
     background-color: #007bff;
 }
-.dash_board{
+.dash-board{
     margin: 0;
 }
 
 #emotion_chart {
 
-
-    transform-origin: top left; /* Ensures the scaling starts from the top left corner */
+    transform-origin: top left;
 }
-
 
 .graph{
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 4vh;
+    margin-right:17vw;
+    padding: 10px;
     left: 24vw;
-
-    width: 50vw; /* Adjust based on your desired width */
-    height: 50vh; /* Adjust based on your desired height */
-    background-color: #F6F6F6;
+    width: 50vw;
+    height: 50vh;
+    background-color: rgba(243, 243, 243, 0.97);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 

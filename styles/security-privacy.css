@@ -1,7 +1,29 @@
+.dash-board{
+    margin: 14vh;
+
+}
 .security-privacy {
-    display: flex;
-    position: relative;
-    margin: 16vw;
-    background-color: red;;
+    width: 100%; /* Full width within the main content area */
+    padding: 20px;
+    background-color: #f9f9f9; /* Slightly off-white background for the section */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box;
 }
 
+.security-privacy h2 {
+    color: #333; /* Dark grey for heading for better readability */
+    margin-bottom: 10px; /* Space after the heading */
+}
+
+.security-privacy ul {
+    list-style-type: none; /* No bullets for lists */
+    padding-left: 20px; /* Indent items for clarity */
+}
+
+.security-privacy li {
+    padding: 5px 0; /* Padding for each list item */
+}
+
+.security-privacy p {
+    margin-top: 10px; /* Margin on top of paragraphs to space out text blocks */
+}
