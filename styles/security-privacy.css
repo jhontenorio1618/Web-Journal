@@ -1,29 +1,35 @@
 .dash-board{
-    margin: 14vh;
+    display: flex;
+    position: relative;
+    top: 0;
+    margin-top: -16vh;
+
 
 }
 .security-privacy {
-    width: 100%; /* Full width within the main content area */
+    width: 80%;
     padding: 20px;
-    background-color: #f9f9f9; /* Slightly off-white background for the section */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9;
+    border-radius: 10px;
     box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
 }
 
 .security-privacy h2 {
-    color: #333; /* Dark grey for heading for better readability */
-    margin-bottom: 10px; /* Space after the heading */
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .security-privacy ul {
-    list-style-type: none; /* No bullets for lists */
-    padding-left: 20px; /* Indent items for clarity */
+    list-style-type: none;
+    padding-left: 20px;
 }
 
 .security-privacy li {
-    padding: 5px 0; /* Padding for each list item */
+    padding: 5px 0;
 }
 
 .security-privacy p {
-    margin-top: 10px; /* Margin on top of paragraphs to space out text blocks */
+    margin-top: 10px;
 }

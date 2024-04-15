@@ -1,4 +1,4 @@
-body, h1, p, div {
+body, p, div {
     margin: 0;
     padding: 0;
 }
@@ -6,8 +6,15 @@ body, h1, p, div {
 
 
 body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
     font-family: Arial, sans-serif;
+    z-index: 10;
 }
+
 
 
 header {
@@ -17,21 +24,13 @@ header {
     justify-content: space-between;
     background-color: #121212;
 }
-/*.page-title img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}8/
 
- */
 .page-title {
     position: fixed;
     top: 0;
     left: 0;
     width: 17vw;
     height: 10vh;
-    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,18 +42,29 @@ header {
     color: white;
     text-align: center;
 }
+
 .dash-center {
-    flex: 1; /* Takes up the remaining space */
     display: flex;
-    justify-content: center;
+    position: relative;
+    padding-inline: 1vw;
+    width: 35vw;
+    margin-left: 19vw;
+    margin-right: auto;
+    justify-content: flex-start;
     align-items: center;
-    margin-right: 3vw; /* Adjust if needed */
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
+
 }
+
+
 .title {
-    display: flex;
-    justify-content: start;
-    margin-top: 0;
-    color: white;
+    position: relative;
+    justify-content: left;
+    text-align: left;
+    color: #333;
+    font-size: 24px;
 }
 
 .subsection:last-child {
@@ -68,31 +78,34 @@ header {
     justify-content: center;
     align-items: center;
     left: 10vw;
-    width: 80%; /* Ensure it takes full width */
+    width: 100%;
 }
 
 main{
     display: flex;
     position: relative;
-
     margin-left: 7vw;
-    width: 100%;
-    padding-bottom:30vh;
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
+    min-height: 100vh;
+    z-index: 2;
 }
 
 .navigation {
     width: 17vw;
     overflow-y: auto;
     background-color: #121212;
+    padding-bottom: 12vh;
+    padding-top: 1.2vh;
     color: white;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 10vh;
+    font-size: 24px;
+    z-index: 3;
 }
 
 .navigation ul {
@@ -109,7 +122,7 @@ main{
 }
 
 .navigation ul li a:hover {
-    background-color: #007bff;
+    background-color: #1fb3f3;
 }
 .dash-board{
     margin: 0;
@@ -120,18 +133,5 @@ main{
     transform-origin: top left;
 }
 
-.graph{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4vh;
-    margin-right:17vw;
-    padding: 10px;
-    left: 24vw;
-    width: 50vw;
-    height: 50vh;
-    background-color: rgba(243, 243, 243, 0.97);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+
 

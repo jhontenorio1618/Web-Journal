@@ -1,0 +1,13 @@
+.graph{
+    display: flex;
+    position: relative;
+    margin-top: -40vh;
+    top: 2px;
+    margin-right:33vw;
+    padding: 18px;
+    left: 24vw;
+    width: 45%;
+    height: 50vh;
+    background-color: rgba(243, 243, 243, 0.97);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

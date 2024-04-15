@@ -1,35 +1,38 @@
 main{
     height: 50.7vh;
 }
-h1{
-    margin-left: 3vw;
-}
+
 .content-box {
+    display: flex;
+    position: relative;
+    top: -22vh;
+    left: -14vw;
     padding: 20px;
-    width: 100%; /* Full width of the main content */
+    width: 50%;
     background-color: rgba(243, 243, 243, 0.97);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border-radius: 10px; /* Rounded corners for aesthetics */
+    border-radius: 10px;
+
 }
 
 .resource-list {
-    list-style-type: none; /* Remove default list styling */
-    width: 100%; /* Full width of the content box */
+    list-style-type: none;
+    width: 100%;
     padding: 0;
 }
 
 .resource-list li {
-    margin-bottom: 10px; /* Space between list items */
-    padding: 10px; /* Padding around list items */
-    background-color: white; /* Light background for each item */
-    border-radius: 5px; /* Slight rounding of corners for each item */
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 1px;
 }
 
 .resource-list a {
-    color: #007bff; /* Blue color for links */
-    text-decoration: none; /* No underline */
+    color: #007bff;
+    text-decoration: none;
 }
 
 .resource-list p {
-    margin: 5px 0 0; /* Spacing for paragraph */
+    margin: 5px 0 0;
 }

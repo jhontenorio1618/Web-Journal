@@ -4,29 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard with Sidebar</title>
-
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/goal-setting.css">
-    <!-- Include Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <header>
-
-    <aside class="page-title">
-        Blue.
-    </aside>
-
+    <aside class="page-title">Blue.</aside>
     <section class="dash-center">
-        <h1 class="title">Welcome to Dashboard [USER]</h1>
+        <h1 class="title">[USER'S] DASHBOARD</h1>
     </section>
 </header>
 
 <aside class="navigation">
     <nav>
         <ul>
-            <li><a href="../MainPages/Dashboard.html">Home</a></li>
+            <li><a href="../MainPages/home.html">Home</a></li>
             <li><a href="../secondary_pages/goal-setting.html">Goal Setting</a></li>
             <li><a href="Logger.html">Log Emotions</a></li>
             <li><a href="../secondary_pages/feedback-and-support.html">Feedback & Support</a></li>
@@ -34,7 +27,6 @@
             <li><a href="../secondary_pages/wellness-resources.html">Wellness Resources</a></li>
         </ul>
     </nav>
-
 </aside>
 
 <main class="main-content">
@@ -42,44 +34,78 @@
         <article class="goal-input">
             <h2>Set Your Goals</h2>
             <form id="goal-form">
-                <input type="text" id="goal" placeholder="Enter your goal...">
+                <textarea id="goal" class="large-textarea" placeholder="Enter your goal..." oninput="autoExpand(this)"></textarea>
+
                 <button type="submit">Add Goal</button>
             </form>
         </article>
         <article class="goal-list">
             <h2>Your Goals</h2>
             <div id="goal-list">
-                <!-- Display user's goals here -->
             </div>
         </article>
     </section>
 </main>
 
-
-
 <script>
     document.getElementById('goal-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
 
-        // Get goal input value
+
         const goalInput = document.getElementById('goal');
         const goalText = goalInput.value.trim();
 
         if (goalText !== '') {
-            // Create new goal item
+
             const goalList = document.getElementById('goal-list');
             const goalItem = document.createElement('div');
             goalItem.classList.add('goal-item');
+
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'date-span';
+
+
+            const currentDate = new Date();
+            const dateString = currentDate.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit', second: '2-digit'
+            });
+            dateSpan.textContent = ` - Posted on ${dateString}`;
+
+
             goalItem.textContent = goalText;
+            goalItem.appendChild(dateSpan);
 
-            // Add goal item to the list
-            goalList.appendChild(goalItem);
 
-            // Clear input field
+            if (goalList.firstChild) {
+                goalList.insertBefore(goalItem, goalList.firstChild);
+            } else {
+                goalList.appendChild(goalItem);
+            }
+
+
             goalInput.value = '';
         }
     });
+
+    function autoExpand(field) {
+
+        field.style.height = 'inherit';
+
+
+        const computed = window.getComputedStyle(field);
+        const height = parseInt(computed.getPropertyValue('border-top-width'), 10) +
+            parseInt(computed.getPropertyValue('padding-top'), 10) +
+            field.scrollHeight +
+            parseInt(computed.getPropertyValue('padding-bottom'), 10) +
+            parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+
+
+        field.style.height = `${height}px`;
+    }
 </script>
+
 
 </body>
 </html>
