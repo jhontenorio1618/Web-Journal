@@ -54,8 +54,8 @@ html, body {
 .lower_body .right-container {
     margin: 0;
     color: black;
-    width: 350px;
-    height: 400px;
+    width: 20vw;
+    height: 40vh;
     background-color: white;
     font-family:Trebuchet MS sans-serif; ;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Logger - Get Started</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            font-family: 'Brush Script MT', fantasy;
+            position: absolute; /* Makes the header position relative to the nearest positioned ancestor */
+            margin-left: 2vw;
+            top: 0; /* Aligns the header at the top */
+            left: 0; /* Aligns the header at the left */
+            padding: 10px; /* Adds some space around the text */
+            background-color: transparent; /* Ensures background color does not block anything */
+            font-size: 92px; /* Sets the font size */
+            font-weight: bolder;
+            color: White; /* Sets the text color to blue */
+            z-index: 1000; /* Ensures the header is above all other content */
+        }
+
+        .bg {
+            background-image: url('images/option2.webp');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            top: 60%;
+            transform: translateY(-50%);
+        }
+
+        .get-started, .begin, .explore-emotions {
+            width: 40%;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1, p {
+            font-family: 'Times New Roman', serif;
+            font-size: 2em;
+            background-image: linear-gradient(
+                    to right,
+                    #FFD700 0%,
+                    #FFDF50 50%,
+                    #FFD700 100%
+            );
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow:
+                    1px 1px 0 rgba(255, 215, 0, 0.75),
+                    2px 2px 0 rgba(255, 215, 0, 0.5),
+                    3px 3px 0 rgba(255, 215, 0, 0.25);
+            transform: translateZ(1px) scale(0.825);
+        }
+
+        .button-container {
+            margin-top: 2vh;
+        }
+
+        .button {
+            padding: 1em 2em;
+            font-size: 1em;
+            text-decoration: none;
+            background-color: #1fb3f3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1692c5;
+        }
+    </style>
+</head>
+<body>
+<header>
+    Blue.
+</header>
+<main class="bg">
+    <section class="content">
+        <img class="get-started" src="images/get-started.png">
+        <img class="begin" src="images/begin.png">
+        <article class="button-container">
+            <button class="button" onclick="location.href='secondary-pages/register.html'">Sign Up</button>
+            <button class="button" onclick="location.href='secondary-pages/log-in.html'">Log In</button>
+        </article>
+        <div class="message">
+            <img class="explore-emotions" src="images/explore-emotions.png">
+        </div>
+    </section>
+</main>
+</body>
+</html>

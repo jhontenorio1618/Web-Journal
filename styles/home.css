@@ -8,6 +8,9 @@
     left: 24vw;
     width: 45%;
     height: 50vh;
-    background-color: rgba(243, 243, 243, 0.97);
+    background-color: #191970;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.a:hover{
+    color: gold;
 }

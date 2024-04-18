@@ -1,111 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard with Sidebar</title>
-    <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/goal-setting.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="../styles/dashboard.css">
+        <link rel="stylesheet" href="../styles/goal-setting.css">
+    </head>
+    <body>
 
-<header>
-    <aside class="page-title">Blue.</aside>
-    <section class="dash-center">
-        <h1 class="title">[USER'S] DASHBOARD</h1>
-    </section>
-</header>
+    <header>
+        <aside class="page-title">Blue.</aside>
+        <section class="dash-center">
+            <h1 class="title">[USER'S] DASHBOARD</h1>
+        </section>
+    </header>
 
-<aside class="navigation">
-    <nav>
-        <ul>
-            <li><a href="../MainPages/home.html">Home</a></li>
-            <li><a href="../secondary-pages/goal-setting.html">Goal Setting</a></li>
-            <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
-            <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
-            <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
-            <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
-        </ul>
-    </nav>
-</aside>
+    <aside class="navigation">
+        <nav>
+            <ul>
+                <li><a href="../MainPages/home.html">Home</a></li>
+                <li><a href="../secondary-pages/goal-setting.html">Goal Setting</a></li>
+                <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
+                <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
+                <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
+                <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-<main class="main-content">
-    <section class="dash-board">
-        <article class="goal-input">
-            <h2>Set Your Goals</h2>
-            <form id="goal-form">
-                <textarea id="goal" class="large-textarea" placeholder="Enter your goal..." oninput="autoExpand(this)"></textarea>
+    <main class="main-content">
+        <section class="dash-board">
+            <article class="goal-input">
+                <h2>Set Your Goals</h2>
+                <form id="goal-form">
+                    <textarea id="goal" class="large-textarea" placeholder="Enter your goal..." oninput="autoExpand(this)"></textarea>
 
-                <button type="submit">Add Goal</button>
-            </form>
-        </article>
-        <article class="goal-list">
-            <h2>Your Goals</h2>
-            <div id="goal-list">
-            </div>
-        </article>
-    </section>
-</main>
+                    <button type="submit">Add Goal</button>
+                </form>
+            </article>
+            <article class="goal-list">
+                <h2>Your Goals</h2>
+                <div id="goal-list">
+                </div>
+            </article>
+        </section>
+    </main>
 
-<script>
-    document.getElementById('goal-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-
-        const goalInput = document.getElementById('goal');
-        const goalText = goalInput.value.trim();
-
-        if (goalText !== '') {
-
-            const goalList = document.getElementById('goal-list');
-            const goalItem = document.createElement('div');
-            goalItem.classList.add('goal-item');
+    <script>
+        document.getElementById('goal-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
 
-            const dateSpan = document.createElement('span');
-            dateSpan.className = 'date-span';
+            const goalInput = document.getElementById('goal');
+            const goalText = goalInput.value.trim();
+
+            if (goalText !== '') {
+
+                const goalList = document.getElementById('goal-list');
+                const goalItem = document.createElement('div');
+                goalItem.classList.add('goal-item');
 
 
-            const currentDate = new Date();
-            const dateString = currentDate.toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long', day: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit'
-            });
-            dateSpan.textContent = ` - Posted on ${dateString}`;
+                const dateSpan = document.createElement('span');
+                dateSpan.className = 'date-span';
 
 
-            goalItem.textContent = goalText;
-            goalItem.appendChild(dateSpan);
+                const currentDate = new Date();
+                const dateString = currentDate.toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                });
+                dateSpan.textContent = ` - Posted on ${dateString}`;
 
 
-            if (goalList.firstChild) {
-                goalList.insertBefore(goalItem, goalList.firstChild);
-            } else {
-                goalList.appendChild(goalItem);
+                goalItem.textContent = goalText;
+                goalItem.appendChild(dateSpan);
+
+
+                if (goalList.firstChild) {
+                    goalList.insertBefore(goalItem, goalList.firstChild);
+                } else {
+                    goalList.appendChild(goalItem);
+                }
+
+
+                goalInput.value = '';
             }
+        });
 
+        function autoExpand(field) {
+            // Reset the field height to ensure the scroll height is measured correctly
+            field.style.height = 'auto';
 
-            goalInput.value = '';
+            // Calculate the height
+            const computed = window.getComputedStyle(field);
+            const height = field.scrollHeight + parseInt(computed.getPropertyValue('border-top-width'), 10) +
+                parseInt(computed.getPropertyValue('padding-top'), 10) +
+                parseInt(computed.getPropertyValue('padding-bottom'), 10) +
+                parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+
+            // Set the new height
+            field.style.height = `${height}px`;
         }
-    });
-
-    function autoExpand(field) {
-
-        field.style.height = 'inherit';
+    </script>
 
 
-        const computed = window.getComputedStyle(field);
-        const height = parseInt(computed.getPropertyValue('border-top-width'), 10) +
-            parseInt(computed.getPropertyValue('padding-top'), 10) +
-            field.scrollHeight +
-            parseInt(computed.getPropertyValue('padding-bottom'), 10) +
-            parseInt(computed.getPropertyValue('border-bottom-width'), 10);
-
-
-        field.style.height = `${height}px`;
-    }
-</script>
-
-
-</body>
+    </body>
 </html>

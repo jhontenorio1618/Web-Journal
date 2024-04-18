@@ -9,7 +9,8 @@
 .security-privacy {
     width: 80%;
     padding: 20px;
-    background-color: #f9f9f9;
+    margin-left: 20px;
+    background-color: white;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);

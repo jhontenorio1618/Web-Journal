@@ -9,7 +9,6 @@
 .main-content {
     height: 52vh;
     width: 100%;
-
 }
 
 .goal-input {
@@ -21,7 +20,7 @@
 }
 
 .goal-input input[type="text"], .goal-input button {
-    width: 90%;
+    width: 100%; /* Ensure full width to match the input field */
     height: 50px;
     padding: 15px;
     font-size: 18px;
@@ -36,16 +35,6 @@
     cursor: pointer;
 }
 
-.goal-input input[type="text"] {
-    width: 100%;
-    padding: 20px;
-    height: 20vh;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-
 .large-textarea {
     width: 100%;
     height: 200px;
@@ -56,7 +45,6 @@
     box-sizing: border-box;
     resize: vertical;
 }
-
 
 .goal-list, .goal-input {
     background-color: #f9f9f9;
@@ -72,7 +60,6 @@
     margin-right: 19vw;
     overflow-y: auto;
     overflow-x: auto;
-
 }
 
 .goal-item {
@@ -82,11 +69,6 @@
     width: 100%;
 }
 
-.goal-text {
-    margin-bottom: 1.5em;
-    overflow-y: auto;
-}
-
 .date-span {
     align-self: flex-end;
     margin-top: 1em;
@@ -94,33 +76,5 @@
     color: grey;
     font-size: 0.85em;
 }
-
-
-
-.goal-item.completed {
-    background-color: #C5E1A5;
-}
-
-
-.past-entries {
-    padding: 20px;
-    background-color: #EDEDED;
-    color: #333;
-    margin-top: 20px;
-}
-
-.past-entry {
-    margin-bottom: 10px;
-}
-
-input {
-    cursor: pointer;
-}
-
-.goal-input {
-
-}
-
-
 
 
