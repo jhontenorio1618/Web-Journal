@@ -43,10 +43,3 @@ document.getElementById('journal_form').addEventListener('submit', function(even
 });
 
 
-function displayJournalEntry(entry) {
-    const entryContainer = document.getElementById('past_entries');
-    const entryElement = document.createElement('div');
-    entryElement.classList.add('past_entry');
-    entryElement.innerHTML = `<p>${entry}</p>`;
-    entryContainer.prepend(entryElement);
-}

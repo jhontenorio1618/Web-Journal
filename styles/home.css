@@ -1,25 +1,72 @@
 .graph{
     display: flex;
-    position: relative;
-    margin-top: -40vh;
-    top: 2px;
-    margin-right:33vw;
+    position: fixed;
+    margin-top: 0;
+    top: 13.5vh;
     padding: 18px;
-    left: 24vw;
+    left: 50vw;
     width: 45%;
-    height: 50vh;
+    height: 54vh;
     background: #76b9ef;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 10px;
+    z-index: 0;
 }
-.last-entries{
+
+/* Main Content Styling */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7vw; /* Ensures it starts after the navigation */
+    width: 83vw; /* Adjusts width considering navigation */
+    min-height: 100vh; /* Ensures full vertical height */
+    padding-top: 2vh; /* Adds some top padding */
+}
+
+/* Daily Message Section */
+.daily-message {
     display: flex;
     position: relative;
-    left: 10vw;
-    height: 10vh;
-    width: 10vw;
-    top: 40%;
-    background-color: black;
-    z-index: 100;
-
+    flex-direction: column;
+    bottom: 38vh;
+    right: 26vw;
+    width: 30%;
+    height: 25vh;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    align-self: center;
 }
+.message-header {
+    background: #76b9ef;
+    height: 5vh; /* Fixed height for the header */
+    margin: 0; /* Ensure no margin that could push the content */
+    width: 100%; /* Ensures it fills the entire width of its container */
+    text-align: center;
+    padding: 5px 0; /* Padding only top and bottom to keep text vertically centered */
+    box-sizing: border-box; /* Includes padding in the height calculation */
+}
+
+.message-header h2 {
+    margin: 0;
+    font-family: Trebuchet MS, sans-serif;
+    width: 100%;
+    color: white; /* Sets text color for better readability on red background */
+}
+.message{
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 28px;
+}
+
+#message {
+    padding: 10px; /* Adds padding inside the message paragraph for spacing */
+}
+
+
+
+/* Ensure the canvas size is controlled */
+
+
+

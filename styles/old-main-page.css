@@ -88,7 +88,7 @@ main{
 }
 
 
-.title {
+.dashboard-title {
     display: block;
     padding-top: 10vh;
     align-self: center;
@@ -156,7 +156,7 @@ h2{
     }
 
 }
-.title{
+.dashboard-title{
     padding: 10px;
 }
 

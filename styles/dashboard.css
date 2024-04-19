@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: Arial, sans-serif;
-    z-index: 10;
 }
 
 
@@ -64,7 +63,7 @@ header {
 }
 
 
-.title {
+.dashboard-title {
     position: relative;
     justify-content: left;
     text-align: left;
@@ -91,11 +90,9 @@ main{
     position: relative;
     margin-left: 7vw;
     background-color: #F5F5F5;
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
     min-height: 100vh;
-    z-index: 2;
 }
 
 .navigation {
@@ -110,7 +107,6 @@ main{
     left: 0;
     top: 10vh;
     font-size: 24px;
-    z-index: 3;
 }
 
 
