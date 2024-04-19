@@ -3,7 +3,7 @@ const emotionData = {
     datasets: [{
         label: 'Emotion Level',
         data: [3, 4, 5, 6, 7, 8, 9],
-        borderColor: 'blue',
+        borderColor: 'white',
         backgroundColor: 'rgba(0, 0, 255, 0.1)',
         tension: 0.4
     }]

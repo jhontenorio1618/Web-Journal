@@ -1,0 +1,52 @@
+.emotion-logger {
+    background-color: #ffffff;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 60%;
+    margin: 0 auto;
+    position: absolute;
+    top: 2vh;
+    left: 10%;
+}
+
+
+.emotion-logger h2 {
+    text-align: center;
+    color: #333;
+}
+
+.emotion-logger form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+.emotion-logger label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.emotion-logger input[type="date"],
+.emotion-logger select,
+.emotion-logger textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.emotion-logger button {
+    background-color: #187dce;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.emotion-logger button:hover {
+    background-color: #105a94;
+}

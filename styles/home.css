@@ -8,9 +8,18 @@
     left: 24vw;
     width: 45%;
     height: 50vh;
-    background-color: #191970;
+    background: #76b9ef;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
 }
-.a:hover{
-    color: gold;
+.last-entries{
+    display: flex;
+    position: relative;
+    left: 10vw;
+    height: 10vh;
+    width: 10vw;
+    top: 40%;
+    background-color: black;
+    z-index: 100;
+
 }
