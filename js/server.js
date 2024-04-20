@@ -27,14 +27,27 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/submit-registration', async (req, res) => {
+    const { username, email } = req.body;
     try {
+        // Check if a user with the same username or email already exists
+        const existingUser = await User.findOne({
+            $or: [{ username: username }, { email: email }]
+        });
+
+        if (existingUser) {
+            // User found with the same username or email
+            return res.status(400).send('<script>alert("Username or email already exists."); window.location.href = "/login";</script>');
+        }
+
+        // No existing user found, create a new user
         const newUser = new User(req.body);
         await newUser.save();
         res.redirect('/login?success=true');
     } catch (error) {
-        res.status(400).send("Error registering user: " + error.message);
+        res.status(500).send("Error registering user: " + error.message);
     }
 });
+
 
 app.post('/submit-login', async (req, res) => {
     try {
