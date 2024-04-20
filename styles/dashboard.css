@@ -19,10 +19,17 @@ body {
 header {
     display: flex;
     height: 12vh ;
-    align-items: center;
+    align-items: flex-end; /* Align images to the bottom */
     justify-content: space-between;
     background-color: #F5F5F5;
+    width: 100%;
+    padding: 10px 20px;
+    top: 0;
 }
+
+/*
+
+ */
 
 .page-title {
     position: fixed;
@@ -32,14 +39,13 @@ header {
     height: 12vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     background: linear-gradient(to right, #187dce, #76b9ef);
     border-color: black;
     font-family: 'Brush Script MT', fantasy;
     font-size: 80px;
     font-weight: bolder;
     color: White;
-    text-align: center;
+    align-items: flex-end; /* Align images to the bottom */
 }
 
 .dash-center {
@@ -88,6 +94,7 @@ header {
 main{
     display: flex;
     position: relative;
+
     margin-left: 7vw;
     background-color: #F5F5F5;
     background-size: cover;
@@ -108,7 +115,6 @@ main{
     top: 10vh;
     font-size: 24px;
 }
-
 
 .navigation ul {
     list-style-type: none;

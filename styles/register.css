@@ -3,20 +3,26 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
+
 
 .centered-content {
     width: 35%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 50px;
     box-sizing: border-box;
+    background: #fff;
 }
 
-.dashboard-title {
+
+.dashboard-title, .title {
     text-align: center;
     font-size: 34px;
     margin-bottom: 20px;
 }
+
 
 .register-form .form-group {
     margin-bottom: 15px;
@@ -32,6 +38,7 @@
     width: 96%;
     padding: 8px;
     margin-top: 5px;
+    border: 1px solid #ccc;
 }
 
 .register-form button {
@@ -42,6 +49,7 @@
     border: none;
     cursor: pointer;
 }
+
 .register-form button:hover {
     background-color: #0056b3;
 }

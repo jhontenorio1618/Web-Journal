@@ -19,22 +19,55 @@ body, html {
 }
 
 
-
 header {
-    font-family: 'Brush Script MT', fantasy;
-    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center everything initially */
     width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(118, 185, 239, 0.5);
+    color: white;
+    font-family: 'Brush Script MT', fantasy;
+    font-size: 36px;
+    position: fixed;
     top: 0;
     left: 0;
-    padding: 10px;
-    color: white;
-    font-size: 92px;
-    font-weight: bolder;
-    background-color: transparent;
     z-index: 1000;
-    text-align: left;
 }
 
+.logo {
+    position: absolute;
+    left: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 42px;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+    gap: 5vw; /* Space between navigation links */
+}
+
+.nav-link {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.header-navigation:hover {
+    cursor: pointer;
+}
+
+
+.nav-link:hover {
+    text-decoration: underline;
+}
 
 main {
     position: relative;

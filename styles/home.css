@@ -1,72 +1,150 @@
+.page-title,
+.dash-center {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 5vw;
+    height: 100%;
+}
+
+.links img {
+    margin-left: 20px;
+    height: 50px;
+    width: auto;
+
+}
+
 .graph{
     display: flex;
     position: fixed;
     margin-top: 0;
-    top: 13.5vh;
+    top: 15.7vh;
     padding: 18px;
     left: 50vw;
     width: 45%;
     height: 54vh;
-    background: #76b9ef;
+    background: #59adf1;
+    box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
     border-radius: 10px;
     z-index: 0;
 }
 
-/* Main Content Styling */
+
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 7vw; /* Ensures it starts after the navigation */
-    width: 83vw; /* Adjusts width considering navigation */
-    min-height: 100vh; /* Ensures full vertical height */
-    padding-top: 2vh; /* Adds some top padding */
+    margin-left: 7vw;
+    width: 83vw;
+    min-height: 100vh;
+    padding-top: 2vh;
 }
 
-/* Daily Message Section */
+
 .daily-message {
     display: flex;
     position: relative;
     flex-direction: column;
-    bottom: 38vh;
+    bottom: 43vh;
     right: 26vw;
     width: 30%;
     height: 25vh;
     padding: 0;
-    background-color: #ffffff;
+    margin: 0;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    align-self: center;
+}
+.box-header h2 {
+    margin: 0;
+    font-family: Trebuchet MS, sans-serif;
+    width: 100%;
+    color: white;
+}
+
+.box-header {
+    background: #59adf1;
+    height: 5vh;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+.last-goal{
+    display: flex;
+    position: relative;
+    margin: 0;
+    top: 15vh;
+    right: 26vw;
+    width: 30%;
+    height: 30vh;
+    padding: 0;
+    background: white;
     border-radius: 8px;
     text-align: center;
     align-self: center;
 }
-.message-header {
-    background: #76b9ef;
-    height: 5vh; /* Fixed height for the header */
-    margin: 0; /* Ensure no margin that could push the content */
-    width: 100%; /* Ensures it fills the entire width of its container */
+
+.last-goal:hover, .average-emotion:hover, .daily-message:hover{
+    box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
+}
+.last-goal .box-header{
+    background: linear-gradient(to right, #187dce, #76b9ef);
+
+}
+/*\
+background: linear-gradient(to right, #187dce, #76b9ef);
+ */
+.box-header {
+    background: linear-gradient(to right, #187dce, #76b9ef);
+    height: 5vh;
+    margin: 0;
+    width: 100%;
     text-align: center;
-    padding: 5px 0; /* Padding only top and bottom to keep text vertically centered */
-    box-sizing: border-box; /* Includes padding in the height calculation */
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
 }
 
-.message-header h2 {
-    margin: 0;
-    font-family: Trebuchet MS, sans-serif;
-    width: 100%;
-    color: white; /* Sets text color for better readability on red background */
+.average-emotion {
+    position: relative; /* Relative positioning for stacking */
+    right: 26vw;
+    bottom: 7vh;
+    width: 30%; /* Maintain consistent width with other articles */
+    height: 20vh; /* Or adjust based on your content */
+    background-color: white;
+    border-radius: 8px; /* Rounded corners like other boxes */
+    text-align: center; /* Center align the text */
+    align-self: center; /* Center the box in the flex container */
+    margin-top: 0; /* Add some vertical space from the above article */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent shadow with other articles */
 }
+
+
 .message{
     font-family: Trebuchet MS, sans-serif;
     font-size: 28px;
 }
 
 #message {
-    padding: 10px; /* Adds padding inside the message paragraph for spacing */
+    padding: 10px;
 }
 
+/*
 
 
-/* Ensure the canvas size is controlled */
 
 
 
+ */

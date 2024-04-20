@@ -20,7 +20,8 @@
 }
 
 
-body, header, main, .navigation {
+body, header, .navigation {
     margin: 0;
     padding: 0;
 }
+

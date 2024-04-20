@@ -10,6 +10,12 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 150px;
     box-sizing: border-box;
+    background-color: white;
+    align-content: center;
+
+}
+.title{
+    text-align: center;
 }
 
 .dashboard-title {
@@ -46,4 +52,7 @@
 .register:visited {
     color: black;
     text-decoration: underline;
+}
+body{
+    background-color: #69b3f0;
 }
