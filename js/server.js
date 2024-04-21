@@ -156,5 +156,26 @@ app.post('/submit-login', async (req, res) => {
     }
 });
 
+app.post('/submit-registration', async (req, res) => {
+    try {
+        // Create a new user instance
+        const newUser = new User({
+            name: req.body.name,
+            lastName: req.body.lastName,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        });
+
+        // Save the new user to the database
+        await newUser.save();
+        
+        // Redirect to login page or home page after successful registration
+        res.redirect('/login');
+    } catch (error) {
+        res.status(500).send("Registration failed: " + error.message);
+    }
+});
+
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
