@@ -1,4 +1,4 @@
-// Sample data for the past 7 days
+// Sample data for the past 7 days. Need of the API's data
 const pastWeekEmotions = [20, 19, 18, 17, 16, 15, 14];
 
 // Messages corresponding to each emotion score
@@ -30,10 +30,14 @@ function calculateAverage(emotions) {
 
 function displayAverageEmotion() {
     const average = calculateAverage(pastWeekEmotions);
+    console.log("Calculated Average:", average); // Log the calculated average
     const message = emotionMessages[average];
-    const displayText = `You've been feeling ${message} on average.`;
-    document.getElementById('average-emotion').textContent = displayText;
+    if (message) {
+        const displayText = `${message}`;
+        document.getElementById('value').textContent = displayText;
+    } else {
+        console.error("No message found for average:", average); // Error if no message for average
+    }
 }
-
 // Simulating the function to run on page load or another trigger 296 1857
 window.onload = displayAverageEmotion;

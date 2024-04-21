@@ -11,12 +11,24 @@
     height: 100%;
 }
 
-.links img {
-    margin-left: 20px;
-    height: 50px;
-    width: auto;
-
+.links a {
+    display: inline-block; /* Allows the application of padding and margin */
+    margin: 0 10px; /* Spacing between links */
+    transition: transform 0.3s ease; /* Smooth transformation */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate link */
 }
+
+.links img {
+    width: 50px; /* Adjust width as necessary */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.links a:hover img {
+    opacity: 0.7; /* Dim the image slightly on hover */
+    transform: scale(1.1); /* Slightly increase the size */
+}
+
 
 .graph{
     display: flex;
@@ -30,8 +42,8 @@
     background: #59adf1;
     box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
     border-radius: 10px;
-    z-index: 0;
 }
+
 
 
 .main-content {
@@ -50,10 +62,10 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    bottom: 43vh;
+    bottom: 27.7vh;
     right: 26vw;
     width: 30%;
-    height: 25vh;
+    height: 27vh;
     padding: 0;
     margin: 0;
     border-radius: 8px;
@@ -84,11 +96,11 @@
     display: flex;
     position: relative;
     margin: 0;
-    top: 15vh;
+    top: 29vh;
     right: 26vw;
     width: 30%;
-    height: 30vh;
-    padding: 0;
+    height: 26vh;
+    padding-bottom: 2vh;
     background: white;
     border-radius: 8px;
     text-align: center;
@@ -120,22 +132,97 @@ background: linear-gradient(to right, #187dce, #76b9ef);
 .average-emotion {
     position: relative; /* Relative positioning for stacking */
     right: 26vw;
-    bottom: 7vh;
+    bottom: 0;
     width: 30%; /* Maintain consistent width with other articles */
     height: 20vh; /* Or adjust based on your content */
     background-color: white;
     border-radius: 8px; /* Rounded corners like other boxes */
     text-align: center; /* Center align the text */
+    justify-content: center;
     align-self: center; /* Center the box in the flex container */
-    margin-top: 0; /* Add some vertical space from the above article */
+    margin-top: 5vh; /* Add some vertical space from the above article */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent shadow with other articles */
 }
+/*
+.updates {
+    position: relative;
+    width: 55%;
+    bottom: 20vh;
+    height: 18vh;
+    left: 14.8vw;
+    margin: 0;
+    margin-inside: 0;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
+}
+ */
+.updates{
+    display: flex;
+    position: relative;
+    margin: 0;
+    left: 15vw;
+    width: 56.5%;
+    bottom: 20vh;
+    height: 18vh;
+    padding-bottom: 2vh;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    align-self: center;
+}
 
+/* Header style within the Updates article */
+.updates .box-header {
+    background: linear-gradient(to right, #187dce, #76b9ef);
+    height: 5vh;
+    margin: 0;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+.value{
+    height: 15vh;
+    align-content: center;
+
+}
+.average-value{
+    justify-content: center;
+
+
+}
+
+.average-emotion p{
+    color:  #187dce;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    justify-content: center;
+    margin-inline: 1vw;
+    text-align: center;
+}
 
 .message{
     font-family: Trebuchet MS, sans-serif;
     font-size: 28px;
 }
+
+/* Styles for the Announcements section */
+
+
+/* Content area within the Updates article */
+.updates .update-content {
+    text-align: center; /* Center aligned text for readability */
+    color: #333; /* Text color for visibility */
+    height: 4vh;
+}
+
 
 #message {
     padding: 10px;
