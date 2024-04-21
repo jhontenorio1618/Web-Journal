@@ -43,10 +43,99 @@ app.get('/home.html', (req, res) => {
         res.redirect('/login');
     }
 });
+
+
 app.get('/login', (req, res) => {
     const filePath = path.join(__dirname, '../secondary-pages/log-in.html');
     console.log('Serving log-in.html at path:', filePath);
     res.sendFile(filePath);
+});
+
+// Serve the goal-setting.html dynamically
+app.get('/goal-setting.html', (req, res) => {
+    if (req.session.firstName) {
+        const filePath = path.join(__dirname, '../secondary-pages/goal-setting.html');
+        fs.readFile(filePath, 'utf8', (err, htmlData) => {
+            if (err) {
+                res.status(500).send("Error loading page");
+                return;
+            }
+            // Replace the placeholder with the user's first name
+            const personalizedHtmlData = htmlData.replace('<!--USERNAME-->', req.session.firstName);
+            res.send(personalizedHtmlData);
+        });
+    } else {
+        res.redirect('/login');
+    }
+});
+
+// Serve the logger.html dynamically
+app.get('/logger.html', (req, res) => {
+    if (req.session.firstName) {
+        const filePath = path.join(__dirname, '../secondary-pages/logger.html');
+        fs.readFile(filePath, 'utf8', (err, htmlData) => {
+            if (err) {
+                res.status(500).send("Error loading page");
+                return;
+            }
+            // Replace the placeholder with the user's first name
+            const personalizedHtmlData = htmlData.replace('<!--USERNAME-->', req.session.firstName);
+            res.send(personalizedHtmlData);
+        });
+    } else {
+        res.redirect('/login');
+    }
+});
+
+app.get('/feedback-and-support.html', (req, res) => {
+    if (req.session.firstName) {
+        const filePath = path.join(__dirname, '../secondary-pages/feedback-and-support.html');
+        fs.readFile(filePath, 'utf8', (err, htmlData) => {
+            if (err) {
+                res.status(500).send("Error loading page");
+                return;
+            }
+            // Replace the placeholder with the user's first name
+            const personalizedHtmlData = htmlData.replace('<!--USERNAME-->', req.session.firstName);
+            res.send(personalizedHtmlData);
+        });
+    } else {
+        res.redirect('/login');
+    }
+});
+
+app.get('/security-privacy.html', (req, res) => {
+    if (req.session.firstName) {
+        const filePath = path.join(__dirname, '../secondary-pages/security-privacy.html');
+        fs.readFile(filePath, 'utf8', (err, htmlData) => {
+            if (err) {
+                res.status(500).send("Error loading page");
+                return;
+            }
+            // Replace the placeholder with the user's first name
+            const personalizedHtmlData = htmlData.replace('<!--USERNAME-->', req.session.firstName);
+            res.send(personalizedHtmlData);
+        });
+    } else {
+        res.redirect('/login');
+    }
+});
+
+app.get('/wellness-resources.html', (req, res) => {
+    if (req.session.firstName) {
+        const filePath = path.join(__dirname, '../secondary-pages/wellness-resources.html');
+        fs.readFile(filePath, 'utf8', (err, htmlData) => {
+            if (err) {
+                res.status(500).send("Error loading page");
+                return;
+            }
+            // Replace the placeholder with the user's first name
+            const personalizedHtmlData = htmlData.replace('<!--USERNAME-->', req.session.firstName);
+            res.send(personalizedHtmlData);
+        });
+    } else {
+        res.redirect('/login');
+    }
 });
 
 app.post('/submit-login', async (req, res) => {
