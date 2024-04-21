@@ -60,8 +60,11 @@
     margin-right: 19vw;
     overflow-y: auto;
     overflow-x: auto;
-}
 
+}
+.goal-list h2{
+    text-align: center;
+}
 .goal-item {
     display: flex;
     flex-direction: column;
