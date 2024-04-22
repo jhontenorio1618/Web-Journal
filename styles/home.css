@@ -39,11 +39,55 @@
     left: 50vw;
     width: 45%;
     height: 54vh;
-    background: #59adf1;
+    background: white;
     box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
     border-radius: 10px;
 }
+/*
+MAHNOOR
+ */
 
+#emotion-chart {
+    min-width: 30vh; /* Adjusted width of the graph */
+    min-height: 20vh; /* Adjusted height of the graph */
+    margin-bottom: 2vh; /* Add margin below the graph */
+}
+
+.journaling-area {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.journal-entry {
+    margin-bottom: 20px;
+}
+
+.journal-entry h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.journal-entry p {
+    margin-bottom: 10px;
+}
+
+/* Make all the words and numbers on the graph white */
+.chartjs-text {
+    fill: white !important;
+}
+
+
+
+
+/*
+MAHNOOR
+ */
 
 
 .main-content {
@@ -186,7 +230,6 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px
 }
-
 .value{
     height: 15vh;
     align-content: center;
@@ -202,15 +245,15 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     color:  #187dce;
     font-family: Trebuchet MS, sans-serif;
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 1.5vw;
     justify-content: center;
-    margin-inline: 1vw;
+    margin-inline: 1.5vw;
     text-align: center;
 }
 
 .message{
     font-family: Trebuchet MS, sans-serif;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 /* Styles for the Announcements section */
