@@ -1,7 +1,8 @@
 // Sample data for the past 7 days. Need of the API's data
-const pastWeekEmotions = [20, 19, 18, 17, 16, 15, 14];
 
 // Messages corresponding to each emotion score
+
+/*
 const emotionMessages = {
     1: "Hopeless",
     2: "Terrified",
@@ -41,3 +42,4 @@ function displayAverageEmotion() {
 }
 // Simulating the function to run on page load or another trigger 296 1857
 window.onload = displayAverageEmotion;
+*/

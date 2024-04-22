@@ -43,15 +43,20 @@
     box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
     border-radius: 10px;
 }
+.average-value .box-header{
+
+}
+
+
 /*
 MAHNOOR
  */
 
 #emotion-chart {
-    min-width: 30vh; /* Adjusted width of the graph */
-    min-height: 20vh; /* Adjusted height of the graph */
-    margin-bottom: 2vh; /* Add margin below the graph */
+    width: 43vw; /* 80% of the viewport width */
+    height: 25vh; /* 60% of the viewport height */
 }
+
 
 .journaling-area {
     margin-top: 20px;
@@ -81,8 +86,6 @@ textarea {
 .chartjs-text {
     fill: white !important;
 }
-
-
 
 
 /*
@@ -171,6 +174,12 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     box-sizing: border-box;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px
+}
+
+
+
+.box-header{
+    font-size: 12px;
 }
 
 .average-emotion {

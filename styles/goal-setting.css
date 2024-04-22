@@ -48,6 +48,7 @@
 
 .goal-list, .goal-input {
     background-color: #f9f9f9;
+    margin-bottom: 10vh;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     flex: 1;
     margin-inline: 25px;
