@@ -116,9 +116,16 @@ MAHNOOR
     padding: 0;
     margin: 0;
     border-radius: 8px;
+    color: ;
     background-color: white;
     text-align: center;
     align-self: center;
+}
+
+.daily-message p{
+    color:  #187dce;
+    font-family: Trebuchet MS, sans-serif;
+
 }
 .box-header h2 {
     margin: 0;
@@ -253,7 +260,6 @@ background: linear-gradient(to right, #187dce, #76b9ef);
 .average-emotion p{
     color:  #187dce;
     font-family: Trebuchet MS, sans-serif;
-    font-weight: bolder;
     font-size: 1.5vw;
     justify-content: center;
     margin-inline: 1.5vw;
