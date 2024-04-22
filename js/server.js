@@ -174,6 +174,9 @@ const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/Login+sig
 // Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+// Declare collection outside the connectToMongoDB function
+let collection;
+
 // Connect to the MongoDB cluster
 async function connectToMongoDB() {
     try {
@@ -184,8 +187,8 @@ async function connectToMongoDB() {
         // Specify the database to be used
         const database = client.db('Login+signup');
         
-        // Specify the collection to be used
-        const collection = database.collection('emotion');
+        // Assign the collection to the variable defined outside
+        collection = database.collection('emotion');
 
         // Now you can perform operations on the collection
         // For example:
@@ -195,8 +198,36 @@ async function connectToMongoDB() {
         console.error('Error connecting to MongoDB Atlas:', error);
     }
 }
+
 // Call the connectToMongoDB function to establish the connection
 connectToMongoDB();
+
+// Endpoint to handle emotion data submission
+app.post('/api/emotions', async (req, res) => {
+   if (req.session.userId) {
+       try {
+           // Extract emotion data from the request body
+           const { date, rating } = req.body;
+
+           // Insert the emotion data into the MongoDB collection
+           const result = await collection.insertOne({
+               userId: req.session.userId,
+               date: new Date(date), // Convert date string to Date object
+               rating: parseInt(rating) // Convert rating string to integer
+           });
+
+           // Respond with success message
+           res.status(200).send("Emotion data saved successfully");
+       } catch (error) {
+           // Handle database error
+           res.status(500).send("Error saving emotion data: " + error.message);
+       }
+   } else {
+       // User is not logged in
+       res.status(403).send("Unauthorized");
+   }
+});
+
 
 app.post('/submit-login', async (req, res) => {
    try {
