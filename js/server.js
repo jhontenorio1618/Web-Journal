@@ -156,17 +156,55 @@ app.get('/wellness-resources.html', (req, res) => {
 
 // Endpoint to get all goals for the logged-in user
 app.get('/api/goals', async (req, res) => {
-   if (req.session.userId) {
-       try {
-           const goals = await Goal.find({ userId: req.session.userId });
-           res.json(goals);
-       } catch (error) {
-           res.status(500).send("Error retrieving goals: " + error.message);
-       }
-   } else {
-       res.status(403).send("Unauthorized");
-   }
-});
+    if (req.session.userId) {
+        try {
+            const goals = await Goal.find({ userId: req.session.userId });
+            res.json(goals);
+        } catch (error) {
+            res.status(500).send("Error retrieving goals: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+ });
+ 
+ 
+ // Endpoint to add a new goal for the logged-in user
+ app.post('/api/goals', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const newGoal = new Goal({
+                userId: req.session.userId,
+                content: req.body.content
+            });
+            const savedGoal = await newGoal.save();
+            res.status(201).json(savedGoal);
+        } catch (error) {
+            res.status(500).send("Error adding goal: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+ });
+ 
+ 
+ app.delete('/api/goals/:goalId', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const goal = await Goal.findOneAndDelete({ _id: req.params.goalId, userId: req.session.userId });
+            if (goal) {
+                res.status(200).send("Goal deleted");
+            } else {
+                res.status(404).send("Goal not found");
+            }
+        } catch (error) {
+            res.status(500).send("Error deleting goal: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+ });
+ 
 
 // Connection URI
 const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/Login+signup?retryWrites=true&w=majority';
