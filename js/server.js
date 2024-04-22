@@ -169,7 +169,7 @@ app.get('/api/goals', async (req, res) => {
 });
 
 // Connection URI
-const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/login+signup?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/Login+signup?retryWrites=true&w=majority';
 
 // Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -182,7 +182,7 @@ async function connectToMongoDB() {
         console.log('Connected to MongoDB Atlas');
 
         // Specify the database to be used
-        const database = client.db('login+signup');
+        const database = client.db('Login+signup');
         
         // Specify the collection to be used
         const collection = database.collection('emotion');
