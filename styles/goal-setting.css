@@ -19,7 +19,8 @@
     gap: 10px;
 }
 
-.goal-input input[type="text"], .goal-input button {
+.goal-input input[type="text"],
+.goal-input button {
     width: 100%; /* Ensure full width to match the input field */
     height: 50px;
     padding: 15px;
@@ -46,10 +47,11 @@
     resize: vertical;
 }
 
-.goal-list, .goal-input {
+.goal-list,
+.goal-input {
     background-color: #f9f9f9;
     margin-bottom: 10vh;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     flex: 1;
     margin-inline: 25px;
     padding: 40px;
@@ -61,14 +63,18 @@
     margin-right: 19vw;
     overflow-y: auto;
     overflow-x: auto;
-
 }
-.goal-list h2{
+
+.goal-list h2 {
     text-align: center;
 }
+
+.goal-container {
+    margin-top: 2vh; /* Adjust the spacing between individual goal containers */
+}
+
 .goal-item {
     display: flex;
-    margin-top: 2vh;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -98,6 +104,3 @@
 .delete-button:hover {
     background-color: #c0392b; /* Slightly darker red on hover */
 }
-
-
-

@@ -34,17 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(goals => {
             goalList.innerHTML = ''; // Clear existing goals
             goals.forEach(goal => {
+                const goalContainer = document.createElement('div');
+                goalContainer.classList.add('goal-container');
+
                 const goalItem = document.createElement('div');
                 goalItem.classList.add('goal-item');
                 goalItem.textContent = goal.content;
-    
+
                 const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.classList.add('delete-button'); // Add this line to apply your CSS styles to the button
-            deleteButton.onclick = function() {
-                deleteGoal(goal._id);
-            };
-    
+                deleteButton.textContent = 'Delete';
+                deleteButton.classList.add('delete-button'); // Add this line to apply your CSS styles to the button
+                deleteButton.onclick = function() {
+                    deleteGoal(goal._id);
+                };
+
                 const dateSpan = document.createElement('span');
                 dateSpan.className = 'date-span';
                 const dateString = new Date(goal.createdAt).toLocaleDateString('en-US', {
@@ -52,15 +55,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     hour: '2-digit', minute: '2-digit', second: '2-digit'
                 });
                 dateSpan.textContent = ` - Posted on ${dateString}`;
-    
+
                 goalItem.appendChild(dateSpan);
                 goalItem.appendChild(deleteButton);
-                goalList.appendChild(goalItem);
+                goalContainer.appendChild(goalItem);
+                goalList.appendChild(goalContainer);
             });
         })
         .catch(error => console.error('Error:', error));
     }
-    
+
     function deleteGoal(goalId) {
         fetch(`/api/goals/${goalId}`, {
             method: 'DELETE'
