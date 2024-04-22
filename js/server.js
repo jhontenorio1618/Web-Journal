@@ -5,9 +5,7 @@ const session = require('express-session');
 const fs = require('fs');
 const { User, connectDB } = require('./login-database');
 const Goal = require('./goal');
-const { Datastore } = require('@google-cloud/datastore');
-const { GoogleAuth } = require('google-auth-library');
-const { queryEntities } = require('./api-datastore.js'); // Assuming you have this file with authentication logic
+const { MongoClient } = require('mongodb');
 
 
 const app = express();
@@ -170,87 +168,32 @@ app.get('/api/goals', async (req, res) => {
    }
 });
 
+// MongoDB connection URI
+const uri = 'mongodb://localhost:27017';
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Endpoint to add a new goal for the logged-in user
-app.post('/api/goals', async (req, res) => {
-   if (req.session.userId) {
-       try {
-           const newGoal = new Goal({
-               userId: req.session.userId,
-               content: req.body.content
-           });
-           const savedGoal = await newGoal.save();
-           res.status(201).json(savedGoal);
-       } catch (error) {
-           res.status(500).send("Error adding goal: " + error.message);
-       }
-   } else {
-       res.status(403).send("Unauthorized");
-   }
-});
-
-
-app.delete('/api/goals/:goalId', async (req, res) => {
-   if (req.session.userId) {
-       try {
-           const goal = await Goal.findOneAndDelete({ _id: req.params.goalId, userId: req.session.userId });
-           if (goal) {
-               res.status(200).send("Goal deleted");
-           } else {
-               res.status(404).send("Goal not found");
-           }
-       } catch (error) {
-           res.status(500).send("Error deleting goal: " + error.message);
-       }
-   } else {
-       res.status(403).send("Unauthorized");
-   }
-});
-
-// Add the necessary imports and configurations for Google Cloud Datastore
-const keyFilePath = path.join(__dirname, 'resolute-client-420805-b76218d69ac6.json');
-
-// Authenticate with Google Cloud Datastore API
-async function authenticate() {
-    const auth = new GoogleAuth({
-        keyFile: keyFilePath,
-        scopes: 'https://www.googleapis.com/auth/datastore',
-    });
-
-    try {
-        const client = await auth.getClient();
-        return client;
-    } catch (error) {
-        console.error('Authentication failed:', error);
-        return null;
+// Connect to MongoDB
+client.connect(function(err) {
+    if (err) {
+        console.error('Failed to connect to MongoDB:', err);
+        return;
     }
-}
+    console.log('Connected to MongoDB');
 
-const datastore = new Datastore({ projectId: 'resolute-client-420805' });
+    const db = client.db('login+signup');
+    const collection = db.collection('emotion');
 
-// API Endpoint to update emotion without authentication
-app.post('/api/update-emotion', async (req, res) => {
-   try {
-       // Assuming req.body contains the emotion data and other necessary information
-       const { userId, emotionData } = req.body;
-       
-       // Create a Datastore entity
-       const key = datastore.key(['EmotionData', userId]);
-       const entity = {
-           key: key,
-           data: {
-               userId: userId,
-               emotionData: emotionData
-           }
-       };
-
-       // Save the entity
-       await datastore.save(entity);
-       
-       res.status(200).send("Emotion data updated successfully");
-   } catch (error) {
-       res.status(500).send("Error updating emotion data: " + error.message);
-   }
+    // Endpoint to save emotion data
+    app.post('/api/emotions', async (req, res) => {
+        try {
+            const { date, rating } = req.body;
+            const result = await collection.insertOne({ date: date, rating: rating });
+            res.status(201).json({ message: 'Emotion data saved successfully', id: result.insertedId });
+        } catch (error) {
+            console.error('Error saving emotion data:', error);
+            res.status(500).json({ error: 'Failed to save emotion data' });
+        }
+    });
 });
 
 app.post('/submit-login', async (req, res) => {

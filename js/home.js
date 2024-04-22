@@ -1,3 +1,4 @@
+// Function to display journal entry
 function displayJournalEntry(entry) {
     const entryContainer = document.getElementById('past_entries');
     const entryElement = document.createElement('div');
@@ -6,6 +7,7 @@ function displayJournalEntry(entry) {
     entryContainer.prepend(entryElement);
 }
 
+// Function to display message of the day
 function showMessage() {
     const emotionalAcceptanceMessages = [
         "\"Accepting your emotions means allowing yourself to be vulnerable. In vulnerability, there is a strength that comes from being honest about how you truly feel.\"",
@@ -17,16 +19,41 @@ function showMessage() {
         "\"You cannot heal what you do not acknowledge. Accepting your emotions is the first step towards healing and improving your emotional wellbeing.\""
     ];
 
-
     const today = new Date();
     const dayOfYear = (Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) - Date.UTC(today.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
-    // Cycle through messages based on the day of the year
+    
+    // Display message of the day based on the day of the year
     document.getElementById('message').textContent = emotionalAcceptanceMessages[dayOfYear % emotionalAcceptanceMessages.length];
 }
 
-document.addEventListener('DOMContentLoaded', showMessage); // This will run the function when the page loads
+// Add event listener to the form for emotion submission
+document.getElementById('emotion-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const date = document.getElementById('emotion-date').value;
+    const rating = document.getElementById('emotion-rating').value;
+    const data = { date: date, rating: rating };
 
+    try {
+        const response = await fetch('/api/emotions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            console.log('Emotion data saved successfully');
+            // You can optionally update the UI here if needed
+        } else {
+            console.error('Failed to save emotion data:', response.statusText);
+            // Handle errors or display error messages to the user
+        }
+    } catch (error) {
+        console.error('Error saving emotion data:', error.message);
+        // Handle errors or display error messages to the user
+    }
+});
 
-
-
-
+// Run the showMessage function when the page loads
+document.addEventListener('DOMContentLoaded', showMessage);
