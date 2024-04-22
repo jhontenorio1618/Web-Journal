@@ -68,6 +68,7 @@
 }
 .goal-item {
     display: flex;
+    margin-top: 2vh;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
