@@ -229,6 +229,8 @@ app.delete('/api/goals/:goalId', async (req, res) => {
        res.status(403).send("Unauthorized");
    }
 });
+
+
 // Endpoint to retrieve emotions for the logged-in user
 app.get('/api/emotions', async (req, res) => {
    if (req.session.userId) {
@@ -249,24 +251,42 @@ app.get('/api/emotions', async (req, res) => {
 
 
 app.post('/api/emotions', async (req, res) => {
-   if (req.session.userId) {
-       try {
-           const newEmotion = new Emotion({
-               userId: req.session.userId,
-               date: new Date(req.body.date), // Ensure date is correctly formatted
-               emotion: parseInt(req.body.rating) // Parse emotion as an integer
-               // include other fields if necessary
-           });
-           await newEmotion.save();
-           res.status(201).send(newEmotion);
-       } catch (error) {
-           console.error('Error adding emotion:', error);
-           res.status(500).send("Error adding emotion: " + error.message);
-       }
-   } else {
-       res.status(403).send("Unauthorized");
-   }
+    if (req.session.userId) {
+        try {
+            const newEmotion = new Emotion({
+                userId: req.session.userId,
+                emotion: req.body.emotion,
+                date: new Date(req.body.date),
+                notes: req.body.notes
+            });
+            const savedEmotion = await newEmotion.save();
+            res.status(201).json(savedEmotion);
+        } catch (error) {
+            res.status(500).send("Error adding emotion: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
 });
+
+app.delete('/api/emotions/:emotionId', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const result = await Emotion.deleteOne({ _id: req.params.emotionId, userId: req.session.userId });
+            if (result.deletedCount === 1) {
+                res.status(200).send("Emotion deleted successfully");
+            } else {
+                res.status(404).send("Emotion not found");
+            }
+        } catch (error) {
+            res.status(500).send("Error deleting emotion: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+});
+
+
 app.get('/api/emotions/current-week', async (req, res) => {
    if (req.session.userId) {
        const startOfWeek = new Date();
