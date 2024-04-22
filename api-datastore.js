@@ -21,8 +21,8 @@ async function authenticate() {
     }
 }
 
-// Example usage: Query entities from Cloud Datastore
-async function queryEntities() {
+// Update emotion in Cloud Datastore
+async function updateEmotion(date, rating) {
     const client = await authenticate();
     if (!client) {
         console.error('Failed to authenticate.');
@@ -30,32 +30,28 @@ async function queryEntities() {
     }
 
     const datastore = new Datastore({ projectId: 'resolute-client-420805', auth: client });
-    const query = datastore.createQuery('YourData');
-    const [entities] = await datastore.runQuery(query);
-    console.log('Entities:', entities);
+
+    const kind = 'Emotion'; // Change this to your entity kind
+    const entityKey = datastore.key(kind);
+
+    const entity = {
+        key: entityKey,
+        data: {
+            date: date,
+            rating: rating
+        },
+    };
+
+    try {
+        await datastore.save(entity);
+        console.log('Emotion updated successfully:', entity);
+        return entity;
+    } catch (error) {
+        console.error('Error updating emotion:', error);
+        return null;
+    }
 }
 
-// Export the function to query entities
 module.exports = {
-    queryEntities
+    updateEmotion
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

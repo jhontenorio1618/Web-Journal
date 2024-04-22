@@ -10,6 +10,7 @@
 </head>
 <body>
 
+
 <header>
     <aside class="page-title">Blue.</aside>
     <section class="dash-center">
@@ -31,6 +32,7 @@
     </section>
 </header>
 
+
 <aside class="navigation">
     <nav>
         <ul>
@@ -39,10 +41,11 @@
             <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
             <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
             <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
-            <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
+            <li><a href="../secondary-pages/resources.html">Wellness Resources</a></li>
         </ul>
     </nav>
 </aside>
+
 
 <main class="main-content">
     <article class="last-goal">
@@ -51,10 +54,12 @@
         </div>
         <div class="goal-content">
             <p class="goal" id="last-goal">
-                <!-- Dynamic content for the latest goal will be loaded here -->
+
+
             </p>
         </div>
     </article>
+
 
     <article class="daily-message">
         <div class="box-header">
@@ -67,6 +72,7 @@
         </div>
         <script src="../js/home.js"></script>
     </article>
+
 
     <article class="graph">
         <div class="dash-board">
@@ -95,7 +101,9 @@
         <!-- <canvas id="emotion_chart" width="100" height="100"></canvas>  -->
         <canvas id="emotion_chart" width="100" height="100"></canvas>
 
+
     </article>
+
 
     <article class="average-emotion">
         <div class="box-header">
@@ -107,6 +115,7 @@
             </p>
         </div>
     </article>
+
 
     <article class="updates">
         <div class="box-header">
@@ -120,9 +129,32 @@
     </article>
 </main>
 
-<script src="../api-datastore.js"></script>
+
+<script src="../js/api-datastore.js"></script>
 <script src="../js/home.js"></script>
 <script src="../js/graph.js"></script>
+
+<script>
+    // JavaScript handling for emotion update
+    document.getElementById('emotion-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get emotion data
+        const date = document.getElementById('emotion-date').value;
+        const rating = document.getElementById('emotion-rating').value;
+
+        // Call updateEmotion function from api-datastore.js
+        updateEmotion(date, rating)
+            .then(response => {
+                console.log('Emotion updated successfully:', response);
+                // Update UI or perform any other action as needed
+            })
+            .catch(error => {
+                console.error('Error updating emotion:', error);
+                // Handle error scenario
+            });
+    });
+</script>
 </body>
 </html>
 
