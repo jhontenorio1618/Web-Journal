@@ -1,8 +1,10 @@
 /* logger.css */
 
+
 body {
     padding-bottom: 50vh;
 }
+
 
 .emotion-logger {
     background-color: #ffffff;
@@ -18,10 +20,13 @@ body {
 }
 
 
+
+
 .emotion-logger h2 {
     text-align: center;
     color: #333;
 }
+
 
 .emotion-logger form {
     display: grid;
@@ -30,10 +35,12 @@ body {
     padding: 20px;
 }
 
+
 .emotion-logger label {
     margin-bottom: 5px;
     font-weight: bold;
 }
+
 
 .emotion-logger input[type="date"],
 .emotion-logger select,
@@ -42,6 +49,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 
 .emotion-logger button {
     background-color: #187dce;
@@ -53,9 +61,11 @@ body {
     transition: background-color 0.3s;
 }
 
+
 .emotion-logger button:hover {
     background-color: #105a94;
 }
+
 
 /* New styles for emotion containers */
 .emotion-container {
@@ -66,6 +76,12 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: calc(20% - 20px); /* Limit each emotion container to 20% of the container width (minus margin) */
 }
+
+
+.delete-button {
+    /* Add or adjust styles for delete button */
+}
+
 
 .submission-box {
     display: flex;
@@ -83,10 +99,10 @@ body {
     overflow-y: auto; /* Add vertical scrollbar when emotions overflow */
 }
 
-.submission-box h2{
-    text-align: center;
-    width: 100%;
-    margin-top: 4vh;
 
-}
+
+
+
+
+
 
