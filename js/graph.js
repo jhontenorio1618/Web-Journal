@@ -1,30 +1,24 @@
 const ctx = document.getElementById('emotion-chart').getContext('2d');
-const canvas = document.getElementById('emotion-chart');
+const emotionChartCanvas = document.getElementById('emotion-chart');
 
-// Set the width and height of the canvas element
-canvas.width = 600; // Set width to 600 pixels
-canvas.height = 400; // Set height to 400 pixels
+// Set the width and height of the canvas element using vw and vh units
+emotionChartCanvas.style.width = '40vw'; // 80% of viewport width
+emotionChartCanvas.style.height = '35vh'; // 50% of viewport height
 
 const emotionChart = new Chart(ctx, {
-    type: 'scatter', // Change chart type to scatter plot
+    type: 'line',
     data: {
+        labels: [],
         datasets: [{
             label: 'Emotion Level',
             data: [], // Sample data, replace with actual emotion levels
-            borderColor: 'rgba(255, 159, 64, 1)', // Orange color for all emotions
-            backgroundColor: 'rgba(255, 159, 64, 0.5)', // Semi-transparent fill color
+            borderColor: 'blue', // Line color
+            backgroundColor: 'rgba(0, 0, 255, 0.2)', // Fill color (blue with 20% opacity)
             borderWidth: 1
         }]
     },
     options: {
         scales: {
-            x: {
-                type: 'time', // Use time scale for x-axis
-                time: {
-                    unit: 'day' // Display data by day
-                },
-                beginAtZero: true
-            },
             y: {
                 beginAtZero: true,
                 suggestedMax: 10 // Assuming the emotion level is rated on a scale of 0 to 10
@@ -33,10 +27,6 @@ const emotionChart = new Chart(ctx, {
         plugins: {
             legend: {
                 display: false // Hide legend
-            },
-            title: {
-                display: true,
-                text: 'Emotion Chart' // Chart title
             }
         }
     }
@@ -47,9 +37,11 @@ document.getElementById('emotion-form').addEventListener('submit', function(even
     event.preventDefault();
     const date = document.getElementById('emotion-date').value;
     const rating = document.getElementById('emotion-rating').value;
+
     // Update data in the chart
-    emotionChart.data.datasets[0].data.push({ x: new Date(date), y: parseInt(rating) });
-    emotionChart.update();
+    emotionChart.data.labels.push(date); // Push date to labels array
+    emotionChart.data.datasets[0].data.push(parseInt(rating)); // Push rating to data array
+    emotionChart.update(); // Update the chart
 });
 
 // Initialize Datepicker
