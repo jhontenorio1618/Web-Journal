@@ -1,6 +1,10 @@
+/* logger.css */
+
+
 body {
     padding-bottom: 50vh;
 }
+
 
 .emotion-logger {
     background-color: #ffffff;
@@ -15,10 +19,14 @@ body {
     right: 9vw;
 }
 
+
+
+
 .emotion-logger h2 {
     text-align: center;
     color: #333;
 }
+
 
 .emotion-logger form {
     display: grid;
@@ -27,10 +35,12 @@ body {
     padding: 20px;
 }
 
+
 .emotion-logger label {
     margin-bottom: 5px;
     font-weight: bold;
 }
+
 
 .emotion-logger input[type="date"],
 .emotion-logger select,
@@ -39,6 +49,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 
 .emotion-logger button {
     background-color: #187dce;
@@ -50,29 +61,67 @@ body {
     transition: background-color 0.3s;
 }
 
+
 .emotion-logger button:hover {
     background-color: #105a94;
 }
 
-.submission-box {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    overflow-y: auto;
-    max-height: calc(100vh - 250px); /* Adjust as needed */
-}
 
+/* New styles for emotion containers */
 .emotion-container {
     background-color: #f9f9f9;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: calc(20% - 20px); /* Limit each emotion container to 20% of the container width (minus margin) */
 }
 
-.scrollable {
-    overflow-y: auto;
+
+.delete-button {
+    background-color: #ff4d4d; /* Red color for delete actions */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem; /* Smaller font size for button text */
+    line-height: 1.5;
+    margin: 3px; /* Spacing around the button */
+    vertical-align: middle;
+}
+
+.delete-button:hover {
+    background-color: #cc0000; /* Darker shade of red on hover */
+}
+
+.delete-button:focus {
+    outline: none; /* Removes the outline to keep the design clean */
+    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.5); /* Adds a subtle shadow to indicate focus */
+}
+
+.delete-button:active {
+    background-color: #990000; /* Even darker shade of red to simulate the button being pressed */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for pressed effect */
+}
+
+
+.submission-box {
+    display: flex;
+    flex-wrap: wrap; /* Allow emotions to wrap to new lines */
+    gap: 20px; /* Add some space between emotion containers */
+    position: relative;
+    bottom: 15vh;
+    right: 20vw;
+    height: 50vh;
+    padding-bottom: 7vh;
+    width: 32%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Add vertical scrollbar when emotions overflow */
 }

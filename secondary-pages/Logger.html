@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <header>
     <aside class="page-title">
         Blue.
@@ -32,12 +33,13 @@
     </section>
 </header>
 
+
 <aside class="navigation">
     <nav>
         <ul>
             <li><a href="../MainPages/home.html">Home</a></li>
             <li><a href="../secondary-pages/goal-setting.html">Goal Setting</a></li>
-            <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
+            <li><a href="../secondary-pages/logger.html">Log Emotions</a></li>
             <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
             <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
             <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
@@ -45,13 +47,14 @@
     </nav>
 </aside>
 
+
 <main class="main-content">
     <section class="emotion-logger">
         <h2>Log Your Emotions</h2>
         <form id="emotion-form">
             <label for="emotion">Emotion:</label>
             <select id="emotion" name="emotion">
-                <!-- Options for emotions -->
+                <!-- Options here -->
             </select>
             <label for="date">Date:</label>
             <input type="date" id="date" name="date">
@@ -62,15 +65,12 @@
     </section>
     <section id="submission-box" class="submission-box">
         <h2>Logged Emotions</h2>
-        <div class="emotion-container">
-            <!-- Emotions fetched from the server will be displayed here -->
-            <!-- Each emotion container includes a delete button -->
-            <!-- Repeat the structure for each logged emotion -->
-        </div>
+        <!-- Emotions fetched from the server will be displayed here -->
+        <!-- Logged emotions will be appended here dynamically -->
     </section>
 </main>
+
 
 <script src="../js/logger.js"></script>
 </body>
 </html>
-
