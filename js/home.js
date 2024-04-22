@@ -26,34 +26,89 @@ function showMessage() {
     document.getElementById('message').textContent = emotionalAcceptanceMessages[dayOfYear % emotionalAcceptanceMessages.length];
 }
 
+
+
 // Add event listener to the form for emotion submission
 document.getElementById('emotion-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const date = document.getElementById('emotion-date').value;
-    const rating = document.getElementById('emotion-rating').value;
+    const rating = parseInt(document.getElementById('emotion-rating').value, 10);
     const data = { date: date, rating: rating };
 
-    try {
-        const response = await fetch('/api/emotions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        
-        if (response.ok) {
-            console.log('Emotion data saved successfully');
-            // You can optionally update the UI here if needed
-        } else {
-            console.error('Failed to save emotion data:', response.statusText);
-            // Handle errors or display error messages to the user
-        }
-    } catch (error) {
-        console.error('Error saving emotion data:', error.message);
-        // Handle errors or display error messages to the user
+    const response = await fetch('/api/emotions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+        // Refresh the graph with the new data
+        fetchAndInitializeEmotions();
+    } else {
+        // Error handling
+        console.error('Failed to save emotion data:', response.statusText);
     }
 });
 
+function updateGraphWithNewData(data) {
+    // Clear existing data
+    emotionChart.data.labels = [];
+    emotionChart.data.datasets.forEach((dataset) => {
+        dataset.data = [];
+    });
+
+    // Add new data
+    data.forEach((emotionEntry) => {
+        emotionChart.data.labels.push(new Date(emotionEntry.date).toLocaleDateString());
+        emotionChart.data.datasets[0].data.push(emotionEntry.emotion);
+    });
+
+    emotionChart.update();
+
+    // Update the average emotion display
+    const average = calculateAverage(emotionChart.data.datasets[0].data);
+    const averageEmotion = mapEmotion(average);
+    document.getElementById('value').textContent = `On average, you've been feeling ${averageEmotion}.`;
+}
+
+function resetGraphForNewWeek() {
+    emotionChart.data.labels = [];
+    emotionChart.data.datasets.forEach((dataset) => {
+        dataset.data = [];
+    });
+    emotionChart.update();
+
+    // You may also want to reset the average display
+    document.getElementById('value').textContent = 'No data for this week yet.';
+}
+
+// Function to fetch and render weekly emotions
+async function fetchAndRenderWeeklyEmotions() {
+    const response = await fetch('/api/emotions/current-week');
+    if (response.ok) {
+        const weeklyEmotions = await response.json();
+        updateGraphWithNewData(weeklyEmotions);
+    } else {
+        console.error('Failed to fetch weekly emotions:', response.statusText);
+    }
+}
+
 // Run the showMessage function when the page loads
-document.addEventListener('DOMContentLoaded', showMessage);
+document.addEventListener('DOMContentLoaded', function() {
+    showMessage();
+    fetchAndRenderWeeklyEmotions(); // Fetch weekly emotions and update the graph
+});
+
+// This function is called periodically to check if a new week has started and reset the graph if it has
+function checkAndResetForNewWeek() {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    if (dayOfWeek === 0) { // Assuming you want to reset on Sunday
+        resetGraphForNewWeek();
+    }
+}
+
+// Set up an interval to check for a new week
+setInterval(checkAndResetForNewWeek, 86400000); // Check every day (86400000 milliseconds in a day)

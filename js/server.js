@@ -205,6 +205,7 @@ app.get('/api/goals', async (req, res) => {
     }
  });
  
+<<<<<<< HEAD
 
 // Connection URI
 const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/Login+signup?retryWrites=true&w=majority';
@@ -264,6 +265,61 @@ app.post('/api/emotions', async (req, res) => {
        // User is not logged in
        res.status(403).send("Unauthorized");
    }
+=======
+// Endpoint to retrieve emotions for the logged-in user
+app.get('/api/emotions', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const emotions = await Emotion.find({ userId: req.session.userId });
+            res.json(emotions);
+        } catch (error) {
+            res.status(500).send("Error retrieving emotions: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+});
+
+
+
+app.post('/api/emotions', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const newEmotion = new Emotion({
+                userId: req.session.userId,
+                date: new Date(req.body.date), // Ensure date is correctly formatted
+                emotion: parseInt(req.body.rating) // Parse emotion as an integer
+                // include other fields if necessary
+            });
+            await newEmotion.save();
+            res.status(201).send(newEmotion);
+        } catch (error) {
+            console.error('Error adding emotion:', error);
+            res.status(500).send("Error adding emotion: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+});
+app.get('/api/emotions/current-week', async (req, res) => {
+    if (req.session.userId) {
+        const startOfWeek = new Date();
+        startOfWeek.setHours(0, 0, 0, 0);
+        startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay()); // Adjust for local time if needed
+
+        try {
+            const weeklyEmotions = await Emotion.find({
+                userId: req.session.userId,
+                date: { $gte: startOfWeek }
+            });
+            res.json(weeklyEmotions);
+        } catch (error) {
+            res.status(500).send("Error retrieving current week's emotions: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+>>>>>>> 392c6dc (new change)
 });
 
 

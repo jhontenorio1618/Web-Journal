@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+
+
+const emotionMessages = {
+   1: "Absolutely Devastated",
+   2: "Very Sad",
+   3: "Sad",
+   4: "Neutral",
+    5:"Content",
+   6: "Happy",
+   7: "Excited",
+    8:"Very Excited",
+    9:"Ecstatic",
+    10:"Absolutely Ecstatic"
+};
+
+
+>>>>>>> 392c6dc (new change)
 document.addEventListener('DOMContentLoaded', function() {
     const emotionForm = document.getElementById('emotion-form');
     const submissionBox = document.querySelector('.submission-box');
