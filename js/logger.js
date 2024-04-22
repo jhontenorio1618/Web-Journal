@@ -56,19 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const submissionBox = document.getElementById('submission-box');
             submissionBox.innerHTML = ''; // Clear the submission box
             emotions.forEach(emotionData => {
-                const emotionDiv = document.createElement('div');
-                emotionDiv.classList.add('emotion-entry');
-    
+                const emotionContainer = document.createElement('div');
+                emotionContainer.classList.add('emotion-container');
+        
                 const emotionText = document.createElement('div');
                 emotionText.textContent = `${emotionMessages[emotionData.emotion] || 'Emotion'} recorded on ${new Date(emotionData.date).toLocaleDateString()}`;
-    
+        
                 const emotionNote = document.createElement('div');
                 emotionNote.textContent = `Note: ${emotionData.notes}`;
-    
-                emotionDiv.appendChild(emotionText);
-                emotionDiv.appendChild(emotionNote);
-    
-                submissionBox.appendChild(emotionDiv);
+        
+                emotionContainer.appendChild(emotionText);
+                emotionContainer.appendChild(emotionNote);
+        
+                submissionBox.appendChild(emotionContainer);
             });
         })
         .catch(error => console.error('Error:', error));

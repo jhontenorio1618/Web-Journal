@@ -55,6 +55,15 @@ body{
     background-color: #105a94;
 }
 
+.emotion-container {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
 .submission-box{
     display: flex;
     position: relative;
