@@ -81,4 +81,22 @@
     font-size: 0.85em;
 }
 
+/* Style for the delete button */
+.delete-button {
+    padding: 10px 15px;
+    margin-top: 1em;
+    background-color: #e74c3c; /* Red color for deletion actions */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b; /* Slightly darker red on hover */
+}
+
+
 
