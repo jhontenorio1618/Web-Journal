@@ -5,6 +5,11 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-image: url("../images/calm-blue.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the entire container */
 }
 
 
@@ -13,7 +18,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 50px;
     box-sizing: border-box;
-    background: #fff;
+    background: lightskyblue;
+    border: 1px solid pink; /* Border color set to pink */
+    font-family: "Roboto Thin", fantasy; /* Set font family for the centered content */
 }
 
 
@@ -21,16 +28,21 @@
     text-align: center;
     font-size: 34px;
     margin-bottom: 20px;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the titles */
 }
 
 
 .register-form .form-group {
     margin-bottom: 15px;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the form groups */
 }
+
 
 .register-form label {
     display: block;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the labels */
 }
+
 
 .register-form input[type="text"],
 .register-form input[type="password"],
@@ -38,17 +50,21 @@
     width: 96%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: none;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the form inputs */
 }
+
 
 .register-form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: pink;
     color: white;
     border: none;
     cursor: pointer;
+    font-family: "Roboto Thin", fantasy; /* Set font family for the button */
 }
+
 
 .register-form button:hover {
     background-color: #0056b3;

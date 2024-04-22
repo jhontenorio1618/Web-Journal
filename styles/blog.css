@@ -1,21 +1,27 @@
 header {
-    background-color: #121212;
+    background-color: cornflowerblue;
     color: #fff;
     display: flex;
     width: 100%;
     font-size: 30px;
-
     text-align: center;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+
+header h1 {
+    color: white; /* Change the color of the header text to white */
+    font-family: "Roboto Thin", fantasy;
 }
 .emoji {
     position: absolute;
     animation: move 3s infinite;
 }
 
+
 body {
-    background-image: url("../images/styled-bg.jpg");
+    background-image: url("../images/bg-circles.webp");
     margin: 0;
     padding: 0;
     background-position: center;
@@ -23,7 +29,10 @@ body {
     background-size: cover;
     height: 10vh;
     z-index: 1000;
-}
+    font-size: 65px; /* Change the font size to 65px for all text */
+}  /* Remove individual font-size settings from other selectors */
+
+
 
 
 .container {
@@ -34,32 +43,46 @@ body {
     min-height: 100vh;
 }
 
+
 .values {
     font-size: 20px;
     padding: 20px;
     text-align: center;
 }
 
+
 .grid-container {
     display: grid;
-
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 }
 
-.grid-item {
-    background-color: #121212;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    color: white;
-    width: 100%;
-    font-size: 24px;
-    padding-bottom: 4vh;
 
+.grid-item:nth-child(1) {
+    background-color: cornflowerblue; /* cornflowerblue */
+    color: white; /* Change the color of the header text to white */
+    font-family: "Roboto Thin", fantasy;
 }
+
+
+.grid-item:nth-child(2) {
+    background-color: cornflowerblue;
+    color: white; /* Change the color of the header text to white */
+    font-family: "Roboto Thin", fantasy;
+}
+
+
+.grid-item:nth-child(3) {
+    background-color: cornflowerblue; /* cornflowerblue */
+    color: white; /* Change the color of the header text to white */
+    font-family: "Roboto Thin", fantasy;
+}
+
 
 h1 {
     text-align: center;
     margin-top: 20px;
     font-size: 70px;
     color: white;
+    font-family: "Roboto Thin", fantasy;
 }

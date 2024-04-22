@@ -2,101 +2,132 @@ html, body {
     margin: 0;
     overflow-x: hidden;
     padding-bottom: 100px;
-    background-color: #121212;
+    background-color: cornflowerblue;
 }
+
 
 .container {
     display: flex;
-    background-color: #121212;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;  /* This should stretch the container to at least the height of the viewport */
+    min-height: 100vh;
+    background-color: cornflowerblue;
 }
+
 
 .upper_body {
-    display: flex;
-    position: relative;
-    background-image: url("../images/styled-bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: white;
     height: 420px;
     width: 100%;
-    margin: 0;
-    z-index: 100;
+    background-color: cornflowerblue;
 }
 
 
-
-.values {
-    color: white;
-    font-size: 30px;
-    position: relative;
-    top: 50px;
-    left: 100px;
-    align-self: flex-start;
+.header-container {
+    position: relative; /* Added this line */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 5vh;
+    padding: 3vw;
+    border: 2px solid white;
+    background-color: lightblue;
 }
+
+
+.header-container .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.who-we-are-title {
+    font-size: 200px;
+    font-family: "Roboto Thin", fantasy;
+    text-align: left;
+    margin: 0 0 20px 0; /* Adjust bottom margin to create space */
+    color: white; /* Make the font color white */
+}
+
+
+.header-main-text {
+    font-size: 80px;
+    font-family: "Roboto Thin", fantasy;
+    text-align: center;
+    width: 100%; /* Allows content to center properly */
+    margin-bottom: 20px; /* Adjust bottom margin to create space */
+    color: white; /* Make the font color white */
+}
+.team-blue {
+    text-align: right; /* Aligns the text to the right */
+    font-size: 200px; /* Size of the font */
+    font-family: "Roboto Thin", fantasy;
+    margin: 0; /* Ensures no additional space around the element */
+    padding: 0; /* Ensures padding does not affect alignment */
+    width: 100%; /* Ensures the element spans the full width */
+    align-self: flex-end; /* Aligns this item to the end of the container's cross axis */
+    color: white; /* Make the font color white */
+}
+
+
+.blue {
+    color: royalblue; /* Make the word "Blue" royalblue */
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed to flex-start to prevent stretching */
+    min-height: 100vh;
+    padding-bottom: 100px; /* Added padding to push up the content */
+    background-color: cornflowerblue;
+}
+
 
 .lower_body {
     display: flex;
-    justify-content: center;
-    margin-top: 18vh;
-    grid-template-columns: repeat(3, 350px);
-    align-items: center;
-    gap: 8vw;
-    background-color: #121212;
+    justify-content: space-around; /* Keep space around the items */
+    align-items: center; /* Align items vertically in the center */
+    margin-top: 18vh; /* Keep the original top margin */
+    gap: 8vw; /* Maintain the gap between articles */
+    padding-bottom: 100px; /* Add padding at the bottom to prevent touching the bottom area */
+    width: 100%; /* Ensure the lower_body takes full width */
+    background-color: cornflowerblue; /* Maintain the background color */
 }
 
-.lower_body .left-container,
-.lower_body .middle-container,
-.lower_body .right-container {
-    margin: 0;
-    color: black;
-    width: 20vw;
-    height: 40vh;
-    background-color: white;
-    font-family:Trebuchet MS sans-serif; ;
+
+.lower_body article {
+    color: royalblue;
+    width: 20vw; /* Adjust the width as necessary to fit side by side */
+    height: 40vh; /* Maintain the height */
+    background-image: url("../images/calm-blue.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: "Roboto Thin", fantasy;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 25px;
+    font-size: 1.2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     line-height: 2;
-    padding: 3vw;
-
-}
-
-.lower_body .left-container p {
-    margin-bottom: 10px;
+    padding: 3vw; /* Maintain the padding */
+    margin-bottom: 0; /* Remove any margin-bottom that pushes the articles down */
 }
 
 
-.dashboard-title{
-    font-size: 50px;
-    font-family:Trebuchet MS sans-serif;
-}
 .blue-text {
-    color: #1792ec;
-    font-size: 36px;
+    color: royalblue;
+    font-size: 96px;
     text-align: center;
 }
 
-.vertical_rl {
-    display: flex;
-    font-family: "Roboto Thin", fantasy;
-    flex-direction: column;
-    writing-mode: sideways-rl;
-    margin-left: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-}
 
-.vertical_rl p {
-    color: white;
-    font-size: 26px;
-    line-height: 1.5;
+.big-font {
+    font-size: 100px;
 }
-
