@@ -5,6 +5,9 @@ const session = require('express-session');
 const fs = require('fs');
 const { User, connectDB } = require('./login-database');
 const Goal = require('./goal');
+const { Datastore } = require('@google-cloud/datastore');
+const { GoogleAuth } = require('google-auth-library');
+const { queryEntities } = require('./api-datastore.js'); // Assuming you have this file with authentication logic
 
 
 const app = express();
@@ -204,6 +207,51 @@ app.delete('/api/goals/:goalId', async (req, res) => {
    }
 });
 
+// Add the necessary imports and configurations for Google Cloud Datastore
+const keyFilePath = path.join(__dirname, 'resolute-client-420805-b76218d69ac6.json');
+
+// Authenticate with Google Cloud Datastore API
+async function authenticate() {
+    const auth = new GoogleAuth({
+        keyFile: keyFilePath,
+        scopes: 'https://www.googleapis.com/auth/datastore',
+    });
+
+    try {
+        const client = await auth.getClient();
+        return client;
+    } catch (error) {
+        console.error('Authentication failed:', error);
+        return null;
+    }
+}
+
+const datastore = new Datastore({ projectId: 'resolute-client-420805' });
+
+// API Endpoint to update emotion without authentication
+app.post('/api/update-emotion', async (req, res) => {
+   try {
+       // Assuming req.body contains the emotion data and other necessary information
+       const { userId, emotionData } = req.body;
+       
+       // Create a Datastore entity
+       const key = datastore.key(['EmotionData', userId]);
+       const entity = {
+           key: key,
+           data: {
+               userId: userId,
+               emotionData: emotionData
+           }
+       };
+
+       // Save the entity
+       await datastore.save(entity);
+       
+       res.status(200).send("Emotion data updated successfully");
+   } catch (error) {
+       res.status(500).send("Error updating emotion data: " + error.message);
+   }
+});
 
 app.post('/submit-login', async (req, res) => {
    try {
@@ -246,8 +294,5 @@ app.post('/submit-registration', async (req, res) => {
        res.status(500).send("Registration failed: " + error.message);
    }
 });
-
-
-
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

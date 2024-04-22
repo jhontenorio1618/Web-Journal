@@ -2,8 +2,10 @@ const { GoogleAuth } = require('google-auth-library');
 const { Datastore } = require('@google-cloud/datastore');
 const path = require('path');
 
+
 // Construct the relative path to the JSON key file
 const keyFilePath = path.join(__dirname, 'resolute-client-420805-b76218d69ac6.json');
+
 
 // Authenticate with Google Cloud Datastore API
 async function authenticate() {
@@ -11,6 +13,7 @@ async function authenticate() {
         keyFile: keyFilePath,
         scopes: 'https://www.googleapis.com/auth/datastore',
     });
+
 
     try {
         const client = await auth.getClient();
@@ -21,6 +24,7 @@ async function authenticate() {
     }
 }
 
+
 // Update emotion in Cloud Datastore
 async function updateEmotion(date, rating) {
     const client = await authenticate();
@@ -29,10 +33,13 @@ async function updateEmotion(date, rating) {
         return;
     }
 
+
     const datastore = new Datastore({ projectId: 'resolute-client-420805', auth: client });
+
 
     const kind = 'Emotion'; // Change this to your entity kind
     const entityKey = datastore.key(kind);
+
 
     const entity = {
         key: entityKey,
@@ -41,6 +48,7 @@ async function updateEmotion(date, rating) {
             rating: rating
         },
     };
+
 
     try {
         await datastore.save(entity);
@@ -52,6 +60,17 @@ async function updateEmotion(date, rating) {
     }
 }
 
+
 module.exports = {
     updateEmotion
 };
+
+
+
+
+
+
+
+
+
+
