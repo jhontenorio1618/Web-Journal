@@ -125,9 +125,9 @@
         event.preventDefault();
         const date = document.getElementById('emotion-date').value;
         const rating = document.getElementById('emotion-rating').value;
-    
+
         const data = { date: date, rating: rating };
-    
+
         try {
             const response = await fetch('http://127.0.0.1:8080/api/emotions', { // <-- Update this URL
                 method: 'POST',
@@ -136,7 +136,7 @@
                 },
                 body: JSON.stringify(data)
             });
-            
+
             if (response.ok) {
                 console.log('Emotion data saved successfully');
             } else {

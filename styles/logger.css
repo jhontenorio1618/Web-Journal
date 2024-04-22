@@ -1,14 +1,18 @@
+body{
+    padding-bottom: 50vh;
+}
+
 .emotion-logger {
     background-color: #ffffff;
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
-    position: absolute;
-    top: 2vh;
-    left: 3vw;
+    position: relative;
+    bottom: 15vh;
+    right: 9vw;
 }
 
 
@@ -50,15 +54,18 @@
 .emotion-logger button:hover {
     background-color: #105a94;
 }
-.submission-box{
 
+.submission-box{
     display: flex;
     position: relative;
-    margin-top: 34vh;
-    right: 16vw;
-    height: 29vh;
-    width: 62%;
+    margin-top: 0;
+    bottom: 15vh;
+    right: 20vw;
+    height: 50vh;
+    padding-bottom: 7vh;
+    width: 32%;
     border-radius: 8px;
     background-color: #ffffff;
+
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
