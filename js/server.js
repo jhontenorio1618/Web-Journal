@@ -5,6 +5,7 @@ const session = require('express-session');
 const fs = require('fs');
 const { User, connectDB } = require('./login-database');
 const Goal = require('./goal');
+const Emotion = require('./emotion');
 const { MongoClient } = require('mongodb');
 
 
@@ -240,30 +241,38 @@ async function connectToMongoDB() {
 // Call the connectToMongoDB function to establish the connection
 connectToMongoDB();
 
-// Endpoint to handle emotion data submission
+// Endpoint to retrieve emotions for the logged-in user
+app.get('/api/emotions', async (req, res) => {
+    if (req.session.userId) {
+        try {
+            const emotions = await Emotion.find({ userId: req.session.userId });
+            res.json(emotions);
+        } catch (error) {
+            res.status(500).send("Error retrieving emotions: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
+});
+
+// Endpoint to create a new emotion entry for the logged-in user
 app.post('/api/emotions', async (req, res) => {
-   if (req.session.userId) {
-       try {
-           // Extract emotion data from the request body
-           const { date, rating } = req.body;
-
-           // Insert the emotion data into the MongoDB collection
-           const result = await collection.insertOne({
-               userId: req.session.userId,
-               date: new Date(date), // Convert date string to Date object
-               rating: parseInt(rating) // Convert rating string to integer
-           });
-
-           // Respond with success message
-           res.status(200).send("Emotion data saved successfully");
-       } catch (error) {
-           // Handle database error
-           res.status(500).send("Error saving emotion data: " + error.message);
-       }
-   } else {
-       // User is not logged in
-       res.status(403).send("Unauthorized");
-   }
+    if (req.session.userId) {
+        try {
+            const newEmotion = new Emotion({
+                userId: req.session.userId,
+                emotion: req.body.emotion,
+                date: req.body.date,
+                notes: req.body.notes
+            });
+            const savedEmotion = await newEmotion.save();
+            res.status(201).json(savedEmotion);
+        } catch (error) {
+            res.status(500).send("Error saving emotion: " + error.message);
+        }
+    } else {
+        res.status(403).send("Unauthorized");
+    }
 });
 
 
