@@ -5,7 +5,6 @@ html, body {
     background-color: cornflowerblue;
 }
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -15,16 +14,14 @@ html, body {
     background-color: cornflowerblue;
 }
 
-
 .upper_body {
     height: 420px;
     width: 100%;
     background-color: cornflowerblue;
 }
 
-
 .header-container {
-    position: relative; /* Added this line */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -35,7 +32,6 @@ html, body {
     background-color: lightblue;
 }
 
-
 .header-container .header-content {
     display: flex;
     flex-direction: column;
@@ -43,91 +39,84 @@ html, body {
     width: 100%;
 }
 
-
 .who-we-are-title {
-    font-size: 200px;
+    font-size: 150px;
     font-family: "Roboto Thin", fantasy;
     text-align: left;
-    margin: 0 0 20px 0; /* Adjust bottom margin to create space */
-    color: white; /* Make the font color white */
+    margin: 0 0 20px 0;
+    color: white;
 }
-
 
 .header-main-text {
-    font-size: 80px;
+    font-size: 90px; /* Add a semicolon here */
     font-family: "Roboto Thin", fantasy;
     text-align: center;
-    width: 100%; /* Allows content to center properly */
-    margin-bottom: 20px; /* Adjust bottom margin to create space */
-    color: white; /* Make the font color white */
-}
-.team-blue {
-    text-align: right; /* Aligns the text to the right */
-    font-size: 200px; /* Size of the font */
-    font-family: "Roboto Thin", fantasy;
-    margin: 0; /* Ensures no additional space around the element */
-    padding: 0; /* Ensures padding does not affect alignment */
-    width: 100%; /* Ensures the element spans the full width */
-    align-self: flex-end; /* Aligns this item to the end of the container's cross axis */
-    color: white; /* Make the font color white */
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
 }
 
+.team-blue {
+    text-align: right;
+    font-size: 150px;
+    font-family: "Roboto Thin", fantasy;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    align-self: flex-end;
+    color: white;
+}
 
 .blue {
-    color: royalblue; /* Make the word "Blue" royalblue */
+    color: royalblue;
 }
-
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Changed to flex-start to prevent stretching */
+    justify-content: flex-start;
     min-height: 100vh;
-    padding-bottom: 100px; /* Added padding to push up the content */
+    padding-bottom: 100px;
     background-color: cornflowerblue;
 }
 
-
 .lower_body {
     display: flex;
-    justify-content: space-around; /* Keep space around the items */
-    align-items: center; /* Align items vertically in the center */
-    margin-top: 18vh; /* Keep the original top margin */
-    gap: 8vw; /* Maintain the gap between articles */
-    padding-bottom: 100px; /* Add padding at the bottom to prevent touching the bottom area */
-    width: 100%; /* Ensure the lower_body takes full width */
-    background-color: cornflowerblue; /* Maintain the background color */
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 18vh;
+    gap: 8vw;
+    padding-bottom: 100px;
+    width: 100%;
+    background-color: cornflowerblue;
 }
-
 
 .lower_body article {
     color: royalblue;
-    width: 20vw; /* Adjust the width as necessary to fit side by side */
-    height: 40vh; /* Maintain the height */
+    width: 20vw;
+    height: 40vh;
     background-image: url("../images/calm-blue.jpeg");
     background-size: cover;
     background-position: center;
     font-family: "Roboto Thin", fantasy;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 1.2vw;
+    font-size: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     line-height: 2;
-    padding: 3vw; /* Maintain the padding */
-    margin-bottom: 0; /* Remove any margin-bottom that pushes the articles down */
+    padding: 3vw;
+    margin-bottom: 0;
 }
-
 
 .blue-text {
     color: royalblue;
-    font-size: 96px;
+    font-size: 100px;
     text-align: center;
 }
 
-
 .big-font {
-    font-size: 100px;
+    font-size: 90px;
 }
