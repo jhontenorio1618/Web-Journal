@@ -7,17 +7,14 @@
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/logger.css">
 </head>
-
+<body>
 
 <header>
     <aside class="page-title">
         Blue.
     </aside>
     <section class="dash-center">
-
         <h1 class="dashboard-title">Dashboard</h1>
-
-
     </section>
     <section class="links">
         <a href="../secondary-pages/about.html" title="About">
@@ -33,25 +30,25 @@
             <img src="../images/resources.png" alt="Security & Privacy">
         </a>
     </section>
-
 </header>
-<body>
-    <aside class="navigation">
-        <nav>
-            <ul>
-                <li><a href="../MainPages/home.html">Home</a></li>
-                <li><a href="../secondary-pages/goal-setting.html">Goal Setting</a></li>
-                <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
-                <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
-                <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
-                <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
-            </ul>
-        </nav>
-    </aside>
+
+<aside class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../MainPages/home.html">Home</a></li>
+            <li><a href="../secondary-pages/goal-setting.html">Goal Setting</a></li>
+            <li><a href="../secondary-pages/Logger.html">Log Emotions</a></li>
+            <li><a href="../secondary-pages/feedback-and-support.html">Feedback & Support</a></li>
+            <li><a href="../secondary-pages/security-privacy.html">Security & Privacy</a></li>
+            <li><a href="../secondary-pages/wellness-resources.html">Wellness Resources</a></li>
+        </ul>
+    </nav>
+</aside>
+
 <main class="main-content">
     <section class="emotion-logger">
         <h2>Log Your Emotions</h2>
-        <form action="/submit-emotion" method="POST">
+        <form id="emotion-form">
             <label for="emotion">Emotion:</label>
             <select id="emotion" name="emotion">
                 <option value="20">Joyful - Extremely Happy</option>
@@ -75,18 +72,18 @@
             <label for="date">Date:</label>
             <input type="date" id="date" name="date">
             <label for="log">I feel...</label>
-            <textarea id="log" name="notes" rows="4" placeholder="All emotions are valid stepping stones on the path to personal growth."></textarea>
+            <textarea id="log" name="notes" placeholder="Describe your feelings..."></textarea>
             <button type="submit">Log Emotion</button>
         </form>
     </section>
     <section id="submission-box" class="submission-box">
         <h2>Your Journey</h2>
         <script src="../js/logger.js"></script>
+        <h2>Logged Emotions</h2>
+        <!-- Emotions fetched from the server will be displayed here -->
+
     </section>
-
 </main>
-
-
-    <script src="../js/logger.js"></script>
+<script src="../js/logger.js"></script>
 </body>
 </html>
