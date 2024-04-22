@@ -80,6 +80,7 @@ body {
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Add vertical scrollbar when emotions overflow */
 }
 
 .submission-box h2{
