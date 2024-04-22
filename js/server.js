@@ -168,33 +168,35 @@ app.get('/api/goals', async (req, res) => {
    }
 });
 
-// MongoDB connection URI
-const uri = 'mongodb://localhost:27017';
+// Connection URI
+const uri = 'mongodb+srv://rehonoma1:JJjj33..@blue.aw6qzs9.mongodb.net/login+signup?retryWrites=true&w=majority';
+
+// Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Connect to MongoDB
-client.connect(function(err) {
-    if (err) {
-        console.error('Failed to connect to MongoDB:', err);
-        return;
+// Connect to the MongoDB cluster
+async function connectToMongoDB() {
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+        console.log('Connected to MongoDB Atlas');
+
+        // Specify the database to be used
+        const database = client.db('login+signup');
+        
+        // Specify the collection to be used
+        const collection = database.collection('emotion');
+
+        // Now you can perform operations on the collection
+        // For example:
+        // const result = await collection.insertOne({ key: 'value' });
+        // console.log('Inserted document:', result.insertedId);
+    } catch (error) {
+        console.error('Error connecting to MongoDB Atlas:', error);
     }
-    console.log('Connected to MongoDB');
-
-    const db = client.db('login+signup');
-    const collection = db.collection('emotion');
-
-    // Endpoint to save emotion data
-    app.post('/api/emotions', async (req, res) => {
-        try {
-            const { date, rating } = req.body;
-            const result = await collection.insertOne({ date: date, rating: rating });
-            res.status(201).json({ message: 'Emotion data saved successfully', id: result.insertedId });
-        } catch (error) {
-            console.error('Error saving emotion data:', error);
-            res.status(500).json({ error: 'Failed to save emotion data' });
-        }
-    });
-});
+}
+// Call the connectToMongoDB function to establish the connection
+connectToMongoDB();
 
 app.post('/submit-login', async (req, res) => {
    try {
