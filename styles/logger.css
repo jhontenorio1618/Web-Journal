@@ -8,7 +8,7 @@
     margin: 0 auto;
     position: absolute;
     top: 2vh;
-    left: 10%;
+    left: 3vw;
 }
 
 
@@ -49,4 +49,16 @@
 
 .emotion-logger button:hover {
     background-color: #105a94;
+}
+.submission-box{
+
+    display: flex;
+    position: relative;
+    margin-top: 34vh;
+    right: 16vw;
+    height: 29vh;
+    width: 62%;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
