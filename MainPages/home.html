@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
     </section>
 </header>
 
+
 <aside class="navigation">
     <nav>
         <ul>
@@ -44,11 +46,14 @@
     </nav>
 </aside>
 
+
 <main class="main-content">
-    <article class="last-goal">
+    <!-- Articles and content here -->
+    <article class="user-input">
         <div class="box-header">
-            <h2>Latest Goal</h2>
+            <h2>Log Emotions</h2>
         </div>
+<<<<<<< HEAD
         <div class="goal-content">
             <p class="goal" id="last-goal">
                 <!-- Dynamic content for the latest goal will be loaded here -->
@@ -76,6 +81,12 @@
             <form id="emotion-form">
                 <label for="emotion-date">Select Date:</label>
                 <input type="date" id="emotion-date" name="emotion-date" data-toggle="datepicker" required>
+=======
+        <div class="input-content">
+            <form id="emotion-form">
+                <label for="emotion-date">Select Date:</label>
+                <input type="text" id="emotion-date" name="emotion-date" data-toggle="datepicker" required>
+>>>>>>> b6e9fbf (update API stuff)
                 <label for="emotion-rating">Select Your Emotion:</label>
                 <select id="emotion-rating" name="emotion-rating" required>
                     <option value="1">1 - Absolutely Devastated</option>
@@ -91,6 +102,7 @@
                 </select>
                 <button type="submit">Submit</button>
             </form>
+<<<<<<< HEAD
         </div>
         <!-- <canvas id="emotion_chart" width="100" height="100"></canvas>  -->
         <canvas id="emotion_chart" width="100" height="100"></canvas>
@@ -115,13 +127,60 @@
             <p class="announcement" id="announcement">
                 <!-- Dynamic content for announcements will be loaded here -->
             </p>
+=======
+>>>>>>> b6e9fbf (update API stuff)
         </div>
     </article>
 </main>
 
+
 <script src="../js/api-datastore.js"></script>
 <script src="../js/home.js"></script>
 <script src="../js/graph.js"></script>
+
+<script>
+    // JavaScript handling for emotion update
+    document.getElementById('emotion-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get emotion data
+        const date = document.getElementById('emotion-date').value;
+        const rating = document.getElementById('emotion-rating').value;
+
+        // Construct request body
+        const requestBody = {
+            date: date,
+            rating: rating
+        };
+
+        // Make AJAX request to update emotion
+        fetch('/api/update-emotion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Emotion updated successfully');
+                    // Update UI or perform any other action as needed
+                } else {
+                    console.error('Error updating emotion:', response.statusText);
+                    // Handle error scenario
+                }
+            })
+            .catch(error => {
+                console.error('Error updating emotion:', error);
+                // Handle error scenario
+            });
+    });
+</script>
 </body>
 </html>
+
+
+
+
+
 
