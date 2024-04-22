@@ -186,6 +186,7 @@ background: linear-gradient(to right, #187dce, #76b9ef);
 
 .box-header{
     font-size: 12px;
+
 }
 
 .average-emotion {
@@ -221,6 +222,7 @@ background: linear-gradient(to right, #187dce, #76b9ef);
 .updates{
     display: flex;
     position: relative;
+    flex-direction: column;
     margin: 0;
     left: 15vw;
     width: 56.5%;
@@ -231,6 +233,10 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     border-radius: 8px;
     text-align: center;
     align-self: center;
+}
+.updates p {
+    margin-top: 2vh;
+    font-family: Trebuchet MS, sans-serif;
 }
 
 /* Header style within the Updates article */
@@ -270,7 +276,7 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     font-size: 1.5vw;
 }
 
-/* Styles for the Announcements section */
+
 
 
 /* Content area within the Updates article */
