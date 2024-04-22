@@ -30,7 +30,7 @@ async function queryEntities() {
     }
 
     const datastore = new Datastore({ projectId: 'resolute-client-420805', auth: client });
-    const query = datastore.createQuery('YourKind');
+    const query = datastore.createQuery('YourData');
     const [entities] = await datastore.runQuery(query);
     console.log('Entities:', entities);
 }
@@ -39,7 +39,6 @@ async function queryEntities() {
 module.exports = {
     queryEntities
 };
-
 
 
 
