@@ -22,7 +22,7 @@ body, html {
 header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center everything initially */
+    justify-content: center;    
     width: 100%;
     padding: 10px 20px;
     background-color: rgba(118, 185, 239, 0.5);
@@ -46,7 +46,7 @@ header {
 .header-navigation {
     display: flex;
     align-items: center;
-    gap: 5vw; /* Space between navigation links */
+    gap: 5vw;    
 }
 
 .nav-link {
@@ -110,8 +110,8 @@ main {
     width: 50%;
     margin-bottom: 2vh;
     display: flex;
-    justify-content: center; /* This will center the child elements horizontally */
-    align-items: center; /* This will center the child elements vertically */
+    justify-content: center;    
+    align-items: center;    
 }
 
 
@@ -130,7 +130,7 @@ main {
     background-color: #1692c5;
 }
 
-/* Ensures text is readable by applying a gradient and shadow */
+   
 h1, p {
     font-family: 'Times New Roman', serif;
     font-size: 2em;

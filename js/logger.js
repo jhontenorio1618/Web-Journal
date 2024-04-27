@@ -1,4 +1,3 @@
-// logger.js
 const emotionMessages = {
     1: "Hopeless",
     2: "Terrified",
@@ -26,20 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const emotion = document.getElementById('emotion').value;
         const date = document.getElementById('date').value;
         const notes = document.getElementById('log').value;
-
-        fetch('/api/emotions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ emotion, date, notes }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            addEmotionToUI(data);
-            fetchEmotions();
-        })
-        .catch(error => console.error('Error:', error));
+        postEmotion({ emotion, date, notes });
     });
 
     document.addEventListener('click', function(event) {
@@ -49,8 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    fetchEmotions(); // Initial fetch to load emotions
+    fetchEmotions();
 });
+
+function postEmotion(data) {
+    fetch('/api/emotions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        addEmotionToUI(data);
+        fetchEmotions();
+    })
+    .catch(error => console.error('Error:', error));
+}
 
 function addEmotionToUI(emotion) {
     const submissionBox = document.getElementById('submission-box');
@@ -60,42 +60,33 @@ function addEmotionToUI(emotion) {
     emotionText.textContent = `${emotionMessages[emotion.emotion] || 'Emotion'} recorded on ${new Date(emotion.date).toLocaleDateString()}`;
     const emotionNote = document.createElement('div');
     emotionNote.textContent = `Note: ${emotion.notes}`;
+    const deleteButton = createDeleteButton(emotion._id);
 
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.classList.add('delete-button');
-    deleteButton.dataset.emotionId = emotion._id;
-
-    emotionContainer.appendChild(emotionText);
-    emotionContainer.appendChild(emotionNote);
-    emotionContainer.appendChild(deleteButton);
+    emotionContainer.append(emotionText, emotionNote, deleteButton);
     submissionBox.appendChild(emotionContainer);
+}
+
+function createDeleteButton(id) {
+    const button = document.createElement('button');
+    button.textContent = 'Delete';
+    button.classList.add('delete-button');
+    button.dataset.emotionId = id;
+    return button;
 }
 
 function fetchEmotions() {
     fetch('/api/emotions')
-    .then(response => {
-        if (response.ok) return response.json();
-        throw new Error('Network response was not ok.');
-    })
+    .then(response => response.ok ? response.json() : Promise.reject('Failed to load emotions'))
     .then(emotions => {
         const submissionBox = document.getElementById('submission-box');
-        submissionBox.innerHTML = ''; // Clear the box
+        submissionBox.innerHTML = '';
         emotions.forEach(addEmotionToUI);
     })
     .catch(error => console.error('Error:', error));
 }
 
 function deleteEmotion(emotionId) {
-    fetch(`/api/emotions/${emotionId}`, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            fetchEmotions(); // Refresh emotions list after deletion
-        } else {
-            throw new Error('Failed to delete emotion.');
-        }
-    })
+    fetch(`/api/emotions/${emotionId}`, { method: 'DELETE' })
+    .then(response => response.ok ? fetchEmotions() : Promise.reject('Failed to delete emotion'))
     .catch(error => console.error('Error:', error));
 }

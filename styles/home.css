@@ -40,6 +40,7 @@
     width: 45%;
     height: 54vh;
     background: white;
+    color:  #187dce;
     box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
     border-radius: 10px;
 }
@@ -167,9 +168,7 @@ MAHNOOR
     background: linear-gradient(to right, #187dce, #76b9ef);
 
 }
-/*\
-background: linear-gradient(to right, #187dce, #76b9ef);
- */
+
 .box-header {
     background: linear-gradient(to right, #187dce, #76b9ef);
     height: 5vh;
@@ -182,43 +181,26 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     border-top-left-radius: 10px
 }
 
-
-
 .box-header{
     font-size: 12px;
 
 }
 
 .average-emotion {
-    position: relative; /* Relative positioning for stacking */
+    position: relative;
     right: 26vw;
     bottom: 0;
-    width: 30%; /* Maintain consistent width with other articles */
-    height: 20vh; /* Or adjust based on your content */
-    background-color: white;
-    border-radius: 8px; /* Rounded corners like other boxes */
-    text-align: center; /* Center align the text */
-    justify-content: center;
-    align-self: center; /* Center the box in the flex container */
-    margin-top: 5vh; /* Add some vertical space from the above article */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent shadow with other articles */
-}
-/*
-.updates {
-    position: relative;
-    width: 55%;
-    bottom: 20vh;
-    height: 18vh;
-    left: 14.8vw;
-    margin: 0;
-    margin-inside: 0;
-    justify-content: center;
+    width: 30%;
+    height: 20vh;
     background-color: white;
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 5vh;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
- */
+
 .updates{
     display: flex;
     position: relative;
@@ -229,6 +211,7 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     bottom: 20vh;
     height: 18vh;
     padding-bottom: 2vh;
+    color:  #187dce;
     background: white;
     border-radius: 8px;
     text-align: center;
@@ -239,7 +222,7 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     font-family: Trebuchet MS, sans-serif;
 }
 
-/* Header style within the Updates article */
+
 .updates .box-header {
     background: linear-gradient(to right, #187dce, #76b9ef);
     height: 5vh;
@@ -277,12 +260,9 @@ background: linear-gradient(to right, #187dce, #76b9ef);
 }
 
 
-
-
-/* Content area within the Updates article */
 .updates .update-content {
-    text-align: center; /* Center aligned text for readability */
-    color: #333; /* Text color for visibility */
+    text-align: center;
+    color:  #187dce;
     height: 4vh;
 }
 
@@ -291,10 +271,3 @@ background: linear-gradient(to right, #187dce, #76b9ef);
     padding: 10px;
 }
 
-/*
-
-
-
-
-
- */

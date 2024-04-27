@@ -107,7 +107,7 @@ h2{
 
 
 }
-/* LIly's idea of changing the 1,2,3 to next buttons */
+     
 .step-one,
 .step-two,
 .step-three {
@@ -191,14 +191,14 @@ p {
 .sub-main {
     font-family: "Roboto Thin", fantasy;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    flex-direction: column;      
+    align-items: center;      
+    justify-content: center;     
     position: relative;
     top: 35vh;
     margin: 0;
     background-color: #121212;;
-    width: auto; /* Adjust as needed */
+    width: auto;     
     height: 65vh;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 20px;
@@ -212,7 +212,7 @@ p {
 }
 .box {
     display: flex;
-    justify-content: center; /* Center items vertically */
+    justify-content: center;      
     margin: 0;
     width: 100%;
     height: 100%;
@@ -220,7 +220,7 @@ p {
 }
 
 .box img {
-    width: 20%; /* Adjust as needed */
+    width: 20%;      
     height: auto;
     object-fit: contain;
     margin-right: 20px;
@@ -239,9 +239,9 @@ p {
 
 
 .brain {
-    float: left; /* Makes text flow around the right side of the image */
-    margin-right: 20px; /* Adds some space between the image and the surrounding text */
-    margin-bottom: 20px; /* Optional: adds space below the image if the text is longer */
+    float: left;      
+    margin-right: 20px;      
+    margin-bottom: 20px;      
 }
 .container{
     display: flex;

@@ -67,53 +67,53 @@ body {
 }
 
 
-/* New styles for emotion containers */
+   
 .emotion-container {
     background-color: #f9f9f9;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: calc(20% - 20px); /* Limit each emotion container to 20% of the container width (minus margin) */
+    width: calc(20% - 20px);    
 }
 
 
 .delete-button {
-    background-color: #ff4d4d; /* Red color for delete actions */
+    background-color: #ff4d4d;    
     color: white;
     border: none;
     padding: 5px 10px;
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: 5px;   
+    cursor: pointer;    
+    transition: background-color 0.3s ease;    
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 0.9rem; /* Smaller font size for button text */
+    font-size: 0.9rem;    
     line-height: 1.5;
-    margin: 3px; /* Spacing around the button */
+    margin: 3px;    
     vertical-align: middle;
 }
 
 .delete-button:hover {
-    background-color: #cc0000; /* Darker shade of red on hover */
+    background-color: #cc0000;    
 }
 
 .delete-button:focus {
-    outline: none; /* Removes the outline to keep the design clean */
-    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.5); /* Adds a subtle shadow to indicate focus */
+    outline: none;    
+    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.5);    
 }
 
 .delete-button:active {
-    background-color: #990000; /* Even darker shade of red to simulate the button being pressed */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for pressed effect */
+    background-color: #990000;    
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);    
 }
 
 
 .submission-box {
     display: flex;
-    flex-wrap: wrap; /* Allow emotions to wrap to new lines */
-    gap: 20px; /* Add some space between emotion containers */
+    flex-wrap: wrap;   
+    gap: 20px;   
     position: relative;
     bottom: 15vh;
     right: 20vw;
@@ -123,5 +123,5 @@ body {
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow-y: auto; /* Add vertical scrollbar when emotions overflow */
+    overflow-y: auto;    
 }

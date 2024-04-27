@@ -9,8 +9,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the entire container */
-    color: black; /* Set text color to pink */
+    font-family: "Roboto Thin", fantasy;   
+    color: black;    
 }
 
 
@@ -21,15 +21,15 @@
     box-sizing: border-box;
     background-color: lightskyblue;
     align-content: center;
-    color: black; /* Set text color to pink */
+    color: black;    
 }
 
 
 .title {
     text-align: center;
-    color: black; /* Set text color to pink */
-    font-family: "Roboto Thin", fantasy; /* Set font family for the title */
-    font-size: 24px; /* Make the font size bigger */
+    color: black;      
+    font-family: "Roboto Thin", fantasy;     
+    font-size: 24px;      
 }
 
 
@@ -37,25 +37,24 @@
     text-align: center;
     font-size: 34px;
     margin-bottom: 20px;
-    color: pink; /* Set text color to pink */
-    font-family: "Roboto Thin", fantasy; /* Set font family for the dashboard title */
-    font-size: 30px; /* Make the font size bigger */
+    color: pink;     
+    font-family: "Roboto Thin", fantasy;     
+    font-size: 30px;      
 }
 
 
 .login-form .form-group {
     margin-bottom: 15px;
 }
-
-
+     
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    color: pink; /* Set text color to pink */
-    font-family: "Roboto Thin", fantasy; /* Set font family for the form inputs */
-    font-size: 20px; /* Make the font size bigger */
+    color: pink;      
+    font-family: "Roboto Thin", fantasy;     
+    font-size: 20px;      
 }
 
 
@@ -66,8 +65,8 @@
     color: white;
     border: none;
     cursor: pointer;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the button */
-    font-size: 18px; /* Make the font size bigger */
+    font-family: "Roboto Thin", fantasy;     
+    font-size: 18px;      
 }
 
 
@@ -85,6 +84,6 @@
 
 body {
     background-color: #69b3f0;
-    color: pink; /* Set text color to pink */
-    font-family: "Roboto Thin", fantasy; /* Set font family for the body */
+    color: pink;      
+    font-family: "Roboto Thin", fantasy;     
 }

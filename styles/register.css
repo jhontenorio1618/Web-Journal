@@ -9,7 +9,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the entire container */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
@@ -19,8 +19,8 @@
     padding: 50px;
     box-sizing: border-box;
     background: lightskyblue;
-    border: 1px solid pink; /* Border color set to pink */
-    font-family: "Roboto Thin", fantasy; /* Set font family for the centered content */
+    border: 1px solid pink;     
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
@@ -28,19 +28,19 @@
     text-align: center;
     font-size: 34px;
     margin-bottom: 20px;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the titles */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
 .register-form .form-group {
     margin-bottom: 15px;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the form groups */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
 .register-form label {
     display: block;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the labels */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
@@ -51,7 +51,7 @@
     padding: 8px;
     margin-top: 5px;
     border: none;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the form inputs */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 
@@ -62,7 +62,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    font-family: "Roboto Thin", fantasy; /* Set font family for the button */
+    font-family: "Roboto Thin", fantasy;      
 }
 
 

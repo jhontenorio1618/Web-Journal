@@ -9,16 +9,14 @@ header {
     margin-bottom: 20px;
 }
 
-
 header h1 {
-    color: white; /* Change the color of the header text to white */
+    color: white;    
     font-family: "Roboto Thin", fantasy;
 }
 .emoji {
     position: absolute;
     animation: move 3s infinite;
 }
-
 
 body {
     background-image: url("../images/bg-circles.webp");
@@ -29,11 +27,8 @@ body {
     background-size: cover;
     height: 10vh;
     z-index: 1000;
-    font-size: 65px; /* Change the font size to 65px for all text */
-}  /* Remove individual font-size settings from other selectors */
-
-
-
+    font-size: 65px;    
+}     
 
 .container {
     display: flex;
@@ -59,22 +54,22 @@ body {
 
 
 .grid-item:nth-child(1) {
-    background-color: cornflowerblue; /* cornflowerblue */
-    color: white; /* Change the color of the header text to white */
+    background-color: cornflowerblue;    
+    color: white;   
     font-family: "Roboto Thin", fantasy;
 }
 
 
 .grid-item:nth-child(2) {
     background-color: cornflowerblue;
-    color: white; /* Change the color of the header text to white */
+    color: white;    
     font-family: "Roboto Thin", fantasy;
 }
 
 
 .grid-item:nth-child(3) {
-    background-color: cornflowerblue; /* cornflowerblue */
-    color: white; /* Change the color of the header text to white */
+    background-color: cornflowerblue;   
+    color: white;    
     font-family: "Roboto Thin", fantasy;
 }
 

@@ -8,8 +8,8 @@ body {
     background-size: cover;
     height: 10vh;
     z-index: 1000;
-    color: white; /* Make all text white */
-    font-family: "Roboto Thin", fantasy; /* Set the font family for all text */
+    color: white;       
+    font-family: "Roboto Thin", fantasy;   
 }
 
 
@@ -48,7 +48,7 @@ body {
 .contact_form_message {
     font-size: 14px;
     margin-top: 20px;
-    /* color: #555; Remove individual color setting */
+       
 }
 
 
